@@ -1,5 +1,3 @@
-![Calavera](https://imgur.com/carbon-CKyIqiY)
-
 ```
                       :::!~!!!!!:.                     Emanuel Lopez F (ema28pro)
                   .xUHWH!! !!?M88WHX:.                 ——————
