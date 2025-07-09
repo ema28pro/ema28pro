@@ -19,8 +19,6 @@
 <img width="45%" align="right" src="https://quotes-github-readme.vercel.app/api?type=vetical&theme=radical" />
 </a>
 
----
-
 ### 🛠 &nbsp;Tech Stack
 
 ![Web](https://skillicons.dev/icons?i=html,css,js,nodejs,react,tailwind)
