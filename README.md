@@ -1,5 +1,13 @@
 ![Calavera](carbon%20(1).svg)
 
+<div align="center">
+  <img alt="" src="https://img.shields.io/badge/Discord-ema28pro-5865F2?logo=discord&logoColor=white" class="inline-block mx-1" style="margin: 0px 2px;">
+  <img alt="" src="https://visitor-badge.laobi.icu/badge?page_id=ema28pro" class="inline-block mx-1" style="margin: 0px 2px;">
+  <img alt="" src="" class="inline-block mx-1" style="margin: 0px 2px;">
+  <img alt="" src="" class="inline-block mx-1" style="margin: 0px 2px;">
+  
+</div>
+
 ## **About Me**: 
 <!-- <img src="https://quotes-github-readme.vercel.app/api?type=vetical&theme=radical" align="right" height="170"/> -->
 📗 Student of Engineering of System<br>🔭 I'm currently working on a Real-Time Chat<br>🤝 I'm looking to collaborate on Proyects<br>🌱 I'm currently learning **React** and **Express**.<br>💬 Ask me about Python and problem solving<br>⚡Fun fact: Apples are green
@@ -42,7 +50,10 @@
 <img width="50%" align="left" src="https://media.tenor.com/yOqgOJDlyzMAAAAi/club-penguin-club.gif" />
 </a> -->
 
-<h3> Connect with me:</h3><a style="margin-left: 10px;"  target="_blank" href="https://www.linkedin.com/in/emanuel-lopez-f/"><img src="https://img.icons8.com/doodle/40/000000/linkedin--v2.png"></a> <a style="margin-left: 10px;" target="_blank" href="https://github.com/ema28pro"><img src="https://img.icons8.com/doodle/40/000000/github--v1.png"></a>
+<h3> Connect with me:</h3>
+
+<a style="margin-left: 10px;"  target="_blank" href="https://www.linkedin.com/in/emanuel-lopez-f/"><img src="https://img.icons8.com/doodle/40/000000/linkedin--v2.png"></a> <a style="margin-left: 10px;" target="_blank" href="https://github.com/ema28pro"><img src="https://img.icons8.com/doodle/40/000000/github--v1.png"></a>
+
 
 ---
 
