@@ -16,6 +16,18 @@
                              |_|                             
 ```
 
+<p>
+  I am a system engineering student, currently halfway through my degree. I am expanding my knowledge in both front-end and back-end development, and I am currently improving my skills. I love to learn and build something new, productive, innovative and creative.
+</p>
+
+📗 Student of Engineering of System <br>
+🔭 I'm currently working on a Real-Time Chat <br>
+🤝 I'm looking to collaborate on open source proyects <br>
+🌱 I'm currently learning **React** and **Express** <br>
+💬 Ask me about anything, I am happy to help and talk <br>
+📫 Reach out to me at: [ema2805pro@gmail.com](ema2805pro@gmail.com) <br>
+⚡Fun fact: Apples are green <br>
+
 ```
 Emanuel Lopez F (ema28pro)
 ——————
