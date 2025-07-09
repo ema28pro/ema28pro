@@ -43,8 +43,8 @@
 ###
 
 <div align="center">
-  <img src="https://streak-stats.demolab.com?user=ema28pro&locale=en&mode=daily&theme=dark&hide_border=true&border_radius=5&date_format=M%20j%5B,%20Y%5D&order=3" height="100" alt="streak graph" style="display: inline-block; margin-right: 10px;" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=ema28pro&locale=en&hide_title=false&layout=compact&card_width=320&langs_count=5&theme=dark&hide_border=true&order=2" height="100" alt="languages graph" style="display: inline-block;" />
+  <img src="https://streak-stats.demolab.com?user=ema28pro&locale=en&mode=daily&theme=dark&hide_border=true&border_radius=5&date_format=M%20j%5B,%20Y%5D&order=3" height="140" alt="streak graph" style="display: inline-block; margin-right: 10px;" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=ema28pro&locale=en&hide_title=false&layout=compact&card_width=320&langs_count=5&theme=dark&hide_border=true&order=2" height="140" alt="languages graph" style="display: inline-block;" />
 </div>
 
 ###
