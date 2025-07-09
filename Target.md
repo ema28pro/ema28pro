@@ -651,3 +651,5 @@ $$         $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
   <img width="12" />
   <img src="https://skillicons.dev/icons?i=cpp" height="30" alt="cplusplus logo"  />
 </div>
+
+<img src="https://raw.githubusercontent.com/ema28pro/ema28pro/output/snake.svg" alt="Snake animation" />
