@@ -7,6 +7,7 @@
 - https://github.com/J0B10/aoc-badges-action
 - https://github.com/khalby786/REHeader?tab=readme-ov-file (shut down)
 - https://github.com/Akshay090/svg-banners
+- https://github.com/anuraghazra/github-readme-stats
 
 
 
@@ -15,6 +16,7 @@
 - https://github.com/MikeCodesDotNET/ColoredBadges
 - https://github.com/Envoy-VC/awesome-badges
 - https://github.com/marwin1991/profile-technology-icons
+- https://github.com/Ileriayo/markdown-badges
 - https://simpleicons.org/
 - https://techstack-generator.vercel.app/
 - https://skillicons.dev/
@@ -24,3 +26,8 @@
 - https://profile-readme-generator.com/es
 - https://rahuldkjain.github.io/gh-profile-readme-generator/
 - https://awesome-github-stats.azurewebsites.net/
+
+## Ejemplos:
+- [Todo lo que necesitas para actualizar tu perfil de Github](https://github.com/CondorCoders/github-readme-profile?tab=readme-ov-file)
+    - https://zzetao.github.io/awesome-github-profile/ 
+- 

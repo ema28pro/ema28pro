@@ -1,13 +1,44 @@
 ![Calavera](carbon%20(1).svg)
-<div align="center">
-  <img src="https://skillicons.dev/icons?i=html,css,js,nodejs,react,py,fastapi,java,cpp,mysql,mongodb" />
-</div>
 
-#
+## **About Me**: 
+<!-- <img src="https://quotes-github-readme.vercel.app/api?type=vetical&theme=radical" align="right" height="170"/> -->
+🔭 I'm currently working on a Real-Time Chat<br>🤝 I'm looking to collaborate on Proyects<br>🌱 I'm currently learning **React** and **Express**.<br>💬 Ask me about Python and problem solving<br>⚡Fun fact: Apples are green
+
+
+<!-- <div align="center">
+  <img src="https://skillicons.dev/icons?i=html,css,js,nodejs,react,py,fastapi,java,cpp,mysql,mongodb" />
+</div> -->
 
 <div align="center">
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=ema28pro&theme=lucent&area=true&hide_border=true&hide_title=true&bg_color=0d1117&color=30a14e&line=10aa50&area_color=9be9a8" alt="activity-graph graph" />
 </div>
+
+<br/>
+
+<a href="https://github.com/leonardoPBF">
+<img width="50%" align="right" src="https://quotes-github-readme.vercel.app/api?type=vetical&theme=radical" />
+</a>
+
+### 🛠 &nbsp;Tech Stack
+
+![C#](https://skillicons.dev/icons?i=html,css,js,nodejs,react)
+
+![Python](https://skillicons.dev/icons?i=python)&nbsp;
+![Java](https://skillicons.dev/icons?i=java)&nbsp;
+![C++](https://skillicons.dev/icons?i=cpp)
+
+### 🗃 &nbsp;Databases
+
+![MongoDB](https://skillicons.dev/icons?i=mongodb)&nbsp;
+![MySQL](https://skillicons.dev/icons?i=mysql)
+
+<!-- <a href="https://github.com/ema28pro">
+<img width="50%" align="left" src="https://media.tenor.com/yOqgOJDlyzMAAAAi/club-penguin-club.gif" />
+</a> -->
+
+<h3> Connect with me:</h3><a style="margin-left: 10px;"  target="_blank" href="https://www.linkedin.com/in/emanuel-lopez-f/"><img src="https://img.icons8.com/doodle/40/000000/linkedin--v2.png"></a> <a style="margin-left: 10px;" target="_blank" href="https://github.com/ema28pro"><img src="https://img.icons8.com/doodle/40/000000/github--v1.png"></a>
+
+###
 
 <table align="center">
 <tr>
@@ -21,9 +52,5 @@
 </td>
 </tr>
 </table>
-
-<div align="center">
-  <img alt="ema28pro's GitHub Stats" src="https://awesome-github-stats.azurewebsites.net/user-stats/ema28pro?cardType=octocat&preferLogin=true" />
-</div>
 
 ###
