@@ -2,7 +2,7 @@
 
 ## **About Me**: 
 <!-- <img src="https://quotes-github-readme.vercel.app/api?type=vetical&theme=radical" align="right" height="170"/> -->
-🔭 I'm currently working on a Real-Time Chat<br>🤝 I'm looking to collaborate on Proyects<br>🌱 I'm currently learning **React** and **Express**.<br>💬 Ask me about Python and problem solving<br>⚡Fun fact: Apples are green
+📗 Student of Engineering of System<br>🔭 I'm currently working on a Real-Time Chat<br>🤝 I'm looking to collaborate on Proyects<br>🌱 I'm currently learning **React** and **Express**.<br>💬 Ask me about Python and problem solving<br>⚡Fun fact: Apples are green
 
 
 <!-- <div align="center">
@@ -15,30 +15,33 @@
 
 <br/>
 
-<a href="https://github.com/leonardoPBF">
+<a href="https://github.com/ema28pro">
 <img width="50%" align="right" src="https://quotes-github-readme.vercel.app/api?type=vetical&theme=radical" />
 </a>
 
 ### 🛠 &nbsp;Tech Stack
 
-![C#](https://skillicons.dev/icons?i=html,css,js,nodejs,react)
+![Web](https://skillicons.dev/icons?i=html,css,js,nodejs,react,tailwind)
 
 ![Python](https://skillicons.dev/icons?i=python)&nbsp;
+![FastAPi](https://skillicons.dev/icons?i=fastapi)&nbsp;
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" height="47" alt="numpy logo"/>&nbsp;
 ![Java](https://skillicons.dev/icons?i=java)&nbsp;
 ![C++](https://skillicons.dev/icons?i=cpp)
 
-### 🗃 &nbsp;Databases
+### 🗃 &nbsp;Others
 
 ![MongoDB](https://skillicons.dev/icons?i=mongodb)&nbsp;
-![MySQL](https://skillicons.dev/icons?i=mysql)
+![MySQL](https://skillicons.dev/icons?i=mysql)&nbsp;&nbsp;&nbsp;
+![Git](https://skillicons.dev/icons?i=git)&nbsp;
+![GitHub](https://skillicons.dev/icons?i=github)&nbsp;
+![VSCode](https://skillicons.dev/icons?i=vscode)
 
 <!-- <a href="https://github.com/ema28pro">
 <img width="50%" align="left" src="https://media.tenor.com/yOqgOJDlyzMAAAAi/club-penguin-club.gif" />
 </a> -->
 
 <h3> Connect with me:</h3><a style="margin-left: 10px;"  target="_blank" href="https://www.linkedin.com/in/emanuel-lopez-f/"><img src="https://img.icons8.com/doodle/40/000000/linkedin--v2.png"></a> <a style="margin-left: 10px;" target="_blank" href="https://github.com/ema28pro"><img src="https://img.icons8.com/doodle/40/000000/github--v1.png"></a>
-
-###
 
 <table align="center">
 <tr>
