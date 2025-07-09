@@ -8,6 +8,7 @@
 - https://github.com/khalby786/REHeader?tab=readme-ov-file (shut down)
 - https://github.com/Akshay090/svg-banners
 - https://github.com/anuraghazra/github-readme-stats
+- https://github.com/alexandresanlim/Badges4-README.md-Profile-Dynamic
 
 
 
@@ -20,6 +21,7 @@
 - https://simpleicons.org/
 - https://techstack-generator.vercel.app/
 - https://skillicons.dev/
+- https://github.com/alexandresanlim/Badges4-README.md-Profile
 
 
 ### Readme Generators:
