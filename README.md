@@ -5,12 +5,22 @@
   <img alt="" src="https://visitor-badge.laobi.icu/badge?page_id=ema28pro" class="inline-block mx-1" style="margin: 0px 2px;">
   <img alt="" src="" class="inline-block mx-1" style="margin: 0px 2px;">
   <img alt="" src="" class="inline-block mx-1" style="margin: 0px 2px;">
-  
 </div>
 
-## **About Me**: 
 <!-- <img src="https://quotes-github-readme.vercel.app/api?type=vetical&theme=radical" align="right" height="170"/> -->
-📗 Student of Engineering of System<br>🔭 I'm currently working on a Real-Time Chat<br>🤝 I'm looking to collaborate on Proyects<br>🌱 I'm currently learning **React** and **Express**.<br>💬 Ask me about Python and problem solving<br>⚡Fun fact: Apples are green
+
+## **About Me**: 
+<p>
+  I am a System Engineering student, currently halfway through my degree. Passionate about Computer Science, Algorithmst, i am expanding my knowledge in both Front-end and Back-end development, and I am improving my skills. I love to learn and build something new, productive, innovative and creative.
+</p>
+
+🔭 Currently working on a Real-Time Chat app <br>
+🤝 Looking to collaborate on open source projects <br>
+🌱 Learning React, Express and advanced backend concepts <br>
+🧠 I enjoy solving problems on CodinGame (Clash of Code) <br>
+💬 Ask me about anything, I am happy to help and talk <br>
+📫 Reach out to me at: [ema2805pro@gmail.com](ema2805pro@gmail.com) <br>
+⚡Fun fact: Apples are green <br>
 
 <!-- <div align="center">
   <img src="https://skillicons.dev/icons?i=html,css,js,nodejs,react,py,fastapi,java,cpp,mysql,mongodb" />
@@ -25,12 +35,12 @@
 ### 🛠 &nbsp;Tech Stack
 
 <!-- ![Web](https://skillicons.dev/icons?i=html,css,js,nodejs,react,tailwind) -->
-![Web](https://skillicons.dev/icons?i=html)
-![Web](https://skillicons.dev/icons?i=css)
-![Web](https://skillicons.dev/icons?i=js)
-![Web](https://skillicons.dev/icons?i=nodejs)
-![Web](https://skillicons.dev/icons?i=react)
-![Web](https://skillicons.dev/icons?i=tailwind)
+![HTML](https://skillicons.dev/icons?i=html)
+![CSS](https://skillicons.dev/icons?i=css)
+![JavaScript](https://skillicons.dev/icons?i=js)
+![NodeJs](https://skillicons.dev/icons?i=nodejs)
+![React](https://skillicons.dev/icons?i=react)
+![Tailwind](https://skillicons.dev/icons?i=tailwind)
 
 ![Python](https://skillicons.dev/icons?i=python)&nbsp;
 ![FastAPi](https://skillicons.dev/icons?i=fastapi)&nbsp;
@@ -44,7 +54,7 @@
 ![MySQL](https://skillicons.dev/icons?i=mysql)&nbsp;&nbsp;&nbsp;
 ![Git](https://skillicons.dev/icons?i=git)&nbsp;
 ![GitHub](https://skillicons.dev/icons?i=github)&nbsp;
-![VSCode](https://skillicons.dev/icons?i=vscode)
+![VSCode](https://skillicons.dev/icons?i=vscode)&nbsp;
 
 <!-- <a href="https://github.com/ema28pro">
 <img width="50%" align="left" src="https://media.tenor.com/yOqgOJDlyzMAAAAi/club-penguin-club.gif" />
