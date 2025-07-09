@@ -21,7 +21,13 @@
 
 ### 🛠 &nbsp;Tech Stack
 
-![Web](https://skillicons.dev/icons?i=html,css,js,nodejs,react,tailwind)
+<!-- ![Web](https://skillicons.dev/icons?i=html,css,js,nodejs,react,tailwind) -->
+![Web](https://skillicons.dev/icons?i=html)
+![Web](https://skillicons.dev/icons?i=css)
+![Web](https://skillicons.dev/icons?i=js)
+![Web](https://skillicons.dev/icons?i=nodejs)
+![Web](https://skillicons.dev/icons?i=react)
+![Web](https://skillicons.dev/icons?i=tailwind)
 
 ![Python](https://skillicons.dev/icons?i=python)&nbsp;
 ![FastAPi](https://skillicons.dev/icons?i=fastapi)&nbsp;
