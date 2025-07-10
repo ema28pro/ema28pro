@@ -29,7 +29,16 @@
 ## Ejemplos:
 - [Todo lo que necesitas para actualizar tu perfil de Github](https://github.com/CondorCoders/github-readme-profile?tab=readme-ov-file)
     - https://zzetao.github.io/awesome-github-profile/ 
-- 
+- https://github.com/durgeshsamariya/awesome-github-profile-readme-templates
+    - https://durgeshsamariya.github.io/awesome-github-profile-readme-templates/#/
+- https://github.com/minoveaz/github-perfil-readme-asombrosos
+- https://github.com/elangosundar/awesome-README-templates
+- https://github.com/abhisheknaiidu/awesome-github-profile-readme
+- https://github.com/JOSBEAK/awesome-github-profile-readme-templates
+- https://github.com/lakshithamadumal/Awesome-Readme-Templates
+- https://github.com/SUBHADIPMAITI-DEV/SUBHADIPMAITI-DEV-awesome-github-profile-readme-templates
+- https://github.com/coderjojo/creative-profile-readme
+- https://github.com/kautukkundan/Awesome-Profile-README-templates/
 
 ## Interesantes:
 - [pyoneerC](https://github.com/pyoneerC)
