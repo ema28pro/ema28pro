@@ -30,3 +30,11 @@
 - [Todo lo que necesitas para actualizar tu perfil de Github](https://github.com/CondorCoders/github-readme-profile?tab=readme-ov-file)
     - https://zzetao.github.io/awesome-github-profile/ 
 - 
+
+## Interesantes:
+- [pyoneerC](https://github.com/pyoneerC)
+- [kevin-dev71](https://github.com/kevin-dev71)
+- [alexandresanlim](https://github.com/alexandresanlim)
+- [erikgiovani](https://github.com/erikgiovani)
+- [mirayatech](https://github.com/mirayatech)
+- [Andres61](https://github.com/Andres61)

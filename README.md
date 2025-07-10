@@ -48,13 +48,21 @@
 ![Java](https://skillicons.dev/icons?i=java)&nbsp;
 ![C++](https://skillicons.dev/icons?i=cpp)
 
+![MongoDB](https://skillicons.dev/icons?i=mongodb)&nbsp;
+![MySQL](https://skillicons.dev/icons?i=mysql)
+
+<!-- &nbsp;&nbsp;&nbsp; -->
+
+
 ### 🗃 &nbsp;Others
 
-![MongoDB](https://skillicons.dev/icons?i=mongodb)&nbsp;
-![MySQL](https://skillicons.dev/icons?i=mysql)&nbsp;&nbsp;&nbsp;
 ![Git](https://skillicons.dev/icons?i=git)&nbsp;
 ![GitHub](https://skillicons.dev/icons?i=github)&nbsp;
 ![VSCode](https://skillicons.dev/icons?i=vscode)&nbsp;
+![Notion](https://skillicons.dev/icons?i=notion)&nbsp;
+![Obsidian](https://skillicons.dev/icons?i=obsidian)
+<img src="https://cdn.simpleicons.org/trello/0052C" height=47>&nbsp;
+
 
 <!-- <a href="https://github.com/ema28pro">
 <img width="50%" align="left" src="https://media.tenor.com/yOqgOJDlyzMAAAAi/club-penguin-club.gif" />
@@ -84,3 +92,33 @@
 </table>
 
 ###
+
+<table>
+<tr>
+<th> Good </th>
+<th> Bad </th>
+</tr>
+<tr>
+<td>
+
+```c++
+int foo() {
+    int result = 4;
+    return result;
+}
+```
+
+</td>
+<td>
+
+```c++
+int foo() { 
+    int x = 4;
+    return x;
+}
+```
+
+</td>
+</tr>
+</table>
+
