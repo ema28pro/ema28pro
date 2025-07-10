@@ -108,6 +108,22 @@
   - Te interesa aprender **programación desde cero**
   - Tienes dudas sobre **cualquier cosa técnica**
 
-<br>
+<details align="right">
+  <summary><img src="./img/pou.png" height=15></summary>
+  <table border=0>
+    <caption><h1>Hall of Fame</h1></caption>
+    <tr>
+    <td align="center">
+      <img src="./img/glaceon.jpeg">
+    </td>
+    <td align="center">
+      <img src="./img/hotdog.jpeg"/>
+    </td>
+    <td align="center">
+      <img src="./img/vaporeon.jpeg"/>
+    </td>
+    </tr>
+  </table>
+</details>
 
 <sub align="center">Hecho con paciencia y código ☕ — Siempre aprendiendo algo nuevo.</sub>
