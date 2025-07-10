@@ -16,41 +16,6 @@
                              |_|                             
 ```
 
-<p>
-  I am a system engineering student, currently halfway through my degree. I am expanding my knowledge in both front-end and back-end development, and I am currently improving my skills. I love to learn and build something new, productive, innovative and creative.
-</p>
-
-📗 Student of Engineering of System <br>
-🔭 I'm currently working on a Real-Time Chat <br>
-🤝 I'm looking to collaborate on open source proyects <br>
-🌱 I'm currently learning **React** and **Express** <br>
-💬 Ask me about anything, I am happy to help and talk <br>
-📫 Reach out to me at: [ema2805pro@gmail.com](ema2805pro@gmail.com) <br>
-⚡Fun fact: Apples are green <br>
-
-```
-Emanuel Lopez F (ema28pro)
-——————
-Description: Software Developer & Self-Taught Creative
-Uptime: 20 years #Age: 20 years
-Host: University of Antioquia #UdeA (Colombia)
-Kernel: Learning Systems, Automation, GameDev
-
-Languages.Programming: Python, Java, C/C++ (Learning)
-Languages.Real: Spanish (Native), English (B2 – Improving)
-
-Tools.Frontend: HTML, CSS, JavaScript, React (Learning)
-Tools.Backend: FastAPI, Node.js, MySQL, MongoDB
-
-Hobbies.Hardware: Athletics, Cycling, Reading, Puzzles
-Hobbies.Software: Computer Sciences, Algorithms, ML/IA
-
-Contact:
-——————
-LinkedIn: in/emanuel-lopez-f
-Email: ema28pro@gmail.com
-```
-
 ```
                       :::!~!!!!!:.                     Emanuel Lopez F (ema28pro)
                   .xUHWH!! !!?M88WHX:.                 ——————
@@ -100,15 +65,6 @@ $R@i.~~ !     :   ~$$$$$B$$en:``                       LinkedIn: in/emanuel-lope
        @@@redis@@%%kgki!|sn#j%k%@  
    *%@@@^ch%b%k{%alm%rr3%%%% ;\%%    
   #%kb%@see%$#'.%H@rdr2////%k~%"gh#  
-```
-
-```
-```
-
-```
-```
-
-```
 ```
 
 ```
@@ -635,5 +591,3 @@ $$         $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
                             $$$$$$$$$$$$$$$$$$$$$$$`
                              $$$$$$$$$$$$$$$$$$$$"
 ```
-
----

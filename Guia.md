@@ -10,8 +10,6 @@
 - https://github.com/anuraghazra/github-readme-stats
 - https://github.com/alexandresanlim/Badges4-README.md-Profile-Dynamic
 
-
-
 ### Badges:
 - https://github.com/tandpfun/skill-icons#readme
 - https://github.com/MikeCodesDotNET/ColoredBadges
@@ -22,7 +20,6 @@
 - https://techstack-generator.vercel.app/
 - https://skillicons.dev/
 - https://github.com/alexandresanlim/Badges4-README.md-Profile
-
 
 ### Readme Generators:
 - https://profile-readme-generator.com/es

@@ -1,4 +1,4 @@
-![Calavera](carbon%20(1).svg)
+![Calavera](./img/CodeMe.svg)
 
 <div align="center">
   <img alt="" src="https://img.shields.io/badge/Discord-ema28pro-5865F2?logo=discord&logoColor=white" class="inline-block mx-1" style="margin: 0px 2px;">
@@ -60,10 +60,9 @@
 <img width="50%" align="left" src="https://media.tenor.com/yOqgOJDlyzMAAAAi/club-penguin-club.gif" />
 </a> -->
 
-<h3> Connect with me:</h3>
+<!-- <h3> Connect with me:</h3>
 
-<a style="margin-left: 10px;"  target="_blank" href="https://www.linkedin.com/in/emanuel-lopez-f/"><img src="https://img.icons8.com/doodle/40/000000/linkedin--v2.png"></a> <a style="margin-left: 10px;" target="_blank" href="https://github.com/ema28pro"><img src="https://img.icons8.com/doodle/40/000000/github--v1.png"></a>
-
+<a style="margin-left: 10px;"  target="_blank" href="https://www.linkedin.com/in/emanuel-lopez-f/"><img src="https://img.icons8.com/doodle/40/000000/linkedin--v2.png"></a> <a style="margin-left: 10px;" target="_blank" href="https://github.com/ema28pro"><img src="https://img.icons8.com/doodle/40/000000/github--v1.png"></a> -->
 
 ---
 
