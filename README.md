@@ -4,10 +4,14 @@
 <p align="center">Building cool things, sharing knowledge and solving real-world problems with code.</p>
 
 <div align="center">
-  <img alt="" src="https://img.shields.io/badge/Discord-ema28pro-5865F2?logo=discord&logoColor=white" class="inline-block mx-1" style="margin: 0px 2px;">
-  <img alt="" src="https://visitor-badge.laobi.icu/badge?page_id=ema28pro" class="inline-block mx-1" style="margin: 0px 2px;">
-  <img alt="" src="" class="inline-block mx-1" style="margin: 0px 2px;">
-  <img alt="" src="" class="inline-block mx-1" style="margin: 0px 2px;">
+  <img alt="WakaTime" src="https://wakatime.com/badge/user/579f9039-3a59-45fa-9d52-96caf7783967.svg" class="inline-block mx-1" style="margin: 0px 2px;">
+  <img alt="Discord User" src="https://img.shields.io/badge/Discord-ema28pro-5865F2?logo=discord&logoColor=white" class="inline-block mx-1" style="margin: 0px 2px;">
+
+  <img alt="Visitors" src="https://visitor-badge.laobi.icu/badge?page_id=ema28pro" class="inline-block mx-1" style="margin: 0px 2px;">
+  <img alt="Github Followers" src="https://img.shields.io/github/followers/ema28pro?style=social" class="inline-block mx-1" style="margin: 0px 2px;">
+  <img alt="Github Stars" src="https://img.shields.io/github/stars/ema28pro?style=social" class="inline-block mx-1" style="margin: 0px 2px;">
+
+  
 </div>
 
 <!-- <img src="https://quotes-github-readme.vercel.app/api?type=vetical&theme=radical" align="right" height="170"/> -->
@@ -94,6 +98,12 @@
 </td>
 </tr>
 </table>
+
+<div align="center">
+  <img src="https://github-readme-stats.vercel.app/api/wakatime?username=ema28pro&theme=dark&hide_border=true" alt="Wakatime Stats">
+</div>
+
+---
 
 ### 🤝 Hablemos
 

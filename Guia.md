@@ -47,3 +47,4 @@
 - [erikgiovani](https://github.com/erikgiovani)
 - [mirayatech](https://github.com/mirayatech)
 - [Andres61](https://github.com/Andres61)
+- [LaDuquesaDev](https://github.com/LaDuquesaDev)
