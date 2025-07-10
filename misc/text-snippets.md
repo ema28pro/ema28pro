@@ -107,8 +107,8 @@
 <!-- Ya tienes una sección de lenguajes, así que aquí irían herramientas más específicas o poco comunes -->
 - 🐍 Python (NumPy, visualización de datos, OOP, scraping con Playwright)
 - ⚙️ SQL + FastAPI (bots y chat con bases de datos)
-- 🌐 HTML / CSS / JS (integración frontend)
-- 🧪 Git, GitHub
+- 🌐 React + Tailwind Frontend
+- 🧪 Xampp, Wamp (Servidor apache y bases de datos)
 - 🧠 Explorando: redes neuronales, álgebra lineal, motores 3D simples
 
 ---

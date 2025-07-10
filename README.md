@@ -48,20 +48,15 @@
 ![Java](https://skillicons.dev/icons?i=java)&nbsp;
 ![C++](https://skillicons.dev/icons?i=cpp)
 
-![MongoDB](https://skillicons.dev/icons?i=mongodb)&nbsp;
-![MySQL](https://skillicons.dev/icons?i=mysql)
-
-<!-- &nbsp;&nbsp;&nbsp; -->
 
 
 ### 🗃 &nbsp;Others
-
+![MongoDB](https://skillicons.dev/icons?i=mongodb)&nbsp;
+![MySQL](https://skillicons.dev/icons?i=mysql)&nbsp;&nbsp;&nbsp;
 ![Git](https://skillicons.dev/icons?i=git)&nbsp;
 ![GitHub](https://skillicons.dev/icons?i=github)&nbsp;
 ![VSCode](https://skillicons.dev/icons?i=vscode)&nbsp;
-![Notion](https://skillicons.dev/icons?i=notion)&nbsp;
-![Obsidian](https://skillicons.dev/icons?i=obsidian)
-<img src="https://cdn.simpleicons.org/trello/0052C" height=47>&nbsp;
+<img src="https://cdn.simpleicons.org/trello/0052C" height=47>
 
 
 <!-- <a href="https://github.com/ema28pro">
@@ -78,6 +73,8 @@
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=ema28pro&theme=lucent&area=true&hide_border=true&hide_title=true&bg_color=0d1117&color=30a14e&line=10aa50&area_color=9be9a8" alt="activity-graph graph" />
 </div>
 
+<br>
+
 <table align="center">
 <tr>
 <td align="center">
@@ -93,32 +90,4 @@
 
 ###
 
-<table>
-<tr>
-<th> Good </th>
-<th> Bad </th>
-</tr>
-<tr>
-<td>
-
-```c++
-int foo() {
-    int result = 4;
-    return result;
-}
-```
-
-</td>
-<td>
-
-```c++
-int foo() { 
-    int x = 4;
-    return x;
-}
-```
-
-</td>
-</tr>
-</table>
 
