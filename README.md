@@ -1,5 +1,8 @@
 ![Calavera](./img/CodeMe.svg)
 
+<p align="center">A passionate system engineering student & developer from Colombia 🌎</p>
+<p align="center">Building cool things, sharing knowledge and solving real-world problems with code.</p>
+
 <div align="center">
   <img alt="" src="https://img.shields.io/badge/Discord-ema28pro-5865F2?logo=discord&logoColor=white" class="inline-block mx-1" style="margin: 0px 2px;">
   <img alt="" src="https://visitor-badge.laobi.icu/badge?page_id=ema28pro" class="inline-block mx-1" style="margin: 0px 2px;">
@@ -72,8 +75,10 @@
 ---
 
 <div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=ema28pro&theme=lucent&area=true&hide_border=true&hide_title=true&bg_color=0d1117&color=30a14e&line=10aa50&area_color=9be9a8" alt="activity-graph graph" />
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=ema28pro&theme=lucent&area=true&hide_border=true&hide_title=false&bg_color=0d1117&color=30a14e&line=10aa50&area_color=9be9a8" alt="activity-graph graph" />
 </div>
+
+> “Si no puedes explicarlo simple, no lo entiendes lo suficiente.” – Einstein
 
 <br>
 
@@ -90,6 +95,19 @@
 </tr>
 </table>
 
-###
+### 🤝 Hablemos
 
+<table align="right">
+ <tr><td>Construyo para entender</td></tr>
+ <tr><td>Comparto para reforzar</td></tr>
+ <tr><td>Colaboro para mejorar</td></tr>
+</table>
 
+📬 Me gusta colaborar y compartir ideas, puedes escribirme si:
+  - Quieres **desarrollar algo juntos**
+  - Te interesa aprender **programación desde cero**
+  - Tienes dudas sobre **cualquier cosa técnica**
+
+<br>
+
+<sub align="center">Hecho con paciencia y código ☕ — Siempre aprendiendo algo nuevo.</sub>
