@@ -44,8 +44,8 @@
 
 ![Python](https://skillicons.dev/icons?i=python)&nbsp;
 ![FastAPi](https://skillicons.dev/icons?i=fastapi)&nbsp;
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" height="47" alt="numpy logo"/>&nbsp;
-![Java](https://skillicons.dev/icons?i=java)&nbsp;
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" height="47" alt="numpy logo"/>&nbsp;&nbsp;&nbsp;
+![Java](https://skillicons.dev/icons?i=java)&nbsp;&nbsp;&nbsp;
 ![C++](https://skillicons.dev/icons?i=cpp)
 
 
@@ -56,6 +56,8 @@
 ![Git](https://skillicons.dev/icons?i=git)&nbsp;
 ![GitHub](https://skillicons.dev/icons?i=github)&nbsp;
 ![VSCode](https://skillicons.dev/icons?i=vscode)&nbsp;
+![Notion](https://skillicons.dev/icons?i=notion)&nbsp;
+![Obsidian](https://skillicons.dev/icons?i=obsidian)&nbsp;
 <img src="https://cdn.simpleicons.org/trello/0052C" height=47>
 
 
