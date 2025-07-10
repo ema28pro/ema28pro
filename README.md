@@ -111,7 +111,7 @@
 <details align="right">
   <summary><img src="./img/pou.png" height=15></summary>
   <table border=0>
-    <caption><h1>Hall of Fame</h1></caption>
+    <caption><h1 align="center">Hall of Fame</h1></caption>
     <tr>
     <td align="center">
       <img src="./img/glaceon.jpeg">
