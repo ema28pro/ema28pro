@@ -21,13 +21,12 @@
   I am a System Engineering student, currently halfway through my degree. Passionate about Computer Science, Algorithmst, i am expanding my knowledge in both Front-end and Back-end development, and I am improving my skills. I love to learn and build something new, productive, innovative and creative.
 </p>
 
-🔭 Currently working on a Real-Time Chat app <br>
+🧠 Solving problems on CodinGame (Clash of Code) <br>
 🤝 Looking to collaborate on open source projects <br>
-🌱 Learning React, Express and advanced backend concepts <br>
-🧠 I enjoy solving problems on CodinGame (Clash of Code) <br>
+💻 Coding with a Systems Engineer mindset <br>
 💬 Ask me about anything, I am happy to help and talk <br>
 📫 Reach out to me at: [ema2805pro@gmail.com](ema2805pro@gmail.com) <br>
-⚡Fun fact: Apples are green <br>
+<!-- ⚡ **Fun fact**: ```Nan != Nan``` -->
 
 <!-- <div align="center">
   <img src="https://skillicons.dev/icons?i=html,css,js,nodejs,react,py,fastapi,java,cpp,mysql,mongodb" />
@@ -99,9 +98,20 @@
 </tr>
 </table>
 
-<div align="center"><a href="https://www.codingame.com/profile/1b0126a833946858dc2f521afb4de4389706666">
-  <img alt="Rat" src="./img/mouse.jpg" height=300>
-</a></div>
+
+
+## 🚀 Current Focus
+<a href="https://www.codingame.com/profile/1b0126a833946858dc2f521afb4de4389706666"><img alt="Rat" align="right" src="./img/mouse.jpg" width="200"></a>
+
+- 🌐 Mastering JS fundamentals and DOM manipulation
+- 🛠 Working on a Real-Time Chat app 
+- 🌱 Learning React + TailwindCSS
+- 🎯 Exploring AI fundaments and neural networks
+- 🔭 Building Apps and Games
+
+> “If it doesn’t exist yet, I’ll try until it does.”
+
+---
 
 <div align="center">
   <img src="https://github-readme-stats.vercel.app/api/wakatime?username=ema28pro&theme=dark&hide_border=true" alt="Wakatime Stats">
