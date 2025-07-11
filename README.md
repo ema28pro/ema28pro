@@ -88,7 +88,7 @@
 <table align="center">
 <tr>
 <td align="center">
-  <img src="https://media.tenor.com/yOqgOJDlyzMAAAAi/club-penguin-club.gif" height="290"/>
+  <a href="https://www.codingame.com/profile/1b0126a833946858dc2f521afb4de4389706666"><img alt="Rat"  src="./img/mouse.jpg" height="290" ></a>
 </td>
 <td align="center">
   <img src="https://streak-stats.demolab.com?user=ema28pro&locale=en&mode=daily&theme=dark&hide_border=true&border_radius=5&date_format=M%20j%5B,%20Y%5D" height="140" alt="streak graph"/>
@@ -100,7 +100,8 @@
 
 
 
-<a href="https://www.codingame.com/profile/1b0126a833946858dc2f521afb4de4389706666"><img alt="Rat" align="right" src="./img/mouse.jpg" width="270" ></a>
+<img src="https://media.tenor.com/yOqgOJDlyzMAAAAi/club-penguin-club.gif" align="right" height="270"/>
+
 ### 🚀 Current Focus
 
 - 🌐 Mastering JS fundamentals and DOM manipulation
