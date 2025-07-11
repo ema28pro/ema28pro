@@ -1,7 +1,7 @@
 ![Calavera](./img/CodeMe.svg)
 
-<p align="center">A passionate system engineering student & developer from Colombia 🌎</p>
-<p align="center">Building cool things, sharing knowledge and solving real-world problems with code.</p>
+<p align="center">Estudiante y desarrollador colombiano apasionado por la ingeniería de sistemas 🌎</p>
+<p align="center">Desarrollando cosas innovadoras, compartiendo conocimientos y resolviendo problemas reales con código.</p>
 
 <div align="center">
   <a href="https://wakatime.com/@ema28pro"><img src="https://wakatime.com/badge/user/579f9039-3a59-45fa-9d52-96caf7783967.svg" alt="WakaTime Total time coded since Jun 15 2025" class="inline-block mx-1" style="margin: 0px 2px;"/></a>
@@ -10,27 +10,27 @@
   <img alt="Visitors" src="https://visitor-badge.laobi.icu/badge?page_id=ema28pro" class="inline-block mx-1" style="margin: 0px 2px;">
   <img alt="Github Followers" src="https://img.shields.io/github/followers/ema28pro?style=social" class="inline-block mx-1" style="margin: 0px 2px;">
   <img alt="Github Stars" src="https://img.shields.io/github/stars/ema28pro?style=social" class="inline-block mx-1" style="margin: 0px 2px;">
-</div>
 
+  
+</div>
 
 <!-- <img src="https://quotes-github-readme.vercel.app/api?type=vetical&theme=radical" align="right" height="170"/> -->
 
-## **About Me**: 
+## **Sobre Mi**: 
+
 <p>
-  I am a System Engineering student, currently halfway through my degree. Passionate about Computer Science, Algorithmst, i am expanding my knowledge in both Front-end and Back-end development, and I am improving my skills. I love to learn and build something new, productive, innovative and creative.
+Soy estudiante de Ingeniería de Sistemas y estoy a mitad de mi carrera. Me apasiona la informática y los algoritmos, y estoy ampliando mis conocimientos en desarrollo front-end y back-end, mejorando mis habilidades. Me encanta aprender y crear algo nuevo, productivo, innovador y creativo.
 </p>
 
-<table align="right">
-<tr><td><a href="./README.md">English</a></tr></td>
-<tr><td><a href="./README_es.md">Spanish</a></tr></td>
-</table>
+<table align="right"><tr><td><a href="./README_es.md">Español</a></tr></td><tr><td><a href="./README.md">Ingles</a></tr></td></table>
 
-🧠 Solving problems on CodinGame (Clash of Code) <br>
-🤝 Looking to collaborate on open source projects <br>
-💻 Coding with a Systems Engineer mindset <br>
-💬 Ask me about anything, I am happy to help and talk <br>
-📫 Reach out to me at: [ema2805pro@gmail.com](ema2805pro@gmail.com) <br>
-<!-- ⚡ **Fun fact**: ```Nan != Nan``` -->
+🧠 Resolviendo problemas en CodinGame (Clash of Code) <br>
+🤝 Busco colaborar en proyectos de código abierto <br>
+💻 Programando con mentalidad de ingeniero de sistemas <br>
+💬 Pregúntame cualquier cosa; estaré encantado de ayudarte y conversar. <br>
+📫 Contáctame en: [ema2805pro@gmail.com](ema2805pro@gmail.com) <br>
+
+<!-- ⚡ **Facto**: ```Nan != Nan``` -->
 
 <!-- <div align="center">
   <img src="https://skillicons.dev/icons?i=html,css,js,nodejs,react,py,fastapi,java,cpp,mysql,mongodb" />
@@ -42,7 +42,7 @@
 <img width="45%" align="right" src="https://quotes-github-readme.vercel.app/api?type=vetical&theme=radical" />
 </a>
 
-### 🛠 &nbsp;Tech Stack
+### 🛠 &nbsp;Stack Tecnológico
 
 <!-- ![Web](https://skillicons.dev/icons?i=html,css,js,nodejs,react,tailwind) -->
 ![HTML](https://skillicons.dev/icons?i=html)
@@ -60,7 +60,7 @@
 
 
 
-### 🗃 &nbsp;Others
+### 🗃 &nbsp;Otros
 ![MongoDB](https://skillicons.dev/icons?i=mongodb)&nbsp;
 ![MySQL](https://skillicons.dev/icons?i=mysql)&nbsp;&nbsp;&nbsp;
 ![Git](https://skillicons.dev/icons?i=git)&nbsp;
@@ -75,7 +75,7 @@
 <img width="50%" align="left" src="https://media.tenor.com/yOqgOJDlyzMAAAAi/club-penguin-club.gif" />
 </a> -->
 
-<h3> Connect with me:</h3>
+<h3> Conecta conmigo:</h3>
 
 <a style="margin-left: 10px;"  target="_blank" href="https://www.linkedin.com/in/emanuel-lopez-f/"><img src="https://img.icons8.com/doodle/40/000000/linkedin--v2.png"></a> <a style="margin-left: 10px;" target="_blank" href="https://github.com/ema28pro"><img src="https://img.icons8.com/doodle/40/000000/github--v1.png"></a>
 
@@ -85,7 +85,7 @@
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=ema28pro&theme=lucent&area=true&hide_border=true&hide_title=false&bg_color=0d1117&color=30a14e&line=10aa50&area_color=9be9a8" alt="activity-graph graph" />
 </div>
 
-> “If you can't explain it simply, you don't understand it well enough.” – Einstein
+> “Si no puedes explicarlo simple, no lo entiendes lo suficiente.” – Einstein
 
 <br>
 
@@ -104,15 +104,15 @@
 
 <a href="https://www.codingame.com/profile/1b0126a833946858dc2f521afb4de4389706666"><img alt="Rat" align="right" src="./img/mouse.jpg" width="270" ></a>
 
-### 🚀 Current Focus
+### 🚀 Enfoque actual
 
-- 🌐 Mastering JavaScript fundamentals and DOM manipulation
-- 🛠 Working on a Real-Time Chat app with Express.js
-- 🌱 Learning React JS + TailwindCSS ⚡
-- 🔭 Exploring AI fundaments and neural networks
-- 🎯 Building Apps and Games
+- 🌐 Dominar los fundamentos de JavaScript y la manipulación del DOM
+- 🛠 Trabajando en una app de chat en tiempo real con Express.js
+- 🌱 Aprendiendo React JS + TailwindCSS ⚡
+- 🔭 Explorando los fundamentos de la IA y las redes neuronales
+- 🎯 Desarrollar apps y juegos
 
-> “If it doesn’t exist yet, I’ll try until it does.”
+> "Si aún no existe, lo intentaré hasta que exista".
 
 ---
 
@@ -122,23 +122,23 @@
 
 ---
 
-### 🤝 Let's talk
+### 🤝 Hablemos
 
 <table align="right">
-  <tr><td>Build to grasp</tr></td>
-  <tr><td>Boost through sharing</tr></td>
-  <tr><td>Bond to enhance</tr></td>
+ <tr><td>Construyo para entender</td></tr>
+ <tr><td>Comparto para reforzar</td></tr>
+ <tr><td>Colaboro para mejorar</td></tr>
 </table>
 
-📬 I like to collaborate and share ideas. You can write to me if:
-- You want to **develop something together**
-- You're interested in learning **programming from scratch**
-- You have questions about **anything technical**
+📬 Me gusta colaborar y compartir ideas, puedes escribirme si:
+  - Quieres **desarrollar algo juntos**
+  - Te interesa aprender **programación desde cero**
+  - Tienes dudas sobre **cualquier cosa técnica**
 
 <details align="right">
   <summary><img src="./img/pou.png" height=15></summary>
   <table border=0>
-    <caption><h1 align="center">Hall of Fame</h1></caption>
+    <caption><h1 align="center">Hall de la Fama</h1></caption>
     <tr>
     <td align="center">
       <img src="./img/glaceon.jpeg">
@@ -153,4 +153,4 @@
   </table>
 </details>
 
-<sub align="center">Made with patience and code ☕ — Always learning something new.</sub>
+<sub align="center">Hecho con paciencia y código ☕ — Siempre aprendiendo algo nuevo.</sub>
