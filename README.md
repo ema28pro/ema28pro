@@ -100,8 +100,8 @@
 
 
 
-## 🚀 Current Focus
-<a href="https://www.codingame.com/profile/1b0126a833946858dc2f521afb4de4389706666"><img alt="Rat" align="right" src="./img/mouse.jpg" width="250" style="margin: 0px 20px;" ></a>
+<a href="https://www.codingame.com/profile/1b0126a833946858dc2f521afb4de4389706666"><img alt="Rat" align="right" src="./img/mouse.jpg" width="270" ></a>
+### 🚀 Current Focus
 
 - 🌐 Mastering JS fundamentals and DOM manipulation
 - 🛠 Working on a Real-Time Chat app 
