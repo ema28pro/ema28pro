@@ -50,3 +50,6 @@
 - [LaDuquesaDev](https://github.com/LaDuquesaDev)
 - [CrawKatt](https://github.com/CrawKatt)
 - [imlostish](https://github.com/imlostish)
+- [Svetlozarko](https://github.com/Svetlozarko)
+- [edulazaro](https://github.com/edulazaro)
+- [luisllamasbinaburo](https://github.com/luisllamasbinaburo)
