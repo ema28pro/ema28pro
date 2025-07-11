@@ -101,13 +101,13 @@
 
 
 ## 🚀 Current Focus
-<a href="https://www.codingame.com/profile/1b0126a833946858dc2f521afb4de4389706666"><img alt="Rat" align="right" src="./img/mouse.jpg" width="200"></a>
+<a href="https://www.codingame.com/profile/1b0126a833946858dc2f521afb4de4389706666"><img alt="Rat" align="right" src="./img/mouse.jpg" width="250"></a>
 
 - 🌐 Mastering JS fundamentals and DOM manipulation
 - 🛠 Working on a Real-Time Chat app 
-- 🌱 Learning React + TailwindCSS
-- 🎯 Exploring AI fundaments and neural networks
-- 🔭 Building Apps and Games
+- 🌱 Learning React + TailwindCSS ⚡
+- 🔭 Exploring AI and neural networks
+- 🎯 Building Apps and Games
 
 > “If it doesn’t exist yet, I’ll try until it does.”
 
