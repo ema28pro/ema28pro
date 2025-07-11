@@ -37,6 +37,14 @@
     📫 Reach out to me at: [ema2805pro@gmail.com](ema2805pro@gmail.com)
     ⚡Fun fact: Apples are green
 ---
+    🔭 Currently working on a Real-Time Chat app
+    🤝 Looking to collaborate on open source projects
+    🌱 Learning React, Express and advanced backend concepts
+    🧠 I enjoy solving problems on CodinGame (Clash of Code)
+    💬 Ask me about anything, I am happy to help and talk
+    📫 Reach out to me at: [ema2805pro@gmail.com](ema2805pro@gmail.com)
+    ⚡Fun fact: Apples are green
+---
     🔭 Currently working on a Real-Time Chat application.
     🤝 Looking to collaborate on open-source projects.
     🌱 Learning React, Express, and advanced backend concepts.
