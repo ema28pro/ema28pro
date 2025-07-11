@@ -132,7 +132,7 @@
 
 📬 I like to collaborate and share ideas. You can write to me if:
 - You want to **develop something together**
-- You're interested in learning **programming from scratch**
+- You're interested in learning **programming**
 - You have questions about **anything technical**
 
 <details align="right">
