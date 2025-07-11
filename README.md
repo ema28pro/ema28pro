@@ -99,6 +99,10 @@
 </tr>
 </table>
 
+<div align="center"><a href="https://www.codingame.com/profile/1b0126a833946858dc2f521afb4de4389706666">
+  <img alt="Rat" src="./img/mouse.jpg" height=300>
+</a></div>
+
 <div align="center">
   <img src="https://github-readme-stats.vercel.app/api/wakatime?username=ema28pro&theme=dark&hide_border=true" alt="Wakatime Stats">
 </div>
