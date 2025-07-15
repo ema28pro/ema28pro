@@ -186,3 +186,25 @@ Email: ema28pro@gmail.com
 ---
 
 <sub align="center">Hecho con paciencia y código ☕ — Siempre aprendiendo algo nuevo.</sub>
+
+---
+
+# Other
+
+## About ME 💬 :
+
+### - I'm 19 years  old Machine Learning & Artificial Intelligence Enthusiast from India.
+
+
+### - Learning :
+- ✨ Data Structures & Algorithms
+- ✨ Generative Adversarial Networks
+
+### - Hobbies : 
+- ✨ Gaming Addict
+- ✨ Watching Anime
+- ✨ Reading Light Novels
+- ✨ Badminton (Neighbourhood Professional XD)
+
+---
+

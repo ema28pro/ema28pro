@@ -26,6 +26,11 @@
 - https://rahuldkjain.github.io/gh-profile-readme-generator/
 - https://awesome-github-stats.azurewebsites.net/
 
+### Markdown
+- https://denshub.com/es/hugo-post-insert-image/
+- https://www.luisllamas.es/curso-markdown/
+- https://tutorialmarkdown.com/
+
 ## Ejemplos:
 - [Todo lo que necesitas para actualizar tu perfil de Github](https://github.com/CondorCoders/github-readme-profile?tab=readme-ov-file)
     - https://zzetao.github.io/awesome-github-profile/ 
