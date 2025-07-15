@@ -58,3 +58,5 @@
 - [Svetlozarko](https://github.com/Svetlozarko)
 - [edulazaro](https://github.com/edulazaro)
 - [luisllamasbinaburo](https://github.com/luisllamasbinaburo)
+- [sammwyy](https://github.com/sammwyy)
+- [notKimu](https://github.com/notKimu)

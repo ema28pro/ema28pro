@@ -132,7 +132,7 @@ Soy estudiante de Ingeniería de Sistemas y estoy a mitad de mi carrera. Me apas
 
 📬 Me gusta colaborar y compartir ideas, puedes escribirme si:
   - Quieres **desarrollar algo juntos**
-  - Te interesa aprender **programación desde cero**
+  - Te interesa aprender **programación**
   - Tienes dudas sobre **cualquier cosa técnica**
 
 <details align="right">
