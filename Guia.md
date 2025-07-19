@@ -30,6 +30,7 @@
 - https://denshub.com/es/hugo-post-insert-image/
 - https://www.luisllamas.es/curso-markdown/
 - https://tutorialmarkdown.com/
+- https://medium.com/@dan.avila7/tu-perfil-de-github-like-a-pro-8436f90caf61
 
 ## Ejemplos:
 - [Todo lo que necesitas para actualizar tu perfil de Github](https://github.com/CondorCoders/github-readme-profile?tab=readme-ov-file)

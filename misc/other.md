@@ -52,3 +52,13 @@ int foo() {
 
 Este es el primer párrafo con un \
 salto de línea.
+
+<div align="center">
+
+[![Tailwind Components][logo-url]][site-url]  
+
+</div>
+
+
+[logo-url]: ""
+[site-url]: ""
