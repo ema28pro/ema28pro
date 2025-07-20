@@ -62,3 +62,20 @@ salto de línea.
 
 [logo-url]: ""
 [site-url]: ""
+
+```mermaid
+graph LR
+    A[🎓 Computer Engineering Student] --> B[👨‍💻 Web Developer Jr.]
+    B --> C[Vue.js Expert]
+    B --> D[GraphQL Specialist]
+    B --> E[Scrum Master]
+    C --> F[🎨 UI/UX Implementation]
+    D --> G[🔄 API Architecture]
+    E --> H[📋 Project Management]
+    
+    style A fill:#ff6b35,stroke:#ff3d00,stroke-width:3px,color:#fff
+    style B fill:#ff3d00,stroke:#e6340a,stroke-width:2px,color:#fff
+    style C fill:#d42c00,stroke:#bf2700,stroke-width:2px,color:#fff
+    style D fill:#bf2700,stroke:#a62200,stroke-width:2px,color:#fff
+    style E fill:#a62200,stroke:#8d1d00,stroke-width:2px,color:#fff
+```
