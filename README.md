@@ -122,7 +122,7 @@
 <div align="center">
   <img src="https://github-readme-stats.vercel.app/api/wakatime?username=ema28pro&theme=dark&hide_border=true" alt="Wakatime Stats">
   
-  <img src="https://github.com/user-attachments/assets/38b23b0d-108c-4617-991c-31eaa85e434e" alt="monkey" width="400" />
+  <!-- <img src="https://github.com/user-attachments/assets/38b23b0d-108c-4617-991c-31eaa85e434e" alt="monkey" width="400" /> -->
 </div>
 
 ---
