@@ -17,6 +17,8 @@
   <img src="" alt="">
 </details>
 
+# Linkeado
+
 | Columna 1 | Columna 2 | Columna 3 |
 |-----------|-|---------------------|
 | hola      | adios | XDXDXDXDXDXDX |
@@ -59,6 +61,7 @@ salto de línea.
 
 </div>
 
+[Aqui se linkeo](#linkeadopyoneerC)
 
 [logo-url]: ""
 [site-url]: ""

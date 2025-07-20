@@ -1,4 +1,4 @@
-![Calavera](./img/CodeMe.svg)
+![Calavera](./img/CodeMe.svg "Inspired by pyoneerC")
 
 <p align="center">A passionate system engineering student & developer from Colombia 🌎</p>
 <p align="center">Building cool things, sharing knowledge and solving real-world problems with code.</p>

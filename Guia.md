@@ -25,6 +25,8 @@
 - https://profile-readme-generator.com/es
 - https://rahuldkjain.github.io/gh-profile-readme-generator/
 - https://awesome-github-stats.azurewebsites.net/
+- https://readme-typing-svg.demolab.com/demo/
+    - https://github.com/DenverCoder1/readme-typing-svg
 
 ### Markdown
 - https://denshub.com/es/hugo-post-insert-image/
@@ -61,3 +63,8 @@
 - [luisllamasbinaburo](https://github.com/luisllamasbinaburo)
 - [sammwyy](https://github.com/sammwyy)
 - [notKimu](https://github.com/notKimu)
+---
+- [sindresorhus](https://github.com/sindresorhus)
+- [BrunnerLivio](https://github.com/BrunnerLivio)
+- [fnky](https://github.com/fnky)
+- [matyo91](https://github.com/matyo91)

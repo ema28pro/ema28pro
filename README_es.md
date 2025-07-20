@@ -1,4 +1,4 @@
-![Calavera](./img/CodeMe.svg)
+![Calavera](./img/CodeMe.svg "Inspirado en pyoneerC")
 
 <p align="center">Estudiante y desarrollador colombiano apasionado por la ingeniería de sistemas 🌎</p>
 <p align="center">Desarrollando cosas innovadoras, compartiendo conocimientos y resolviendo problemas reales con código.</p>
