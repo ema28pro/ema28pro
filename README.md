@@ -35,6 +35,9 @@
 <!-- <div align="center">
   <img src="https://skillicons.dev/icons?i=html,css,js,nodejs,react,py,fastapi,java,cpp,mysql,mongodb" />
 </div> -->
+<div align="center"><a href="https://github.com/ema28pro/GitHub-Guide-Profile">
+  <img  src="https://github-readme-stats.vercel.app/api/pin/?username=ema28pro&repo=GitHub-Guide-Profile&theme=radical&show_owner=true" title="Introduction to Git and GitHub" alt="Introduction to Git and GitHub" />
+</a></div>
 
 ---
 
