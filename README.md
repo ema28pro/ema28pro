@@ -36,12 +36,12 @@
   <img src="https://skillicons.dev/icons?i=html,css,js,nodejs,react,py,fastapi,java,cpp,mysql,mongodb" />
 </div> -->
 
----
+<!---
 
 <div align="center">
-  <a href="https://github.com/ema28pro/GitHub-Guide-Profile"><img width="45%" src="https://github-readme-stats.vercel.app/api/pin/?username=ema28pro&repo=GitHub-Guide-Profile&theme=radical&show_owner=false" title="Introduction to Git and GitHub" alt="Introduction to Git and GitHub" /></a>&nbsp;&nbsp;<a href="https://github.com/ema28pro/Sistema-Gimnasio-3Stars-Solutions"><img width="45%" src="https://github-readme-stats.vercel.app/api/pin/?username=ema28pro&repo=Sistema-Gimnasio-3Stars-Solutions&theme=radical&show_owner=false" title="Introduction to Git and GitHub" alt="Introduction to Git and GitHub" /></a>
+  <a href="https://github.com/ema28pro/GitHub-Guide-Profile"><img height="160" src="https://github-readme-stats.vercel.app/api/pin/?username=ema28pro&repo=GitHub-Guide-Profile&theme=radical&show_owner=false" title="Introduction to Git and GitHub" alt="Introduction to Git and GitHub" /></a>&nbsp;&nbsp;<a href="https://github.com/ema28pro/Sistema-Gimnasio-3Stars-Solutions"><img height="160" src="https://github-readme-stats.vercel.app/api/pin/?username=ema28pro&repo=Sistema-Gimnasio-3Stars-Solutions&theme=radical&show_owner=false" title="Introduction to Git and GitHub" alt="Introduction to Git and GitHub" /></a>
 </div>
-
+-->
 ---
 
 <a href="https://github.com/ema28pro">
