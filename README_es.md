@@ -80,6 +80,7 @@ Soy estudiante de Ingeniería de Sistemas y estoy a mitad de mi carrera. Me apas
 
 <h3> Conecta conmigo:</h3>
 
+<a style="margin-left: 10px;"  target="_blank" href="https://www.codingame.com/profile/1b0126a833946858dc2f521afb4de4389706666"><img alt="codin game" title="Mi perfil de Codin Game" src="./img/CodinGameLogo.png" height="40" ></a>
 <a style="margin-left: 10px;"  target="_blank" href="https://www.linkedin.com/in/emanuel-lopez-f/"><img alt="LinkedIn" title="Mi LinkedIn" src="https://img.icons8.com/doodle/40/000000/linkedin--v2.png"></a> <a style="margin-left: 10px;" target="_blank" href="https://github.com/ema28pro"><img alt="GitHub" title="Mi GitHub" src="https://img.icons8.com/doodle/40/000000/github--v1.png"></a>
 
 ---
