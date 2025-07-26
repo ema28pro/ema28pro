@@ -112,9 +112,10 @@ Soy estudiante de Ingeniería de Sistemas y estoy a mitad de mi carrera. Me apas
 
 - 🌐 Dominar los fundamentos de JavaScript y la manipulación del DOM
 - 🛠 Trabajando en una app de chat en tiempo real con Express.js
+- 💼 Estudiando en Oracle Next Education
 - 🌱 Aprendiendo React JS + TailwindCSS ⚡
 - 🔭 Explorando los fundamentos de la IA y las redes neuronales
-- 🎯 Desarrollar apps y juegos
+- 🎯 Aspirando a desarrollar apps y juegos
 
 > "Si aún no existe, lo intentaré hasta que exista".
 

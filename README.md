@@ -118,10 +118,11 @@
 ### 🚀 Current Focus
 
 - 🌐 Mastering JavaScript fundamentals and DOM manipulation
+- 💼 Studying at Oracle Next Education
 - 🛠 Working on a Real-Time Chat app with Express.js
 - 🌱 Learning React JS + TailwindCSS ⚡
 - 🔭 Exploring AI fundaments and neural networks
-- 🎯 Building Apps and Games
+- 🎯 Aspiring to building Apps and Games
 
 > “If it doesn’t exist yet, I’ll try until it does.”
 
