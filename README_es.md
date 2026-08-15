@@ -34,37 +34,41 @@ Soy estudiante de Ingeniería de Sistemas y estoy a mitad de mi carrera. Me apas
 <details>
 <summary><b>Click me</b></summary>
 
-<table>
-<tr>
-<th>Recent Projects</th>
-<th>TIL</th>
-<th>Algorithm Problems</th>
-</tr>
-<tr valign="top">
-<td>
+<br>
+
+<table><tr><td valign="top" width="33%">
+
+<div><h3>Recent Projects</h3></div>
   
-- [obsidian-skip-silence](https://github.com/ema28pro/obsidian-skip-silence) — plugin with custom silence & video speed controls to skip dead time and streamline note-taking
-- [discord-plugin-photoshop-2020](https://github.com/ema28pro/discord-plugin-photoshop-2020) — CEP extension + Node.js bridge to display real-time Photoshop canvas details, layer stats, and activity on Discord
-- [manga-downloaders](https://github.com/ema28pro/manga-downloaders) — Tampermonkey userscripts to download manga chapters into ZIPs.
-- [agente-inventario-mercado-central](https://github.com/ema28pro/agente-inventario-mercado-central) — LangChain Pandas DataFrame Agent + Gemini to query supermarket Excel inventories in natural language
+[obsidian-skip-silence](https://github.com/ema28pro/obsidian-skip-silence) — plugin with custom silence & video speed controls to skip dead time and streamline note-taking  
 
-</td>
-<td>
+[discord-plugin-photoshop-2020](https://github.com/ema28pro/discord-plugin-photoshop-2020) — CEP extension + Node.js bridge to display real-time Photoshop canvas details, layer stats, and activity on Discord  
 
-- `NaN != NaN` — why IEEE 754 breaks reflexive equality
-- `a[i] == i[a]` — pointer arithmetic commutativity in C `*(a + i)`
-- `OffscreenCanvas` — background graphics processing without freezing UI
-- `Lost in the Middle` — why LLMs lose attention in the center of long contexts
-- `Discord RPC` — currently obsessed with Discord Rich Presence
+[manga-downloaders](https://github.com/ema28pro/manga-downloaders) — Tampermonkey userscripts to download manga chapters into ZIPs  
 
-</td>
-<td>
+[agente-inventario-mercado-central](https://github.com/ema28pro/agente-inventario-mercado-central) — LangChain Pandas DataFrame Agent + Gemini to query supermarket Excel inventories in natural language  
 
-- [CodinGame](https://www.codingame.com/profile/1b0126a833946858dc2f521afb4de4389706666)
+</td><td valign="top" width="34%">
 
-</td>
-</tr>
-</table>
+<div><h3>TIL</h3></div>
+
+`NaN != NaN` — why IEEE 754 breaks reflexive equality  
+
+`a[i] == i[a]` — pointer arithmetic commutativity in C `*(a + i)`  
+
+`OffscreenCanvas` — background graphics processing without freezing UI  
+
+`Lost in the Middle` — why LLMs lose attention in the center of long contexts  
+
+`Discord RPC` — currently obsessed with Discord Rich Presence  
+
+</td><td valign="top" width="33%">
+
+<div><h3>Algorithms Problems</h3></div>
+
+[CodinGame](https://www.codingame.com/profile/1b0126a833946858dc2f521afb4de4389706666)  
+
+</td></tr></table>
 
 </details>
 
