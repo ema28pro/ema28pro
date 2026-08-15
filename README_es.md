@@ -153,7 +153,7 @@ Soy estudiante de Ingeniería de Sistemas y estoy a mitad de mi carrera. Me apas
 - 🧩 Explorando la teoría de autómatas
 - 💾 Dominando la programación en C
 - 🧬 Aprendiendo Machine Learning
-- 🎮 Desarrollando un videojuego
+- 🎮 Desarrollando videojuegos
 
 
 > "Si aún no existe, lo intentaré hasta que exista".

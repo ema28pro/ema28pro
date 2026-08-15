@@ -156,7 +156,7 @@
 - 🧩 Exploring automata theory
 - 💾 Mastering C programming
 - 🧬 Learning Machine Learning
-- 🎮 Developing a video game
+- 🎮 Developing video games
 
 > “If it doesn’t exist yet, I’ll try until it does.”
 
