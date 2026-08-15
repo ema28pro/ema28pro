@@ -112,8 +112,9 @@ Soy estudiante de Ingeniería de Sistemas y estoy a mitad de mi carrera. Me apas
 
 <h3> Conecta conmigo:</h3>
 
+<a style="margin-left: 10px;"  target="_blank" href="https://www.linkedin.com/in/emanuel-lopez-f/"><img alt="LinkedIn" title="Mi LinkedIn" src="https://img.icons8.com/doodle/40/000000/linkedin--v2.png"></a>
 <a style="margin-left: 10px;" target="_blank" href="https://discord.com/users/847867967698108468"><img alt="Discord" title="Mi Discord" src="./img/discord.png" height="40"></a>
-<a style="margin-left: 10px;"  target="_blank" href="https://www.linkedin.com/in/emanuel-lopez-f/"><img alt="LinkedIn" title="Mi LinkedIn" src="https://img.icons8.com/doodle/40/000000/linkedin--v2.png"></a> <a style="margin-left: 10px;" target="_blank" href="https://github.com/ema28pro"><img alt="GitHub" title="Mi GitHub" src="https://img.icons8.com/doodle/40/000000/github--v1.png"></a>
+<a style="margin-left: 10px;" target="_blank" href="https://github.com/ema28pro"><img alt="GitHub" title="Mi GitHub" src="https://img.icons8.com/doodle/40/000000/github--v1.png"></a>
 
 ---
 
