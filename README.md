@@ -115,8 +115,8 @@
 
 <h3> Connect with me:</h3>
 
-<a style="margin-left: 10px;" target="_blank" href="https://discord.com/users/847867967698108468"><img alt="Discord" title="My Discord" src="./img/discord.png" height="40"></a>
 <a style="margin-left: 10px;"  target="_blank" href="https://www.linkedin.com/in/emanuel-lopez-f/"><img alt="LinkedIn" title="My LinkedIn" src="https://img.icons8.com/doodle/40/000000/linkedin--v2.png"></a>
+<a style="margin-left: 10px;" target="_blank" href="https://discord.com/users/847867967698108468"><img alt="Discord" title="My Discord" src="./img/discord.png" height="40"></a>
 <a style="margin-left: 10px;" target="_blank" href="https://github.com/ema28pro"><img alt="GitHub" title="My GitHub" src="https://img.icons8.com/doodle/40/000000/github--v1.png"></a>
 
 ---
