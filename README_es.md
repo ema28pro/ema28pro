@@ -94,7 +94,7 @@ Soy estudiante de Ingeniería de Sistemas y estoy a mitad de mi carrera. Me apas
   <img src="https://media.tenor.com/yOqgOJDlyzMAAAAi/club-penguin-club.gif" title="Penguin" height="290"/>
 </td>
 <td align="center">
-  <img src="https://streak-stats.demolab.com/?user==ema28pro&locale=en&mode=daily&theme=dark&hide_border=true&border_radius=5&date_format=M%20j%5B,%20Y%5D" height="140" alt="streak graph"/>
+  <img src="https://streak-stats.demolab.com/?user=ema28pro&locale=en&mode=daily&theme=dark&hide_border=true&border_radius=5&date_format=M%20j%5B,%20Y%5D" height="140" alt="streak graph"/>
   <br/>
   <img src="https://github-stats-extended.vercel.app/api/top-langs/?username=ema28pro&locale=en&hide_title=false&layout=compact&card_width=320&langs_count=5&theme=dark&hide_border=true" height="140" alt="languages graph"/>
 </td>
