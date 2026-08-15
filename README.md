@@ -25,13 +25,14 @@
 <tr><td><a href="./README_es.md">Spanish</a></tr></td>
 </table>
 
+
 ⚡ What can you teach me? <br>
 🧠 Solving programming problems <br>
 🤝 Looking to collaborate on open-source projects <br>
 💻 Coding with a Systems Engineer mindset <br>
 💬 Ask me about anything, I am happy to help and talk <br>
 📫 Reach out to me at: [ema2805pro@gmail.com](ema2805pro@gmail.com) <br>
----
+
 
 <details>
 <summary><b>Click me</b></summary>

@@ -22,6 +22,7 @@ Soy estudiante de Ingeniería de Sistemas y estoy a mitad de mi carrera. Me apas
 
 <table align="right"><tr><td><a href="./README_es.md">Español</a></tr></td><tr><td><a href="./README.md">Inglés</a></tr></td></table>
 
+
 ⚡ ¿Que puedes enseñarme? <br>
 🧠 Resolviendo problemas de programación<br>
 🤝 Busco colaborar en proyectos open-source <br>

@@ -1,3 +1,13 @@
+# 2026 Inspo
+- https://github.com/simonw
+- https://github.com/jlengstorf
+- https://github.com/carlosazaustre
+- https://github.com/BrunnerLivio
+- https://github.com/maxcomperatore
+- https://github.com/luisllamasbinaburo/
+- https://github.com/sammwyy
+
+
 # Recursos para Readme
 
 - **Lista de emojis**: https://gist.github.com/rxaviers/7360908
