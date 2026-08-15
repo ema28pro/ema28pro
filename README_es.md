@@ -165,7 +165,7 @@ Soy estudiante de Ingeniería de Sistemas y estoy a mitad de mi carrera. Me apas
 ---
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api/wakatime?username=ema28pro&theme=dark&hide_border=true" alt="Wakatime Stats">
+  <img src="https://github-stats-extended.vercel.app/api/wakatime?username=ema28pro&theme=dark&hide_border=true&langs_count=6" alt="Wakatime Stats">
 </div>
 
 ---
