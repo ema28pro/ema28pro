@@ -34,7 +34,7 @@ Soy estudiante de Ingeniería de Sistemas y estoy a mitad de mi carrera. Me apas
 
 ---
 
-### 📌 Proyectos Destacados
+### 📌 Proyectos Recientes
 
 <table width="100%">
   <tr>
