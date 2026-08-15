@@ -5,7 +5,7 @@
 
 <div align="center">
   <a href="https://wakatime.com/@ema28pro"><img src="https://wakatime.com/badge/user/579f9039-3a59-45fa-9d52-96caf7783967.svg" alt="WakaTime Total time coded since Jun 15 2025" class="inline-block mx-1" style="margin: 0px 2px;"/></a>
-  <img alt="Discord User" src="https://img.shields.io/badge/Discord-ema28pro-5865F2?logo=discord&logoColor=white" class="inline-block mx-1" style="margin: 0px 2px;">
+  <a href=https://discord.com/users/847867967698108468><img alt="Discord User" src="https://img.shields.io/badge/Discord-ema28pro-5865F2?logo=discord&logoColor=white" class="inline-block mx-1" style="margin: 0px 2px;"></a>
 
   <img alt="Visitors" src="https://visitor-badge.laobi.icu/badge?page_id=ema28pro" class="inline-block mx-1" style="margin: 0px 2px;">
   <img alt="Github Followers" src="https://img.shields.io/github/followers/ema28pro?style=social" class="inline-block mx-1" style="margin: 0px 2px;">
@@ -31,7 +31,7 @@
 🤝 Looking to collaborate on open-source projects <br>
 💻 Coding with a Systems Engineer mindset <br>
 💬 Ask me about anything, I am happy to help and talk <br>
-📫 Reach out to me at: [ema2805pro@gmail.com](ema2805pro@gmail.com) <br>
+📫 Reach out to me at: [ctrl.ema28@gmail.com](ctrl.ema28@gmail.com) <br>
 
 
 <details>
@@ -115,7 +115,7 @@
 
 <h3> Connect with me:</h3>
 
-<a style="margin-left: 10px;"  target="_blank" href="https://www.codingame.com/profile/1b0126a833946858dc2f521afb4de4389706666"><img alt="codin game" title="My Codin Game Profile" src="./img/CodinGameLogo.png" height="40" ></a>
+<a style="margin-left: 10px;" target="_blank" href="https://discord.com/users/847867967698108468"><img alt="Discord" title="My Discord" src="./img/discord.png" height="40"></a>
 <a style="margin-left: 10px;"  target="_blank" href="https://www.linkedin.com/in/emanuel-lopez-f/"><img alt="LinkedIn" title="My LinkedIn" src="https://img.icons8.com/doodle/40/000000/linkedin--v2.png"></a>
 <a style="margin-left: 10px;" target="_blank" href="https://github.com/ema28pro"><img alt="GitHub" title="My GitHub" src="https://img.icons8.com/doodle/40/000000/github--v1.png"></a>
 
