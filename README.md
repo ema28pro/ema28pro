@@ -25,8 +25,9 @@
 <tr><td><a href="./README_es.md">Spanish</a></tr></td>
 </table>
 
-🧠 Solving problems on CodinGame (Clash of Code) <br>
-🤝 Looking to collaborate on open source projects <br>
+⚡ What can you teach me? <br>
+🧠 Solving programming problems <br>
+🤝 Looking to collaborate on open-source projects <br>
 💻 Coding with a Systems Engineer mindset <br>
 💬 Ask me about anything, I am happy to help and talk <br>
 📫 Reach out to me at: [ema2805pro@gmail.com](ema2805pro@gmail.com) <br>
@@ -111,12 +112,12 @@
 
 ### 🚀 Current Focus
 
-- 🌐 Mastering JavaScript fundamentals and DOM manipulation
-- 💼 Studying at Oracle Next Education
-- 🛠 Working on a Real-Time Chat app with Express.js
-- 🌱 Learning React JS + TailwindCSS ⚡
-- 🔭 Exploring AI fundaments and neural networks
-- 🎯 Aspiring to building Apps and Games
+- 🌐 Deepening my knowledge in Backend development and API design
+- 🤖 Experimenting with RAG and automations
+- 🧩 Exploring automata theory
+- 💾 Mastering C programming
+- 🧬 Learning Machine Learning
+- 🎮 Developing a video game
 
 > “If it doesn’t exist yet, I’ll try until it does.”
 

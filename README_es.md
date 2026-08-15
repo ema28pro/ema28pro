@@ -10,8 +10,6 @@
   <img alt="Visitors" src="https://visitor-badge.laobi.icu/badge?page_id=ema28pro" class="inline-block mx-1" style="margin: 0px 2px;">
   <img alt="Github Followers" src="https://img.shields.io/github/followers/ema28pro?style=social" class="inline-block mx-1" style="margin: 0px 2px;">
   <img alt="Github Stars" src="https://img.shields.io/github/stars/ema28pro?style=social" class="inline-block mx-1" style="margin: 0px 2px;">
-
-  
 </div>
 
 <!-- <img src="https://quotes-github-readme.vercel.app/api?type=vetical&theme=radical" align="right" height="170"/> -->
@@ -24,8 +22,9 @@ Soy estudiante de Ingeniería de Sistemas y estoy a mitad de mi carrera. Me apas
 
 <table align="right"><tr><td><a href="./README_es.md">Español</a></tr></td><tr><td><a href="./README.md">Ingles</a></tr></td></table>
 
-🧠 Resolviendo problemas en CodinGame (Clash of Code) <br>
-🤝 Busco colaborar en proyectos de código abierto <br>
+⚡ ¿Que puedes enseñarme? <br>
+🧠 Resolviendo problemas de programación<br>
+🤝 Busco colaborar en proyectos open-source <br>
 💻 Programando con mentalidad de ingeniero de sistemas <br>
 💬 Pregúntame cualquier cosa; estaré encantado de ayudarte y conversar. <br>
 📫 Contáctame en: [ema2805pro@gmail.com](ema2805pro@gmail.com) <br>
@@ -85,6 +84,10 @@ Soy estudiante de Ingeniería de Sistemas y estoy a mitad de mi carrera. Me apas
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=ema28pro&theme=lucent&area=true&hide_border=true&hide_title=false&bg_color=0d1117&color=30a14e&line=10aa50&area_color=9be9a8" title="" alt="activity-graph graph" />
 </div>
 
+> “Si no puedes explicarlo de forma sencilla, es que no lo entiendes bien.” – Einstein
+
+<br>
+
 <table align="center">
 <tr>
 <td align="center">
@@ -102,12 +105,13 @@ Soy estudiante de Ingeniería de Sistemas y estoy a mitad de mi carrera. Me apas
 
 ### 🚀 Enfoque actual
 
-- 🌐 Dominar los fundamentos de JavaScript y la manipulación del DOM
-- 🛠 Trabajando en una app de chat en tiempo real con Express.js
-- 💼 Estudiando en Oracle Next Education
-- 🌱 Aprendiendo React JS + TailwindCSS ⚡
-- 🔭 Explorando los fundamentos de la IA y las redes neuronales
-- 🎯 Aspirando a desarrollar apps y juegos
+- 🌐 Profundizando en desarrollo Backend y diseño de APIs
+- 🤖 Experimentando con RAG y automatizaciones
+- 🧩 Explorando la teoría de autómatas
+- 💾 Dominando la programación en C
+- 🧬 Aprendiendo Machine Learning
+- 🎮 Desarrollando un videojuego
+
 
 > "Si aún no existe, lo intentaré hasta que exista".
 
