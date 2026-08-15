@@ -20,7 +20,7 @@
 Soy estudiante de Ingeniería de Sistemas y estoy a mitad de mi carrera. Me apasiona la informática y los algoritmos, y estoy ampliando mis conocimientos en desarrollo front-end y back-end, mejorando mis habilidades. Me encanta aprender y crear algo nuevo, productivo, innovador y creativo.
 </p>
 
-<table align="right"><tr><td><a href="./README_es.md">Español</a></tr></td><tr><td><a href="./README.md">Ingles</a></tr></td></table>
+<table align="right"><tr><td><a href="./README_es.md">Español</a></tr></td><tr><td><a href="./README.md">Inglés</a></tr></td></table>
 
 ⚡ ¿Que puedes enseñarme? <br>
 🧠 Resolviendo problemas de programación<br>

@@ -17,7 +17,7 @@
 
 ## **About Me**: 
 <p>
-  I am a System Engineering student, currently halfway through my degree. Passionate about Computer Science, Algorithmst, i am expanding my knowledge in both Front-end and Back-end development, and I am improving my skills. I love to learn and build something new, productive, innovative and creative.
+  I am a System Engineering student, currently halfway through my degree. Passionate about Computer Science, Algorithms, I am expanding my knowledge in both Front-end and Back-end development, and I am improving my skills. I love to learn and build something new, productive, innovative and creative.
 </p>
 
 <table align="right">
@@ -53,7 +53,7 @@
 [![React](https://skillicons.dev/icons?i=react "React")](https://react.dev/)
 [![TailwindCSS](https://skillicons.dev/icons?i=tailwind "TailwindCSS")](https://tailwindcss.com/)
 
-[![Python](https://skillicons.dev/icons?i=python "Pythoh")](https://www.python.org/)&nbsp;
+[![Python](https://skillicons.dev/icons?i=python "Python")](https://www.python.org/)&nbsp;
 [![FastAPi](https://skillicons.dev/icons?i=fastapi "FastAPI")](https://fastapi.tiangolo.com/)&nbsp;
 <a href="https://numpy.org/" ><img alt="Numpy" title="Numpy" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" height="47"/></a>&nbsp;&nbsp;&nbsp;
 [![Java](https://skillicons.dev/icons?i=java "Java")](https://www.java.com/)&nbsp;&nbsp;&nbsp;
