@@ -36,12 +36,57 @@
   <img src="https://skillicons.dev/icons?i=html,css,js,nodejs,react,py,fastapi,java,cpp,mysql,mongodb" />
 </div> -->
 
-<!---
+---
 
-<div align="center">
-  <a href="https://github.com/ema28pro/GitHub-Guide-Profile"><img height="160" src="https://github-readme-stats.vercel.app/api/pin/?username=ema28pro&repo=GitHub-Guide-Profile&theme=radical&show_owner=false" title="Introduction to Git and GitHub" alt="Introduction to Git and GitHub" /></a>&nbsp;&nbsp;<a href="https://github.com/ema28pro/Sistema-Gimnasio-3Stars-Solutions"><img height="160" src="https://github-readme-stats.vercel.app/api/pin/?username=ema28pro&repo=Sistema-Gimnasio-3Stars-Solutions&theme=radical&show_owner=false" title="Introduction to Git and GitHub" alt="Introduction to Git and GitHub" /></a>
-</div>
--->
+### 📌 Featured Projects
+
+<table width="100%">
+  <tr>
+    <td width="55%" align="center">
+      <a href="https://github.com/ema28pro/agente-inventario-mercado-central">
+        <img src="https://github-stats-extended.vercel.app/api/pin/?username=ema28pro&repo=agente-inventario-mercado-central&theme=dark&hide_border=true" />
+      </a>
+    </td>
+    <td width="45%">
+      <b>🛒 AI Inventory Agent</b><br>
+      Interactive platform to query supermarket inventory using natural language with <b>Streamlit</b>, <b>LangChain</b>, <b>Pandas</b>, and <b>Google Gemini</b>.
+    </td>
+  </tr>
+  <tr>
+    <td width="55%" align="center">
+      <a href="https://github.com/ema28pro/obsidian-skip-silence">
+        <img src="https://github-stats-extended.vercel.app/api/pin/?username=ema28pro&repo=obsidian-skip-silence&theme=dark&hide_border=true" />
+      </a>
+    </td>
+    <td width="45%">
+      <b>⏩ Obsidian Skip Silence</b><br>
+      Obsidian plugin that detects silence in local MP4 videos to automatically speed up playback, featuring a 16-band VU Meter and progress bookmarking.
+    </td>
+  </tr>
+  <tr>
+    <td width="55%" align="center">
+      <a href="https://github.com/ema28pro/discord-plugin-photoshop-2020">
+        <img src="https://github-stats-extended.vercel.app/api/pin/?username=ema28pro&repo=discord-plugin-photoshop-2020&theme=dark&hide_border=true" />
+      </a>
+    </td>
+    <td width="45%">
+      <b>🎨 Discord RPC for Photoshop</b><br>
+      Adobe CEP panel extension and Node.js bridge server to broadcast real-time Photoshop canvas details and active document stats directly to Discord Rich Presence.
+    </td>
+  </tr>
+  <tr>
+    <td width="55%" align="center">
+      <a href="https://github.com/ema28pro/manga-downloaders">
+        <img src="https://github-stats-extended.vercel.app/api/pin/?username=ema28pro&repo=manga-downloaders&theme=dark&hide_border=true" />
+      </a>
+    </td>
+    <td width="45%">
+      <b>📚 Manga Downloaders</b><br>
+      Collection of independent browser userscripts to download complete manga chapters into ZIP files directly from multiple supported sites via API and DOM hooks.
+    </td>
+  </tr>
+</table>
+
 ---
 
 <a href="https://github.com/ema28pro">

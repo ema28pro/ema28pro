@@ -32,9 +32,56 @@ Soy estudiante de Ingeniería de Sistemas y estoy a mitad de mi carrera. Me apas
 
 <!-- ⚡ **Facto**: ```Nan != Nan``` -->
 
-<!-- <div align="center">
-  <img src="https://skillicons.dev/icons?i=html,css,js,nodejs,react,py,fastapi,java,cpp,mysql,mongodb" />
-</div> -->
+---
+
+### 📌 Proyectos Destacados
+
+<table width="100%">
+  <tr>
+    <td width="55%" align="center">
+      <a href="https://github.com/ema28pro/agente-inventario-mercado-central">
+        <img src="https://github-stats-extended.vercel.app/api/pin/?username=ema28pro&repo=agente-inventario-mercado-central&theme=dark&hide_border=true" />
+      </a>
+    </td>
+    <td width="45%">
+      <b>🛒 Agente Inteligente de Inventario</b><br>
+      Plataforma interactiva para consultas en lenguaje natural sobre inventarios de supermercado con <b>Streamlit</b>, <b>LangChain</b>, <b>Pandas</b> y <b>Google Gemini</b>.
+    </td>
+  </tr>
+  <tr>
+    <td width="55%" align="center">
+      <a href="https://github.com/ema28pro/obsidian-skip-silence">
+        <img src="https://github-stats-extended.vercel.app/api/pin/?username=ema28pro&repo=obsidian-skip-silence&theme=dark&hide_border=true" />
+      </a>
+    </td>
+    <td width="45%">
+      <b>⏩ Obsidian Skip Silence</b><br>
+      Plugin para Obsidian que detecta silencios en vídeos MP4 locales para acelerar automáticamente la reproducción, con ecualizador VU Meter de 16 bandas y guardado de progreso.
+    </td>
+  </tr>
+  <tr>
+    <td width="55%" align="center">
+      <a href="https://github.com/ema28pro/discord-plugin-photoshop-2020">
+        <img src="https://github-stats-extended.vercel.app/api/pin/?username=ema28pro&repo=discord-plugin-photoshop-2020&theme=dark&hide_border=true" />
+      </a>
+    </td>
+    <td width="45%">
+      <b>🎨 Discord RPC para Photoshop</b><br>
+      Extensión de panel Adobe CEP y servidor puente en Node.js para mostrar en tiempo real tu actividad de diseño y métricas del lienzo en Discord Rich Presence.
+    </td>
+  </tr>
+  <tr>
+    <td width="55%" align="center">
+      <a href="https://github.com/ema28pro/manga-downloaders">
+        <img src="https://github-stats-extended.vercel.app/api/pin/?username=ema28pro&repo=manga-downloaders&theme=dark&hide_border=true" />
+      </a>
+    </td>
+    <td width="45%">
+      <b>📚 Manga Downloaders</b><br>
+      Conjunto de userscripts independientes para descargar capítulos de manga completos en formato ZIP desde múltiples sitios web mediante APIs oficiales e intercepción de datos.
+    </td>
+  </tr>
+</table>
 
 ---
 
