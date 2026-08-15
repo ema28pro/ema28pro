@@ -18,7 +18,7 @@
 ## **Sobre Mi**: 
 
 <p>
-Soy estudiante de Ingeniería de Sistemas y estoy a mitad de mi carrera. Me apasiona la informática y los algoritmos, y estoy ampliando mis conocimientos en desarrollo front-end y back-end, mejorando mis habilidades. Me encanta aprender y crear algo nuevo, productivo, innovador y creativo.
+Soy estudiante de Ingeniería de Sistemas y estoy a mitad de mi carrera. Me apasiona el código. Sigo profundizando mis conocimientos en desarrollo Backend, construyendo proyectos y herramientas. También comparto lo que aprendo como tutor de programación, matemáticas y cálculo en mi universidad. Me gusta enfrentarme cada día a un reto nuevo, ya sea con algoritmos, estructuras de datos u optimización.
 </p>
 
 <table align="right"><tr><td><a href="./README_es.md">Español</a></tr></td><tr><td><a href="./README.md">Inglés</a></tr></td></table>

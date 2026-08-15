@@ -18,7 +18,7 @@
 
 ## **About Me**: 
 <p>
-  I am a System Engineering student, currently halfway through my degree. Passionate about Computer Science, Algorithms, I am expanding my knowledge in both Front-end and Back-end development, and I am improving my skills. I love to learn and build something new, productive, innovative and creative.
+  I am a Systems Engineering student halfway through my degree. I am passionate about code. I continue deepening my knowledge in backend development, building projects and tools. I also share what I learn as a tutor in programming, mathematics, and calculus at my university. I enjoy taking on a new challenge every day, whether with algorithms, data structures, or optimization.
 </p>
 
 <table align="right">
