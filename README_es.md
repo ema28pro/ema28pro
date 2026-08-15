@@ -6,6 +6,7 @@
 <div align="center">
   <a href="https://wakatime.com/@ema28pro"><img src="https://wakatime.com/badge/user/579f9039-3a59-45fa-9d52-96caf7783967.svg" alt="WakaTime Total time coded since Jun 15 2025" class="inline-block mx-1" style="margin: 0px 2px;"/></a>
   <a href=https://discord.com/users/847867967698108468><img alt="Discord User" src="https://img.shields.io/badge/Discord-ema28pro-5865F2?logo=discord&logoColor=white" class="inline-block mx-1" style="margin: 0px 2px;"></a>
+  <a href="https://ko-fi.com/ctrlema28"><img alt="Ko-fi" src="https://img.shields.io/badge/Ko--fi-ctrlema28-FF5E5B?logo=ko-fi&logoColor=white" class="inline-block mx-1" style="margin: 0px 2px;"></a>
 
   <img alt="Visitors" src="https://visitor-badge.laobi.icu/badge?page_id=ema28pro" class="inline-block mx-1" style="margin: 0px 2px;">
   <img alt="Github Followers" src="https://img.shields.io/github/followers/ema28pro?style=social" class="inline-block mx-1" style="margin: 0px 2px;">
