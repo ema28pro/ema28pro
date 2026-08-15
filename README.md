@@ -37,9 +37,11 @@
 <details>
 <summary><b>Click me</b></summary>
 
+<br>
+
 <table><tr><td valign="top" width="33%">
 
-### Recent Projects
+<div><h3>Recent Projects</h3></div>
   
 [obsidian-skip-silence](https://github.com/ema28pro/obsidian-skip-silence) — plugin with custom silence & video speed controls to skip dead time and streamline note-taking  
 
@@ -51,7 +53,7 @@
 
 </td><td valign="top" width="34%">
 
-### TIL
+<div><h3>TIL</h3></div>
 
 `NaN != NaN` — why IEEE 754 breaks reflexive equality  
 
@@ -65,7 +67,7 @@
 
 </td><td valign="top" width="33%">
 
-### Algorithms Problems
+<div><h3>Algorithms Problems</h3></div>
 
 [CodinGame](https://www.codingame.com/profile/1b0126a833946858dc2f521afb4de4389706666)  
 
