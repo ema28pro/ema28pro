@@ -26,7 +26,7 @@ Soy estudiante de Ingeniería de Sistemas y estoy a mitad de mi carrera. Me apas
 
 ⚡ ¿Que puedes enseñarme? <br>
 🧠 Resolviendo problemas de programación<br>
-🤝 Busco colaborar en proyectos open-source <br>
+🤝 Buscando proyectos open-source para colaborar <br>
 💻 Programando con mentalidad de ingeniero de sistemas <br>
 💬 Pregúntame cualquier cosa; estaré encantado de ayudarte y conversar. <br>
 📫 Contáctame en: [ctrl.ema28@gmail.com](ctrl.ema28@gmail.com) <br>
