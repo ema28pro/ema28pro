@@ -102,7 +102,7 @@ Soy estudiante de Ingeniería de Sistemas y estoy a mitad de mi carrera. Me apas
 [![MySQL](https://skillicons.dev/icons?i=mysql "MySQL")](https://www.mysql.com/)&nbsp;
 [![PostgreSQL](https://skillicons.dev/icons?i=postgres "PostgreSQL")](https://www.postgresql.org/)&nbsp;&nbsp;&nbsp;
 [![Git](https://skillicons.dev/icons?i=git "Git")](https://git-scm.com/)&nbsp;
-[![GitHub](https://skillicons.dev/icons?i=github "GitHub")](https://github.com/)&nbsp;
+[![GitHub](https://skillicons.dev/icons?i=github "GitHub")](https://github.com/)&nbsp;&nbsp;  
 [![VSCode](https://skillicons.dev/icons?i=vscode "VSCode")](https://code.visualstudio.com/)&nbsp;
 [![Notion](https://skillicons.dev/icons?i=notion "Notion")](https://www.notion.com/)&nbsp;
 [![Obsidian](https://skillicons.dev/icons?i=obsidian "Obsidian")](https://obsidian.md/)&nbsp;
