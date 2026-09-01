@@ -1,8 +1,8 @@
 ![ema28pro](./img/CodeMe.svg "Inspired by pyoneerC")
 
-<table align="right"><tr><td><a href="./README.md">English</a></td></tr><tr><td><a href="./README_es.md">Spanish</a></td></tr><tr><td><a href="./README_CLEAN.md">Clean</a></td></tr></table>
-
 I'm Emanuel — a systems engineering student from Colombia, halfway through my degree.
+
+<table align="right"><tr><td><a href="./README.md">English</a></td></tr><tr><td><a href="./README_es.md">Spanish</a></td></tr><tr><td><a href="./README_CLEAN.md">Clean</a></td></tr></table>
 
 I build tools, break things apart to understand them, and share what I learn as a programming and math tutor at my university. Most of my work lives at the intersection of backend systems, automation, and the kind of problems that keep you up at night thinking about edge cases.
 
