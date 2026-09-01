@@ -21,7 +21,7 @@
 Soy estudiante de Ingeniería de Sistemas y estoy a mitad de mi carrera. Me apasiona el código. Sigo profundizando mis conocimientos en desarrollo Backend, construyendo proyectos y herramientas. También comparto lo que aprendo como tutor de programación, matemáticas y cálculo en mi universidad. Me gusta enfrentarme cada día a un reto nuevo, ya sea con algoritmos, estructuras de datos u optimización.
 </p>
 
-<table align="right"><tr><td><a href="./README_es.md">Español</a></tr></td><tr><td><a href="./README.md">Inglés</a></tr></td></table>
+<table align="right"><tr><td><a href="./README_es.md">Español</a></tr></td><tr><td><a href="./README.md">Inglés</a></tr></td><tr><td><a href="./README_CLEAN.md">Clean</a></tr></td></table>
 
 
 ⚡ ¿Que puedes enseñarme? <br>
@@ -99,7 +99,8 @@ Soy estudiante de Ingeniería de Sistemas y estoy a mitad de mi carrera. Me apas
 
 ### 🗃 &nbsp;Otros
 [![MongoDB](https://skillicons.dev/icons?i=mongodb "MongoDB")](https://www.mongodb.com/)&nbsp;
-[![MySQL](https://skillicons.dev/icons?i=mysql "MySQL")](https://www.mysql.com/)&nbsp;&nbsp;&nbsp;
+[![MySQL](https://skillicons.dev/icons?i=mysql "MySQL")](https://www.mysql.com/)&nbsp;
+[![PostgreSQL](https://skillicons.dev/icons?i=postgres "PostgreSQL")](https://www.postgresql.org/)&nbsp;&nbsp;&nbsp;
 [![Git](https://skillicons.dev/icons?i=git "Git")](https://git-scm.com/)&nbsp;
 [![GitHub](https://skillicons.dev/icons?i=github "GitHub")](https://github.com/)&nbsp;
 [![VSCode](https://skillicons.dev/icons?i=vscode "VSCode")](https://code.visualstudio.com/)&nbsp;

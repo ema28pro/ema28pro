@@ -24,6 +24,7 @@
 <table align="right">
 <tr><td><a href="./README.md">English</a></tr></td>
 <tr><td><a href="./README_es.md">Spanish</a></tr></td>
+<tr><td><a href="./README_CLEAN.md">Clean</a></tr></td>
 </table>
 
 
@@ -102,7 +103,8 @@
 
 ### 🗃 &nbsp;Others
 [![MongoDB](https://skillicons.dev/icons?i=mongodb "MongoDB")](https://www.mongodb.com/)&nbsp;
-[![MySQL](https://skillicons.dev/icons?i=mysql "MySQL")](https://www.mysql.com/)&nbsp;&nbsp;&nbsp;
+[![MySQL](https://skillicons.dev/icons?i=mysql "MySQL")](https://www.mysql.com/)&nbsp;
+[![PostgreSQL](https://skillicons.dev/icons?i=postgres "PostgreSQL")](https://www.postgresql.org/)&nbsp;&nbsp;&nbsp;
 [![Git](https://skillicons.dev/icons?i=git "Git")](https://git-scm.com/)&nbsp;
 [![GitHub](https://skillicons.dev/icons?i=github "GitHub")](https://github.com/)&nbsp;
 [![VSCode](https://skillicons.dev/icons?i=vscode "VSCode")](https://code.visualstudio.com/)&nbsp;
