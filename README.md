@@ -129,7 +129,7 @@
 ---
 
 <div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=ema28pro&theme=lucent&area=true&hide_border=true&hide_title=false&bg_color=0d1117&color=30a14e&line=10aa50&area_color=9be9a8" title="" alt="activity-graph graph" />
+  <img src="https://graf-activity-github.vercel.app/graph?username=ema28pro&theme=lucent&area=true&hide_border=true&hide_title=false&bg_color=0d1117&color=30a14e&line=10aa50&area_color=9be9a8" title="" alt="activity-graph graph" />
 </div>
 
 > “If you can't explain it simply, you don't understand it well enough.” – Einstein
