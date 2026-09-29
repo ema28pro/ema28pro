@@ -252,10 +252,11 @@ def tokenize_line(line_str: str, line_idx: int) -> list:
         tokens.append((line_str, C_BASE))
         return tokens
 
-    skull_part = line_str[:55]
+    skull_part = line_str[:55].rstrip()  # Quitar espacios finales → elimina el gap enorme
     info_part = line_str[55:]
 
     tokens.append((skull_part, C_BASE))
+    tokens.append(("\x00", "\x00"))  # Sentinel: el siguiente tspan usa x=INFO_COL_X
 
     # Regla 1: Primera línea separada del ASCII art -> Gris oscuro (#4a4a4a)
     if line_idx == 0:
@@ -328,15 +329,25 @@ def generate_svg_from_template(template_path: str, svg_path: str, variables: dic
     max_len = max(len(line) for line in lines)
     svg_width = int(max_len * char_width + padding_x * 2)
     svg_height = int(len(lines) * line_height + padding_y * 2)
+    # INFO_COL_X: x fija para columna info = padding + col44×8px_real + 51px_gap_original ≈ 423px
+    INFO_COL_X = padding_x + 44 * 8 + 51
 
     svg_lines = []
     for idx, line in enumerate(lines):
         y_pos = padding_y + (idx + 1) * line_height - 5
         tokens = tokenize_line(line, idx)
-        line_tspans = "".join(
-            f'<tspan fill="{col}">{html.escape(txt)}</tspan>'
-            for txt, col in tokens
-        )
+        tspan_parts = []
+        set_x_next = False
+        for txt, col in tokens:
+            if txt == "\x00":          # Sentinel: posicionar info en x absoluto
+                set_x_next = True
+                continue
+            if set_x_next:
+                tspan_parts.append(f'<tspan x="{INFO_COL_X}" fill="{col}">{html.escape(txt)}</tspan>')
+                set_x_next = False
+            else:
+                tspan_parts.append(f'<tspan fill="{col}">{html.escape(txt)}</tspan>')
+        line_tspans = "".join(tspan_parts)
         svg_lines.append(f'    <text xml:space="preserve" x="{padding_x}" y="{y_pos}">{line_tspans}</text>')
 
     content_svg = "\n".join(svg_lines)
