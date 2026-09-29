@@ -229,8 +229,8 @@ def update_svg_file(svg_path: str, uptime_str: str, age_str: str, stats: dict) -
     sp24 = "\xa0" * 24
     sp2 = "\xa0" * 2
 
-    em_dash_6 = "\u2014" * 6
-    em_dash_13 = "\u2014" * 13
+    em_dash_contact = "\u2014" * 8
+    em_dash_stats = "\u2014" * 13
 
     # Línea 17: Contact: y GitHub.Stats:
     col2_17 = (
@@ -241,10 +241,10 @@ def update_svg_file(svg_path: str, uptime_str: str, age_str: str, stats: dict) -
         f'</span><!-- /stats-col-17 -->'
     )
 
-    # Línea 18: —————— y —————————————
+    # Línea 18: ———————— (Contact) y ————————————— (GitHub.Stats)
     col2_18 = (
         f'<span id="stats-col-18">'
-        f'<span style="{c_gray}">{em_dash_6}{sp24}{em_dash_13}</span>'
+        f'<span style="{c_gray}">{em_dash_contact}{sp22}{em_dash_stats}</span>'
         f'</span><!-- /stats-col-18 -->'
     )
 
