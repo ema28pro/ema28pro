@@ -76,14 +76,14 @@ def calculate_uptime(today: datetime.date) -> str:
 
 def calculate_age(today: datetime.date) -> str:
     """
-    Calcula edad en años, meses y días desde 28/nov/2005.
+    Calcula la edad en años completos desde 28/nov/2005.
     Si hoy es el día del cumpleaños, agrega un emoji de pastel 🎂.
+    Ejemplo: '20 years' o '21 years 🎂'
     """
     diff = relativedelta.relativedelta(today, BIRTHDAY)
-    age_str = get_time_string(BIRTHDAY, today)
-    if diff.months == 0 and diff.days == 0:
-        age_str += " 🎂"
-    return age_str
+    years = diff.years
+    suffix = " 🎂" if (diff.months == 0 and diff.days == 0) else ""
+    return f"{years} years{suffix}"
 
 
 # =============================================================================
