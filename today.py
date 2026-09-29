@@ -253,8 +253,8 @@ def perform_git_workflow(uptime_str: str, age_str: str, stats: dict, push: bool 
         return False
 
     # 2. git add
-    print("  [+] Ejecutando: git add img/CodeMe.svg today.py")
-    run_git(["add", "img/CodeMe.svg", "today.py"])
+    print("  [+] Ejecutando: git add img/CodeMe.svg today.py daily.ps1")
+    run_git(["add", "img/CodeMe.svg", "today.py", "daily.ps1"])
 
     # 3. git commit
     today_str = datetime.date.today().strftime("%Y-%m-%d")
@@ -271,6 +271,8 @@ def perform_git_workflow(uptime_str: str, age_str: str, stats: dict, push: bool 
 
     # 4. git push
     if push:
+        print("  [+] Sincronizando con remoto (git pull --rebase origin main)...")
+        run_git(["pull", "--rebase", "origin", "main"])
         print("  [+] Enviando cambios a GitHub (git push origin main)...")
         push_proc = run_git(["push", "origin", "main"])
         if push_proc.returncode == 0:
