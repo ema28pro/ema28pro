@@ -213,6 +213,44 @@ def get_saved_loc() -> dict:
 # =============================================================================
 # TOKENIZADOR Y GENERADOR DE SVG
 # =============================================================================
+def parse_val_text(val_text: str, tokens: list):
+    """
+    Parsea texto de valor. Si contiene ( ... ), dentro de los paréntesis
+    cualquier ++... se colorea de Verde (#3fb950) y --... de Rojo (#f85149).
+    Fuera de los paréntesis, todo permanece en Azul (#a5d6ff) (así C++ nunca se afecta).
+    """
+    paren_pattern = re.compile(r'\(([^)]*)\)')
+    pos = 0
+    for pm in paren_pattern.finditer(val_text):
+        p_start, p_end = pm.span()
+        if p_start > pos:
+            tokens.append((val_text[pos:p_start], C_BLUE))
+
+        tokens.append(("(", C_BASE))
+        inner_content = pm.group(1)
+
+        diff_pattern = re.compile(r'(\+\+\S+)|(\-\-\S+)')
+        d_pos = 0
+        for dm in diff_pattern.finditer(inner_content):
+            d_start, d_end = dm.span()
+            if d_start > d_pos:
+                tokens.append((inner_content[d_pos:d_start], C_BLUE))
+            if dm.group(1):
+                tokens.append((dm.group(1), C_GREEN))
+            elif dm.group(2):
+                tokens.append((dm.group(2), C_RED))
+            d_pos = d_end
+
+        if d_pos < len(inner_content):
+            tokens.append((inner_content[d_pos:], C_BLUE))
+
+        tokens.append((")", C_BASE))
+        pos = p_end
+
+    if pos < len(val_text):
+        tokens.append((val_text[pos:], C_BLUE))
+
+
 def tokenize_line(line_str: str, line_idx: int) -> list:
     """
     Separa cada línea en arte ASCII (col 0-54) y texto derecho (col 55+).
@@ -223,8 +261,7 @@ def tokenize_line(line_str: str, line_idx: int) -> list:
     - Texto antes de ':' (sin espacios): Naranja (#ffa657)
     - Los ':' : Gris base (#c9d1d9)
     - Texto de valores: Azul (#a5d6ff)
-    - Líneas agregadas (++) o (+): Verde (#3fb950)
-    - Líneas eliminadas (--) o (-): Rojo (#f85149)
+    - Dentro de ( ... ): ++ en Verde (#3fb950) y -- en Rojo (#f85149)
     - Texto a partir de '#' (inclusive): Gris base (#c9d1d9)
     """
     tokens = []
@@ -267,20 +304,7 @@ def tokenize_line(line_str: str, line_idx: int) -> list:
 
         if key_start > pos:
             val_text = pre_hash[pos:key_start]
-            # Detectar diffs (++ o + en verde, -- o - en rojo seguido de números, ignorando lenguajes como C++)
-            sub_pattern = re.compile(r'(?<![A-Za-z])(\+{1,2}\d[0-9,kK.]*)|(?<![A-Za-z])(\-{1,2}\d[0-9,kK.]*)')
-            sub_pos = 0
-            for sm in sub_pattern.finditer(val_text):
-                s_start, s_end = sm.span()
-                if s_start > sub_pos:
-                    tokens.append((val_text[sub_pos:s_start], C_BLUE))
-                if sm.group(1):
-                    tokens.append((sm.group(1), C_GREEN))
-                elif sm.group(2):
-                    tokens.append((sm.group(2), C_RED))
-                sub_pos = s_end
-            if sub_pos < len(val_text):
-                tokens.append((val_text[sub_pos:], C_BLUE))
+            parse_val_text(val_text, tokens)
 
         tokens.append((key_name, C_ORANGE))
         tokens.append((colon, C_BASE))
@@ -289,19 +313,7 @@ def tokenize_line(line_str: str, line_idx: int) -> list:
     # Texto restante después del último ':'
     if pos < len(pre_hash):
         val_text = pre_hash[pos:]
-        sub_pattern = re.compile(r'(?<![A-Za-z])(\+{1,2}\d[0-9,kK.]*)|(?<![A-Za-z])(\-{1,2}\d[0-9,kK.]*)')
-        sub_pos = 0
-        for sm in sub_pattern.finditer(val_text):
-            s_start, s_end = sm.span()
-            if s_start > sub_pos:
-                tokens.append((val_text[sub_pos:s_start], C_BLUE))
-            if sm.group(1):
-                tokens.append((sm.group(1), C_GREEN))
-            elif sm.group(2):
-                tokens.append((sm.group(2), C_RED))
-            sub_pos = s_end
-        if sub_pos < len(val_text):
-            tokens.append((val_text[sub_pos:], C_BLUE))
+        parse_val_text(val_text, tokens)
 
     # Regla: texto después de # y con la # gris
     if hash_text:
