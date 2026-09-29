@@ -190,17 +190,19 @@ def update_svg_file(svg_path: str, uptime_str: str, age_str: str, stats: dict) -
 
     original_content = content
 
-    # 1. Limpieza de línea 7 (remover cualquier bloque previo de stats atravesadas)
+    # 1. Limpieza de bloques previos de stats
     content = re.sub(r'<span id="github-stats-block"[^>]*>.*?</span><!-- /gh-stats -->', '', content)
+    content = re.sub(r'<span id="contact-stats-block"[^>]*>.*?</span><!-- /contact-stats -->', '', content)
+    content = re.sub(r'<span id="stats-col-17"[^>]*>.*?</span><!-- /stats-col-17 -->', '', content)
+    content = re.sub(r'<span id="stats-col-18"[^>]*>.*?</span><!-- /stats-col-18 -->', '', content)
+    content = re.sub(r'<span id="stats-col-19"[^>]*>.*?</span><!-- /stats-col-19 -->', '', content)
 
-    # 2. Actualizar stack tecnológico en el código
-    # Languages.Programming: Python, Java, JavaScript, C/C++
+    # 2. Actualizar stack tecnológico y correo
     content = content.replace("Python, Java, C/C++ (Learning)", "Python, Java, JavaScript, C/C++")
     content = content.replace("Python, Java, C/C++, JavaScript", "Python, Java, JavaScript, C/C++")
-    # Tools.Frontend: React sin (Learning) y agregar Tailwind
     content = content.replace("HTML, CSS, JS, React (Learning)", "HTML, CSS, JS, React, Tailwind")
-    # Tools.Backend: cambiar MongoDB por PostgreSQL
     content = content.replace(">MongoDB<", ">PostgreSQL<")
+    content = content.replace("ema2805pro@gmail.com", "ctrl.ema28@gmail.com")
 
     # 3. Línea 4: Uptime y Age con formato completo (años, meses y días)
     sample_style = 'color: rgb(201, 209, 217);'
@@ -213,30 +215,77 @@ def update_svg_file(svg_path: str, uptime_str: str, age_str: str, stats: dict) -
     )
     content = re.sub(line4_pattern, rf"\g<1>{new_line4_body}\g<3>", content, count=1)
 
-    # 4. Línea 17: Mostrar estadísticas al lado de Contact:
-    content = re.sub(r'<span id="contact-stats-block"[^>]*>.*?</span><!-- /contact-stats -->', '', content)
-
+    # 4. Dos Columnas: Columna 1 (Contact) y Columna 2 (GitHub Stats)
     contribs = stats.get("contribs", 0)
     repos = stats.get("repos", 0)
     stars = stats.get("stars", 0)
+    followers = stats.get("followers", 0)
 
-    contact_pattern = r'(>Contact</span>\s*<span[^>]*class="cm-operator"[^>]*>:\s*</span>)'
-    stats_html = (
-        f'<span id="contact-stats-block">'
-        f'<span style="{sample_style}">  </span>'
-        f'<span class="cm-identifier" style="{sample_style}">GitHub</span>'
-        f'<span class="cm-operator" style="{sample_style}">: </span>'
-        f'<span class="cm-number" style="{sample_style}">{contribs:,}</span> '
-        f'<span class="cm-identifier" style="{sample_style}">Contribs</span>'
-        f'<span class="cm-punctuation" style="{sample_style}">, </span>'
-        f'<span class="cm-number" style="{sample_style}">{repos:,}</span> '
-        f'<span class="cm-identifier" style="{sample_style}">Repos</span>'
-        f'<span class="cm-punctuation" style="{sample_style}">, </span>'
-        f'<span class="cm-number" style="{sample_style}">{stars:,}</span> '
-        f'<span class="cm-identifier" style="{sample_style}">Stars</span>'
-        f'</span><!-- /contact-stats -->'
+    c_gray = "color: rgb(139, 148, 158);"
+    c_orange = "color: rgb(255, 166, 87);"
+    c_cyan = "color: rgb(121, 192, 255);"
+    c_dots = "color: rgb(80, 90, 100);"
+    c_white = "color: rgb(240, 246, 252);"
+
+    def get_dots(label, val_str, target_w):
+        cnt = max(1, target_w - len(label) - len(val_str) - 2)
+        return '.' * cnt
+
+    r_dots = get_dots("Repos:", f"{repos:,}", 12)
+    s_dots = get_dots("Stars:", f"{stars:,}", 12)
+    c_dots_str = get_dots("Commits:", f"{contribs:,}", 14)
+    f_dots = get_dots("Followers:", f"{followers:,}", 12)
+
+    # HTML Columna 2
+    sp20 = "\xa0" * 20
+    col2_17 = (
+        f'<span id="stats-col-17">'
+        f'<span style="{c_gray}">{sp20}- </span>'
+        f'<span style="{c_white}; font-weight: 600;">GitHub Stats </span>'
+        f'<span style="{c_gray}">---------------</span>'
+        f'</span><!-- /stats-col-17 -->'
     )
-    content = re.sub(contact_pattern, rf"\g<1>{stats_html}", content, count=1)
+
+    sp28 = "\xa0" * 28
+    col2_18 = (
+        f'<span id="stats-col-18">'
+        f'<span style="{c_gray}">{sp28}. </span>'
+        f'<span style="{c_orange}">Repos: </span>'
+        f'<span style="{c_dots}">{r_dots} </span>'
+        f'<span style="{c_cyan}">{repos:,}</span>'
+        f'<span style="{c_gray}"> | </span>'
+        f'<span style="{c_orange}">Stars: </span>'
+        f'<span style="{c_dots}">{s_dots} </span>'
+        f'<span style="{c_cyan}">{stars:,}</span>'
+        f'</span><!-- /stats-col-18 -->'
+    )
+
+    col2_19 = (
+        f'<span id="stats-col-19">'
+        f'<span style="{c_gray}"> . </span>'
+        f'<span style="{c_orange}">Commits: </span>'
+        f'<span style="{c_dots}">{c_dots_str} </span>'
+        f'<span style="{c_cyan}">{contribs:,}</span>'
+        f'<span style="{c_gray}"> | </span>'
+        f'<span style="{c_orange}">Followers: </span>'
+        f'<span style="{c_dots}">{f_dots} </span>'
+        f'<span style="{c_cyan}">{followers:,}</span>'
+        f'</span><!-- /stats-col-19 -->'
+    )
+
+    # Inserción en Línea 17 (al lado de Contact:)
+    content = re.sub(
+        r'(<span[^>]*class="cm-identifier"[^>]*>Contact</span>\s*<span[^>]*class="cm-operator"[^>]*>:\s*</span>)',
+        rf'\g<1>{col2_17}', content, count=1
+    )
+
+    # Inserción en Línea 18 (espacio de col 1 + col 2 Repos/Stars)
+    pattern_l18 = r'(\$RM</span>\s*<span[^>]*class="cm-error"[^>]*>!\s*).*?(</span></span></pre>)'
+    content = re.sub(pattern_l18, rf'\g<1>{col2_18}\g<2>', content, count=1)
+
+    # Inserción en Línea 19 (después de LinkedIn)
+    pattern_l19 = r'(in/emanuel-lopez-f</span>)'
+    content = re.sub(pattern_l19, rf'\g<1>{col2_19}', content, count=1)
 
     if content != original_content:
         with open(svg_path, "w", encoding="utf-8") as f:
