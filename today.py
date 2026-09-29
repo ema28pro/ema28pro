@@ -72,7 +72,7 @@ UPTIME_START = datetime.date(2022, 5, 1)      # Mayo de 2022
 
 TEMPLATE_PATH = os.path.join(BASE_DIR, "template.txt")
 SVG_PATH = os.path.join(BASE_DIR, "img", "CodeMe.svg")
-LOC_CACHE_FILE = os.path.join(BASE_DIR, ".loc_cache.json")
+LOC_FILE = os.path.join(BASE_DIR, "loc.json")
 
 ACCESS_TOKEN = os.environ.get("ACCESS_TOKEN") or os.environ.get("GITHUB_TOKEN")
 
@@ -196,114 +196,18 @@ def get_github_stats(username: str, token: str = None) -> dict:
     return stats
 
 
-def get_loc_stats(username: str, token: str, force: bool = False) -> dict:
+def get_saved_loc() -> dict:
     """
-    Calcula las líneas de código agregadas (+) y eliminadas (-) en todos los repositorios.
-    Utiliza caché local (.loc_cache.json) para que sea instantáneo.
+    Lee las líneas agregadas y eliminadas desde loc.json de forma instantánea.
+    Para recalcular el histórico completo en cualquier momento, ejecuta: python update_loc.py
     """
-    today_str = datetime.date.today().strftime("%Y-%m-%d")
-
-    # 1. Leer caché si existe y es de hoy
-    if not force and os.path.exists(LOC_CACHE_FILE):
+    if os.path.exists(LOC_FILE):
         try:
-            with open(LOC_CACHE_FILE, "r", encoding="utf-8") as f:
-                cache_data = json.load(f)
-                if cache_data.get("updated") == today_str and cache_data.get("additions"):
-                    return cache_data
-        except Exception:
-            pass
-
-    loc_stats = {"additions": 0, "deletions": 0, "commits": 0}
-    if not token:
-        # Si no hay token pero hay caché previa, usarla
-        if os.path.exists(LOC_CACHE_FILE):
-            try:
-                with open(LOC_CACHE_FILE, "r", encoding="utf-8") as f:
-                    return json.load(f)
-            except Exception:
-                pass
-        return loc_stats
-
-    headers = {"Authorization": f"token {token}"}
-
-    try:
-        print("   • Calculando líneas de código (additions/deletions) vía GraphQL...")
-        u_query = """query($login: String!) {
-          user(login: $login) {
-            id
-            repositories(first: 100, ownerAffiliations: [OWNER]) {
-              nodes { name }
-            }
-          }
-        }"""
-        r = requests.post("https://api.github.com/graphql", json={"query": u_query, "variables": {"login": username}}, headers=headers, timeout=15)
-        if r.status_code != 200:
-            return loc_stats
-
-        u_data = r.json()["data"]["user"]
-        user_id = u_data["id"]
-        repo_names = [repo["name"] for repo in u_data["repositories"]["nodes"]]
-
-        total_adds = 0
-        total_dels = 0
-        total_commits = 0
-
-        repo_query = """
-        query($owner: String!, $name: String!) {
-          repository(owner: $owner, name: $name) {
-            defaultBranchRef {
-              target {
-                ... on Commit {
-                  history(first: 100) {
-                    nodes {
-                      author { user { id } }
-                      additions
-                      deletions
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }"""
-
-        for name in repo_names:
-            rr = requests.post("https://api.github.com/graphql", json={"query": repo_query, "variables": {"owner": username, "name": name}}, headers=headers, timeout=10)
-            if rr.status_code == 200:
-                repo_obj = rr.json().get("data", {}).get("repository")
-                if repo_obj and repo_obj.get("defaultBranchRef"):
-                    commits = repo_obj["defaultBranchRef"]["target"]["history"]["nodes"]
-                    for c in commits:
-                        u = c.get("author", {}).get("user")
-                        if u and u.get("id") == user_id:
-                            total_commits += 1
-                            total_adds += c.get("additions", 0)
-                            total_dels += c.get("deletions", 0)
-
-        loc_stats = {
-            "updated": today_str,
-            "additions": total_adds,
-            "deletions": total_dels,
-            "commits": total_commits,
-        }
-
-        # Guardar en caché local
-        try:
-            with open(LOC_CACHE_FILE, "w", encoding="utf-8") as f:
-                json.dump(loc_stats, f)
-        except Exception:
-            pass
-
-    except Exception as e:
-        print(f"  [!] Advertencia al calcular líneas de código: {e}")
-        if os.path.exists(LOC_CACHE_FILE):
-            try:
-                with open(LOC_CACHE_FILE, "r", encoding="utf-8") as f:
-                    return json.load(f)
-            except Exception:
-                pass
-
-    return loc_stats
+            with open(LOC_FILE, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except Exception as e:
+            print(f"  [!] Advertencia al leer {LOC_FILE}: {e}")
+    return {"additions": 245769, "deletions": 41122, "commits": 726}
 
 
 # =============================================================================
@@ -500,8 +404,8 @@ def perform_git_workflow(uptime_str: str, age_str: str, stats: dict, push: bool 
         return False
 
     # 2. git add
-    print("  [+] Ejecutando: git add img/CodeMe.svg template.txt today.py daily.ps1 .gitignore")
-    run_git(["add", "img/CodeMe.svg", "template.txt", "today.py", "daily.ps1", ".gitignore"])
+    print("  [+] Ejecutando: git add img/CodeMe.svg template.txt today.py daily.ps1 loc.json update_loc.py .gitignore")
+    run_git(["add", "img/CodeMe.svg", "template.txt", "today.py", "daily.ps1", "loc.json", "update_loc.py", ".gitignore"])
 
     # 3. git commit
     today_str = datetime.date.today().strftime("%Y-%m-%d")
@@ -557,12 +461,12 @@ def main():
     # 2. Métricas de GitHub
     print(f"\n📡 Consultando métricas de GitHub (@{USER_NAME})...")
     stats = get_github_stats(USER_NAME, ACCESS_TOKEN)
-    loc_stats = get_loc_stats(USER_NAME, ACCESS_TOKEN, force=force_loc)
+    loc_stats = get_saved_loc()
 
     print(f"   • Contribuciones : {stats['contribs']:,}")
     print(f"   • Repositorios   : {stats['repos']:,}")
     print(f"   • Estrellas      : {stats['stars']:,}")
-    print(f"   • Líneas Código  : +{loc_stats['additions']:,} / -{loc_stats['deletions']:,}")
+    print(f"   • Líneas Código  : +{loc_stats.get('additions', 0):,} / -{loc_stats.get('deletions', 0):,}")
 
     variables = {
         "uptime": uptime,
