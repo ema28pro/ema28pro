@@ -1,6 +1,6 @@
                       :::!~!!!!!:.                     Emanuel Lopez F (ema28pro)
                   .xUHWH!! !!?M88WHX:.                 ——————
-                .X*#M@$!!  !X!M$$$$$$WWx:.             Description: Software Developer & Self-Taught Creative
+                .X*#M@$!!  !X!M$$$$$$WWx:.             Description: Software Developer & Systems Engineer
                :!!!!!!?H! :!$!$$$$$$$$$$8X:            Uptime: {uptime} #Age: {age}
               !!~  ~:~!! :~!$!#$$SzsZs$$$8X:           Host: University of Antioquia #UdeA (Colombia)
              :!~::!H!<   ~.U$X!?R$$$$$$$$MM!           Kernel: Learning Systems, Automation, GameDev

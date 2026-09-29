@@ -267,8 +267,8 @@ def tokenize_line(line_str: str, line_idx: int) -> list:
 
         if key_start > pos:
             val_text = pre_hash[pos:key_start]
-            # Detectar diffs (++ o + en verde, -- o - en rojo)
-            sub_pattern = re.compile(r'(\+{1,2}[0-9,kK.+-]+)|(\-{1,2}[0-9,kK.+-]+)')
+            # Detectar diffs (++ o + en verde, -- o - en rojo seguido de números, ignorando lenguajes como C++)
+            sub_pattern = re.compile(r'(?<![A-Za-z])(\+{1,2}\d[0-9,kK.]*)|(?<![A-Za-z])(\-{1,2}\d[0-9,kK.]*)')
             sub_pos = 0
             for sm in sub_pattern.finditer(val_text):
                 s_start, s_end = sm.span()
@@ -289,7 +289,7 @@ def tokenize_line(line_str: str, line_idx: int) -> list:
     # Texto restante después del último ':'
     if pos < len(pre_hash):
         val_text = pre_hash[pos:]
-        sub_pattern = re.compile(r'(\+{1,2}[0-9,kK.+-]+)|(\-{1,2}[0-9,kK.+-]+)')
+        sub_pattern = re.compile(r'(?<![A-Za-z])(\+{1,2}\d[0-9,kK.]*)|(?<![A-Za-z])(\-{1,2}\d[0-9,kK.]*)')
         sub_pos = 0
         for sm in sub_pattern.finditer(val_text):
             s_start, s_end = sm.span()
