@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1008 472" width="1008" height="472">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 440" width="1000" height="440">
   <defs>
     <style>
       .terminal {
@@ -9,34 +9,29 @@
   </defs>
 
   <!-- Background Card -->
-  <rect width="100%" height="100%" rx="10" fill="#151718" stroke="#30363d" stroke-width="1"/>
-
-  <!-- Terminal Window Controls -->
-  <circle cx="20" cy="18" r="5" fill="#f85149"/>
-  <circle cx="36" cy="18" r="5" fill="#e3b341"/>
-  <circle cx="52" cy="18" r="5" fill="#3fb950"/>
+  <rect width="100%" height="100%" rx="5" fill="#000000"/>
 
   <!-- Terminal Text -->
   <g class="terminal">
-    <text xml:space="preserve" x="28" y="52"><tspan fill="#c9d1d9">                      :::!~!!!!!:.                     </tspan><tspan fill="#4a4a4a">Emanuel Lopez F (ema28pro)</tspan></text>
-    <text xml:space="preserve" x="28" y="72"><tspan fill="#c9d1d9">                  .xUHWH!! !!?M88WHX:.                 </tspan><tspan fill="#c9d1d9">——————</tspan></text>
-    <text xml:space="preserve" x="28" y="92"><tspan fill="#c9d1d9">                .X*#M@$!!  !X!M$$$$$$WWx:.             </tspan><tspan fill="#ffa657">Description</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#a5d6ff"> Software Developer &amp; Self-Taught Creative</tspan></text>
-    <text xml:space="preserve" x="28" y="112"><tspan fill="#c9d1d9">               :!!!!!!?H! :!$!$$$$$$$$$$8X:            </tspan><tspan fill="#ffa657">Uptime</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#a5d6ff"> 4 years, 4 months, 28 days </tspan><tspan fill="#c9d1d9">#Age: 20 years</tspan></text>
-    <text xml:space="preserve" x="28" y="132"><tspan fill="#c9d1d9">              !!~  ~:~!! :~!$!#$$SzsZs$$$8X:           </tspan><tspan fill="#ffa657">Host</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#a5d6ff"> University of Antioquia </tspan><tspan fill="#c9d1d9">#UdeA (Colombia)</tspan></text>
-    <text xml:space="preserve" x="28" y="152"><tspan fill="#c9d1d9">             :!~::!H!&lt;   ~.U$X!?R$$$$$$$$MM!           </tspan><tspan fill="#ffa657">Kernel</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#a5d6ff"> Learning Systems, Automation, GameDev</tspan></text>
-    <text xml:space="preserve" x="28" y="172"><tspan fill="#c9d1d9">             ~!~!!!!~~ .:XW$$$U!!?$$$$$$RMM!</tspan></text>
-    <text xml:space="preserve" x="28" y="192"><tspan fill="#c9d1d9">               !:~~~ .:!M&quot;T#$$$$WX??#MRRMMM!           </tspan><tspan fill="#ffa657">Languages.Programming</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#a5d6ff"> Python, Java, JavaScript, C/C++</tspan></text>
-    <text xml:space="preserve" x="28" y="212"><tspan fill="#c9d1d9">               ~?WuxiW*`   `&quot;#$$$$8!!!!??!!!           </tspan><tspan fill="#ffa657">Languages.Real</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#a5d6ff"> Spanish (Nativo), English (B2 – Improving)</tspan></text>
-    <text xml:space="preserve" x="28" y="232"><tspan fill="#c9d1d9">             :X- M$$$$       `&quot;T#$T~!8$WUXU~</tspan></text>
-    <text xml:space="preserve" x="28" y="252"><tspan fill="#c9d1d9">            :%`  ~#$$$m:        ~!~ ?$$$$$$            </tspan><tspan fill="#ffa657">Tools.Frontend</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#a5d6ff"> HTML, CSS, JS, React, Tailwind</tspan></text>
-    <text xml:space="preserve" x="28" y="272"><tspan fill="#c9d1d9">          :!`.-   ~T$$$$8xx.  .xWW- ~&quot;&quot;##*&quot;            </tspan><tspan fill="#ffa657">Tools.Backend</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#a5d6ff"> FastAPI, Node.js, MySQL, PostgreSQL</tspan></text>
-    <text xml:space="preserve" x="28" y="292"><tspan fill="#c9d1d9">.....   -~~:&lt;` !    ~?T#$$@@W@*?$$      /`</tspan></text>
-    <text xml:space="preserve" x="28" y="312"><tspan fill="#c9d1d9">W$@@M!!! .!~~ !!     .:XUW$W!~ `&quot;~:    :               </tspan><tspan fill="#ffa657">Hobbies.Hardware</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#a5d6ff"> Athletics, Cycling, Reading, Puzzles</tspan></text>
-    <text xml:space="preserve" x="28" y="332"><tspan fill="#c9d1d9">#&quot;~~`.:x%`!!  !H:   !WM$$$$Ti.: .!WUn+!`               </tspan><tspan fill="#ffa657">Hobbies.Software</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#a5d6ff"> Computer Sciences, Algorithms, ML/IA</tspan></text>
-    <text xml:space="preserve" x="28" y="352"><tspan fill="#c9d1d9">:::~:!!`:X~ .: ?H.!u &quot;$$$B$$$!W:U!T$$M~</tspan></text>
-    <text xml:space="preserve" x="28" y="372"><tspan fill="#c9d1d9">.~~   :X@!.-~   ?@WTWo(&quot;*$$$W$TH$! `                   </tspan><tspan fill="#ffa657">Contact</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#c9d1d9">                       </tspan><tspan fill="#ffa657">GitHub.Stats</tspan><tspan fill="#c9d1d9">:</tspan></text>
-    <text xml:space="preserve" x="28" y="392"><tspan fill="#c9d1d9">Wi.~!X$?!-~    : ?$$$B$Wu(&quot;**$RM!                      </tspan><tspan fill="#c9d1d9">——————                         —————————————</tspan></text>
-    <text xml:space="preserve" x="28" y="412"><tspan fill="#c9d1d9">$R@i.~~ !     :   ~$$$$$B$$en:``                       </tspan><tspan fill="#ffa657">LinkedIn</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#a5d6ff"> in/emanuel-lopez-f   624 Contribs</tspan></text>
-    <text xml:space="preserve" x="28" y="432"><tspan fill="#c9d1d9">?MXT@Wx.~    :     ~&quot;##*$$$$M~                         </tspan><tspan fill="#ffa657">Email</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#a5d6ff"> ctrl.ema28@gmail.com    32 Repos, 94 Stars</tspan></text>
+    <text xml:space="preserve" x="24" y="35"><tspan fill="#c9d1d9">                      :::!~!!!!!:.                     </tspan><tspan fill="#4a4a4a">Emanuel Lopez F (ema28pro)</tspan></text>
+    <text xml:space="preserve" x="24" y="55"><tspan fill="#c9d1d9">                  .xUHWH!! !!?M88WHX:.                 </tspan><tspan fill="#c9d1d9">——————</tspan></text>
+    <text xml:space="preserve" x="24" y="75"><tspan fill="#c9d1d9">                .X*#M@$!!  !X!M$$$$$$WWx:.             </tspan><tspan fill="#ffa657">Description</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#a5d6ff"> Software Developer &amp; Self-Taught Creative</tspan></text>
+    <text xml:space="preserve" x="24" y="95"><tspan fill="#c9d1d9">               :!!!!!!?H! :!$!$$$$$$$$$$8X:            </tspan><tspan fill="#ffa657">Uptime</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#a5d6ff"> 4 years, 4 months, 28 days </tspan><tspan fill="#c9d1d9">#Age: 20 years</tspan></text>
+    <text xml:space="preserve" x="24" y="115"><tspan fill="#c9d1d9">              !!~  ~:~!! :~!$!#$$SzsZs$$$8X:           </tspan><tspan fill="#ffa657">Host</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#a5d6ff"> University of Antioquia </tspan><tspan fill="#c9d1d9">#UdeA (Colombia)</tspan></text>
+    <text xml:space="preserve" x="24" y="135"><tspan fill="#c9d1d9">             :!~::!H!&lt;   ~.U$X!?R$$$$$$$$MM!           </tspan><tspan fill="#ffa657">Kernel</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#a5d6ff"> Learning Systems, Automation, GameDev</tspan></text>
+    <text xml:space="preserve" x="24" y="155"><tspan fill="#c9d1d9">             ~!~!!!!~~ .:XW$$$U!!?$$$$$$RMM!</tspan></text>
+    <text xml:space="preserve" x="24" y="175"><tspan fill="#c9d1d9">               !:~~~ .:!M&quot;T#$$$$WX??#MRRMMM!           </tspan><tspan fill="#ffa657">Languages.Programming</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#a5d6ff"> Python, Java, JavaScript, C/C++</tspan></text>
+    <text xml:space="preserve" x="24" y="195"><tspan fill="#c9d1d9">               ~?WuxiW*`   `&quot;#$$$$8!!!!??!!!           </tspan><tspan fill="#ffa657">Languages.Real</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#a5d6ff"> Spanish (Nativo), English (B2 – Improving)</tspan></text>
+    <text xml:space="preserve" x="24" y="215"><tspan fill="#c9d1d9">             :X- M$$$$       `&quot;T#$T~!8$WUXU~</tspan></text>
+    <text xml:space="preserve" x="24" y="235"><tspan fill="#c9d1d9">            :%`  ~#$$$m:        ~!~ ?$$$$$$            </tspan><tspan fill="#ffa657">Tools.Frontend</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#a5d6ff"> HTML, CSS, JS, React, Tailwind</tspan></text>
+    <text xml:space="preserve" x="24" y="255"><tspan fill="#c9d1d9">          :!`.-   ~T$$$$8xx.  .xWW- ~&quot;&quot;##*&quot;            </tspan><tspan fill="#ffa657">Tools.Backend</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#a5d6ff"> FastAPI, Node.js, MySQL, PostgreSQL</tspan></text>
+    <text xml:space="preserve" x="24" y="275"><tspan fill="#c9d1d9">.....   -~~:&lt;` !    ~?T#$$@@W@*?$$      /`</tspan></text>
+    <text xml:space="preserve" x="24" y="295"><tspan fill="#c9d1d9">W$@@M!!! .!~~ !!     .:XUW$W!~ `&quot;~:    :               </tspan><tspan fill="#ffa657">Hobbies.Hardware</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#a5d6ff"> Athletics, Cycling, Reading, Puzzles</tspan></text>
+    <text xml:space="preserve" x="24" y="315"><tspan fill="#c9d1d9">#&quot;~~`.:x%`!!  !H:   !WM$$$$Ti.: .!WUn+!`               </tspan><tspan fill="#ffa657">Hobbies.Software</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#a5d6ff"> Computer Sciences, Algorithms, ML/IA</tspan></text>
+    <text xml:space="preserve" x="24" y="335"><tspan fill="#c9d1d9">:::~:!!`:X~ .: ?H.!u &quot;$$$B$$$!W:U!T$$M~</tspan></text>
+    <text xml:space="preserve" x="24" y="355"><tspan fill="#c9d1d9">.~~   :X@!.-~   ?@WTWo(&quot;*$$$W$TH$! `                   </tspan><tspan fill="#ffa657">Contact</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#c9d1d9">                       </tspan><tspan fill="#ffa657">GitHub.Stats</tspan><tspan fill="#c9d1d9">:</tspan></text>
+    <text xml:space="preserve" x="24" y="375"><tspan fill="#c9d1d9">Wi.~!X$?!-~    : ?$$$B$Wu(&quot;**$RM!                      </tspan><tspan fill="#c9d1d9">——————                         —————————————</tspan></text>
+    <text xml:space="preserve" x="24" y="395"><tspan fill="#c9d1d9">$R@i.~~ !     :   ~$$$$$B$$en:``                       </tspan><tspan fill="#ffa657">LinkedIn</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#a5d6ff"> in/emanuel-lopez-f   625 Contribs</tspan></text>
+    <text xml:space="preserve" x="24" y="415"><tspan fill="#c9d1d9">?MXT@Wx.~    :     ~&quot;##*$$$$M~                         </tspan><tspan fill="#ffa657">Email</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#a5d6ff"> ctrl.ema28@gmail.com    32 Repos, 94 Stars</tspan></text>
   </g>
 </svg>

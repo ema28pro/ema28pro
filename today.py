@@ -263,8 +263,8 @@ def generate_svg_from_template(template_path: str, svg_path: str, variables: dic
     char_width = 8.43
     line_height = 20
     font_size = 14
-    padding_x = 28
-    padding_y = 36
+    padding_x = 24
+    padding_y = 20
 
     max_len = max(len(line) for line in lines)
     svg_width = int(max_len * char_width + padding_x * 2)
@@ -272,7 +272,7 @@ def generate_svg_from_template(template_path: str, svg_path: str, variables: dic
 
     svg_lines = []
     for idx, line in enumerate(lines):
-        y_pos = padding_y + (idx + 1) * line_height - 4
+        y_pos = padding_y + (idx + 1) * line_height - 5
         tokens = tokenize_line(line, idx)
         line_tspans = "".join(
             f'<tspan fill="{col}">{html.escape(txt)}</tspan>'
@@ -293,12 +293,7 @@ def generate_svg_from_template(template_path: str, svg_path: str, variables: dic
   </defs>
 
   <!-- Background Card -->
-  <rect width="100%" height="100%" rx="10" fill="#151718" stroke="#30363d" stroke-width="1"/>
-
-  <!-- Terminal Window Controls -->
-  <circle cx="20" cy="18" r="5" fill="#f85149"/>
-  <circle cx="36" cy="18" r="5" fill="#e3b341"/>
-  <circle cx="52" cy="18" r="5" fill="#3fb950"/>
+  <rect width="100%" height="100%" rx="5" fill="#000000"/>
 
   <!-- Terminal Text -->
   <g class="terminal">
