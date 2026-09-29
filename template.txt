@@ -1,0 +1,20 @@
+                      :::!~!!!!!:.                     Emanuel Lopez F (ema28pro)
+                  .xUHWH!! !!?M88WHX:.                 ——————
+                .X*#M@$!!  !X!M$$$$$$WWx:.             Description: Software Developer & Self-Taught Creative
+               :!!!!!!?H! :!$!$$$$$$$$$$8X:            Uptime: {uptime} #Age: {age}
+              !!~  ~:~!! :~!$!#$$SzsZs$$$8X:           Host: University of Antioquia #UdeA (Colombia)
+             :!~::!H!<   ~.U$X!?R$$$$$$$$MM!           Kernel: Learning Systems, Automation, GameDev
+             ~!~!!!!~~ .:XW$$$U!!?$$$$$$RMM!
+               !:~~~ .:!M"T#$$$$WX??#MRRMMM!           Languages.Programming: Python, Java, JavaScript, C/C++
+               ~?WuxiW*`   `"#$$$$8!!!!??!!!           Languages.Real: Spanish (Nativo), English (B2 – Improving)
+             :X- M$$$$       `"T#$T~!8$WUXU~
+            :%`  ~#$$$m:        ~!~ ?$$$$$$            Tools.Frontend: HTML, CSS, JS, React, Tailwind
+          :!`.-   ~T$$$$8xx.  .xWW- ~""##*"            Tools.Backend: FastAPI, Node.js, MySQL, PostgreSQL
+.....   -~~:<` !    ~?T#$$@@W@*?$$      /`
+W$@@M!!! .!~~ !!     .:XUW$W!~ `"~:    :               Hobbies.Hardware: Athletics, Cycling, Reading, Puzzles
+#"~~`.:x%`!!  !H:   !WM$$$$Ti.: .!WUn+!`               Hobbies.Software: Computer Sciences, Algorithms, ML/IA
+:::~:!!`:X~ .: ?H.!u "$$$B$$$!W:U!T$$M~
+.~~   :X@!.-~   ?@WTWo("*$$$W$TH$! `                   Contact:                      GitHub.Stats:
+Wi.~!X$?!-~    : ?$$$B$Wu("**$RM!                      ——————                        —————————————
+$R@i.~~ !     :   ~$$$$$B$$en:``                       LinkedIn: in/emanuel-lopez-f  {contribs} Contribs, {repos} Repos, {stars} Stars
+?MXT@Wx.~    :     ~"##*$$$$M~                         Email: ctrl.ema28@gmail.com

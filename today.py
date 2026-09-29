@@ -5,16 +5,22 @@
  Daily Profile & SVG Updater (today.py)
  Emanuel Lopez F (ema28pro)
 -----------------------------------------------------------------------------
+ - Genera el SVG CodeMe.svg directamente desde template.txt (sin regex frágiles).
  - Calcula dinámicamente Uptime y Age con años, meses y días (estilo pyoneer).
  - Muestra métricas de GitHub en vivo al lado de "Contact:".
- - Actualiza lenguajes y herramientas según el stack actual.
- - Realiza git add, git commit automático y git push a GitHub.
+ - Aplica la paleta de colores oficial:
+     * Gris oscuro (#4a4a4a): Línea 1 (nombre y usuario)
+     * Naranja     (#ffa657): Claves antes de los dos puntos (:)
+     * Azul        (#a5d6ff): Textos de valores, tecnologías y números
+     * Gris/Blanco (#c9d1d9): Cráneo ASCII, separadores, dos puntos y comentarios (#)
+ - Realiza git add, commit y push automático a GitHub.
 =============================================================================
 """
 
 import sys
 import os
 import re
+import html
 import datetime
 import subprocess
 from dateutil import relativedelta
@@ -31,34 +37,38 @@ if sys.platform.startswith("win"):
         pass
 
 # =============================================================================
-# CONFIGURACIÓN PERSONALIZABLE
+# CONFIGURACIÓN
 # =============================================================================
 USER_NAME = os.environ.get("GITHUB_USER", "ema28pro")
 BIRTHDAY = datetime.date(2005, 11, 28)       # 28 de Noviembre de 2005
 UPTIME_START = datetime.date(2022, 5, 1)      # Mayo de 2022
 
-# Ruta al archivo SVG principal
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+TEMPLATE_PATH = os.path.join(BASE_DIR, "template.txt")
 SVG_PATH = os.path.join(BASE_DIR, "img", "CodeMe.svg")
 
-# Token opcional (si existe en el entorno o archivo .env, permite GraphQL extendido)
 ACCESS_TOKEN = os.environ.get("ACCESS_TOKEN") or os.environ.get("GITHUB_TOKEN")
+
+# Colores oficiales
+C_ORANGE = "#ffa657"   # Naranja (Keys / Identificadores)
+C_BASE = "#c9d1d9"     # Blanco / Gris base (ASCII skull, separadores, :, comentarios #)
+C_BLUE = "#a5d6ff"     # Azul (Valores, tecnologías, estadísticas)
+C_DARK = "#4a4a4a"     # Gris oscuro (Línea 1 del perfil)
+C_GREEN = "#3fb950"    # Verde ++
+C_RED = "#f85149"      # Rojo --
 
 
 # =============================================================================
-# CÁLCULOS TEMPORALES (ESTILO PYONEER / ANDREW6RANT)
+# CÁLCULOS TEMPORALES
 # =============================================================================
 def format_unit(val: int, unit: str) -> str:
     """Retorna número y unidad formateada con plural según corresponda."""
     return f"{val} {unit}{'s' if val != 1 else ''}"
 
 
-def get_time_string(start_date: datetime.date, end_date: datetime.date) -> str:
-    """
-    Retorna la duración exacta entre dos fechas en formato:
-    'X years, Y months, Z days'
-    """
-    diff = relativedelta.relativedelta(end_date, start_date)
+def calculate_uptime(today: datetime.date) -> str:
+    """Calcula Uptime en años, meses y días desde mayo 2022."""
+    diff = relativedelta.relativedelta(today, UPTIME_START)
     parts = []
     if diff.years > 0:
         parts.append(format_unit(diff.years, "year"))
@@ -69,16 +79,10 @@ def get_time_string(start_date: datetime.date, end_date: datetime.date) -> str:
     return ", ".join(parts)
 
 
-def calculate_uptime(today: datetime.date) -> str:
-    """Calcula Uptime en años, meses y días desde mayo 2022."""
-    return get_time_string(UPTIME_START, today)
-
-
 def calculate_age(today: datetime.date) -> str:
     """
     Calcula la edad en años completos desde 28/nov/2005.
-    Si hoy es el día del cumpleaños, agrega un emoji de pastel 🎂.
-    Ejemplo: '20 years' o '21 years 🎂'
+    Si hoy es el cumpleaños, agrega pastel 🎂.
     """
     diff = relativedelta.relativedelta(today, BIRTHDAY)
     years = diff.years
@@ -95,31 +99,28 @@ def get_github_stats(username: str, token: str = None) -> dict:
     - contribs: total de contribuciones (último año o histórico)
     - repos: total de repositorios públicos
     - stars: total de estrellas recibidas en repositorios
-    - followers: seguidores
     """
     stats = {
         "contribs": 0,
         "repos": 0,
         "stars": 0,
-        "followers": 0,
     }
 
     headers = {"User-Agent": f"today-script-{username}"}
     if token:
         headers["Authorization"] = f"token {token}"
 
-    # 1. Datos básicos del usuario (repos públicos, followers)
+    # 1. Repos públicos
     try:
         user_url = f"https://api.github.com/users/{username}"
         res = requests.get(user_url, headers=headers, timeout=10)
         if res.status_code == 200:
             user_data = res.json()
             stats["repos"] = user_data.get("public_repos", 0)
-            stats["followers"] = user_data.get("followers", 0)
     except Exception as e:
         print(f"  [!] Advertencia al obtener datos de usuario: {e}")
 
-    # 2. Conteo de estrellas en todos los repositorios públicos
+    # 2. Estrellas totales
     try:
         repos_url = f"https://api.github.com/users/{username}/repos?per_page=100"
         res = requests.get(repos_url, headers=headers, timeout=10)
@@ -169,115 +170,151 @@ def get_github_stats(username: str, token: str = None) -> dict:
 
 
 # =============================================================================
-# ACTUALIZACIÓN DEL ARCHIVO SVG
+# TOKENIZADOR Y GENERADOR DE SVG
 # =============================================================================
-def update_svg_file(svg_path: str, uptime_str: str, age_str: str, stats: dict) -> bool:
+def tokenize_line(line_str: str, line_idx: int) -> list:
     """
-    Actualiza con precisión milimétrica las líneas de CodeMe.svg:
-    - Línea 4: Uptime y Age con años, meses y días
-    - Línea 7: Se mantiene limpia (sin estadísticas atravesadas)
-    - Línea 8: Languages.Programming sin (Learning) y con JavaScript
-    - Línea 11: Tools.Frontend con React y Tailwind
-    - Línea 12: Tools.Backend con PostgreSQL
-    - Línea 17: Estadísticas de GitHub al lado de "Contact:"
-    Retorna True si el archivo fue modificado exitosamente.
+    Separa cada línea en arte ASCII (col 0-54) y texto derecho (col 55+).
+    Aplica las reglas exactas:
+    - Arte ASCII: Gris base (#c9d1d9)
+    - Primera línea separada: Gris oscuro (#4a4a4a)
+    - Separadores (——————): Gris base (#c9d1d9)
+    - Texto antes de ':' : Naranja (#ffa657)
+    - Los ':' : Gris base (#c9d1d9)
+    - Texto de valores: Azul (#a5d6ff)
+    - Texto a partir de '#' (inclusive): Gris base (#c9d1d9)
     """
-    if not os.path.exists(svg_path):
-        raise FileNotFoundError(f"No se encontró el archivo SVG en: {svg_path}")
+    tokens = []
+    if len(line_str) <= 55:
+        tokens.append((line_str, C_BASE))
+        return tokens
 
-    with open(svg_path, "r", encoding="utf-8") as f:
-        content = f.read()
+    skull_part = line_str[:55]
+    info_part = line_str[55:]
 
-    original_content = content
+    tokens.append((skull_part, C_BASE))
 
-    # 1. Limpieza de bloques previos de stats
-    content = re.sub(r'<span id="github-stats-block"[^>]*>.*?</span><!-- /gh-stats -->', '', content)
-    content = re.sub(r'<span id="contact-stats-block"[^>]*>.*?</span><!-- /contact-stats -->', '', content)
-    content = re.sub(r'<span id="stats-col-17"[^>]*>.*?</span><!-- /stats-col-17 -->', '', content)
-    content = re.sub(r'<span id="stats-col-18"[^>]*>.*?</span><!-- /stats-col-18 -->', '', content)
-    content = re.sub(r'<span id="stats-col-19"[^>]*>.*?</span><!-- /stats-col-19 -->', '', content)
+    # Regla 1: Primera línea separada del ASCII art -> Gris oscuro (#4a4a4a)
+    if line_idx == 0:
+        tokens.append((info_part, C_DARK))
+        return tokens
 
-    # 2. Actualizar stack tecnológico y correo
-    content = content.replace("Python, Java, C/C++ (Learning)", "Python, Java, JavaScript, C/C++")
-    content = content.replace("Python, Java, C/C++, JavaScript", "Python, Java, JavaScript, C/C++")
-    content = content.replace("HTML, CSS, JS, React (Learning)", "HTML, CSS, JS, React, Tailwind")
-    content = content.replace(">MongoDB<", ">PostgreSQL<")
-    content = content.replace("ema2805pro@gmail.com", "ctrl.ema28@gmail.com")
+    # Separadores (ej: ——————) -> Gris (#c9d1d9)
+    if info_part.strip().startswith("—"):
+        tokens.append((info_part, C_BASE))
+        return tokens
 
-    # 3. Colores estándar del SVG
-    c_orange = "color: rgb(255, 166, 87);"       # Naranja (Keys / Identificadores)
-    c_blue = "color: rgb(165, 214, 255);"         # Azul (Valores / Textos / Números)
-    c_gray = "color: rgb(201, 209, 217);"         # Gris / Blanco (Operadores / Dos puntos / Comentarios)
-    c_dots = "color: rgb(100, 110, 120);"         # Puntos justificadores
+    # Separar parte con '#' (comentarios)
+    if "#" in info_part:
+        hash_idx = info_part.index("#")
+        pre_hash = info_part[:hash_idx]
+        hash_text = info_part[hash_idx:]
+    else:
+        pre_hash = info_part
+        hash_text = ""
 
-    # Línea 4: Uptime en Azul, Age en Gris/Blanco
-    line4_pattern = r'(>Uptime</span>\s*<span[^>]*class="cm-operator"[^>]*>:\s*</span>)(.*?)(</pre>)'
-    new_line4_body = (
-        f'<span style="{c_gray}"> </span>'
-        f'<span style="{c_blue}">{uptime_str}</span>'
-        f'<span style="{c_gray}"> </span>'
-        f'<span class="cm-comment" style="{c_gray}">#Age: {age_str}</span></span>'
-    )
-    content = re.sub(line4_pattern, rf"\g<1>{new_line4_body}\g<3>", content, count=1)
+    # Extraer claves terminadas en ':'
+    pattern = re.compile(r'([A-Za-z0-9_.\s]+?)(:)')
+    matches = list(pattern.finditer(pre_hash))
 
-    # 4. Dos Columnas paralelas: Columna 1 (Contact) y Columna 2 (GitHub.Stats)
-    contribs = stats.get("contribs", 0)
-    repos = stats.get("repos", 0)
-    stars = stats.get("stars", 0)
+    if not matches:
+        if pre_hash:
+            tokens.append((pre_hash, C_BLUE))
+    else:
+        for i, m in enumerate(matches):
+            key_name = m.group(1)
+            colon = m.group(2)
 
-    sp22 = "\xa0" * 22
-    sp24 = "\xa0" * 24
-    sp2 = "\xa0" * 2
+            leading_spaces = len(key_name) - len(key_name.lstrip())
+            if leading_spaces > 0:
+                tokens.append((key_name[:leading_spaces], C_BASE))
+                key_name = key_name[leading_spaces:]
 
-    em_dash_contact = "\u2014" * 8
-    em_dash_stats = "\u2014" * 13
+            tokens.append((key_name, C_ORANGE))
+            tokens.append((colon, C_BASE))
 
-    # Línea 17: Contact: y GitHub.Stats:
-    col2_17 = (
-        f'<span id="stats-col-17">'
-        f'<span style="{c_gray}">{sp22}</span>'
-        f'<span style="{c_orange}">GitHub.Stats</span>'
-        f'<span style="{c_gray}">:</span>'
-        f'</span><!-- /stats-col-17 -->'
-    )
+            val_start = m.end()
+            val_end = matches[i + 1].start() if i + 1 < len(matches) else len(pre_hash)
+            val_text = pre_hash[val_start:val_end]
+            if val_text:
+                tokens.append((val_text, C_BLUE))
 
-    # Línea 18: ———————— (Contact) y ————————————— (GitHub.Stats)
-    col2_18 = (
-        f'<span id="stats-col-18">'
-        f'<span style="{c_gray}">{em_dash_contact}{sp22}{em_dash_stats}</span>'
-        f'</span><!-- /stats-col-18 -->'
-    )
+    # Regla: texto después de # y con la # gris
+    if hash_text:
+        tokens.append((hash_text, C_BASE))
 
-    # Línea 19: LinkedIn y Stats (sin followers ni puntos)
-    col2_19 = (
-        f'<span id="stats-col-19">'
-        f'<span style="{c_gray}">{sp2}</span>'
-        f'<span style="{c_blue}">{contribs:,}</span> '
-        f'<span style="{c_gray}">Contribs, </span>'
-        f'<span style="{c_blue}">{repos:,}</span> '
-        f'<span style="{c_gray}">Repos, </span>'
-        f'<span style="{c_blue}">{stars:,}</span> '
-        f'<span style="{c_gray}">Stars</span>'
-        f'</span><!-- /stats-col-19 -->'
-    )
+    return tokens
 
-    # Inserción en Línea 17 (al lado de Contact:)
-    content = re.sub(
-        r'(<span[^>]*class="cm-identifier"[^>]*>Contact</span>\s*<span[^>]*class="cm-operator"[^>]*>:\s*</span>)',
-        lambda m: m.group(1) + col2_17, content, count=1
-    )
 
-    # Inserción en Línea 18 (guiones debajo de Contact y de GitHub.Stats)
-    pattern_l18 = r'(\$RM</span>\s*<span[^>]*class="cm-error"[^>]*>!\s*).*?(</span></span></pre>)'
-    content = re.sub(pattern_l18, lambda m: m.group(1) + "\xa0 " * 7 + col2_18 + m.group(2), content, count=1)
+def generate_svg_from_template(template_path: str, svg_path: str, variables: dict) -> bool:
+    """
+    Lee template.txt, interpola las variables y genera un archivo SVG vectorial ultra ligero (~5 KB).
+    Retorna True si el archivo cambió o fue generado exitosamente.
+    """
+    if not os.path.exists(template_path):
+        raise FileNotFoundError(f"No se encontró el template en: {template_path}")
 
-    # Inserción en Línea 19 (después de LinkedIn)
-    pattern_l19 = r'(in/emanuel-lopez-f</span>)'
-    content = re.sub(pattern_l19, lambda m: m.group(1) + col2_19, content, count=1)
+    with open(template_path, "r", encoding="utf-8") as f:
+        template = f.read()
 
-    if content != original_content:
+    rendered_text = template.format(**variables)
+    lines = rendered_text.splitlines()
+
+    char_width = 8.43
+    line_height = 20
+    font_size = 14
+    padding_x = 28
+    padding_y = 36
+
+    max_len = max(len(line) for line in lines)
+    svg_width = int(max_len * char_width + padding_x * 2)
+    svg_height = int(len(lines) * line_height + padding_y * 2)
+
+    svg_lines = []
+    for idx, line in enumerate(lines):
+        y_pos = padding_y + (idx + 1) * line_height - 4
+        tokens = tokenize_line(line, idx)
+        line_tspans = "".join(
+            f'<tspan fill="{col}">{html.escape(txt)}</tspan>'
+            for txt, col in tokens
+        )
+        svg_lines.append(f'    <text xml:space="preserve" x="{padding_x}" y="{y_pos}">{line_tspans}</text>')
+
+    content_svg = "\n".join(svg_lines)
+
+    new_svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {svg_width} {svg_height}" width="{svg_width}" height="{svg_height}">
+  <defs>
+    <style>
+      .terminal {{
+        font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        font-size: {font_size}px;
+      }}
+    </style>
+  </defs>
+
+  <!-- Background Card -->
+  <rect width="100%" height="100%" rx="10" fill="#151718" stroke="#30363d" stroke-width="1"/>
+
+  <!-- Terminal Window Controls -->
+  <circle cx="20" cy="18" r="5" fill="#f85149"/>
+  <circle cx="36" cy="18" r="5" fill="#e3b341"/>
+  <circle cx="52" cy="18" r="5" fill="#3fb950"/>
+
+  <!-- Terminal Text -->
+  <g class="terminal">
+{content_svg}
+  </g>
+</svg>
+"""
+    old_svg = ""
+    if os.path.exists(svg_path):
+        with open(svg_path, "r", encoding="utf-8") as f:
+            old_svg = f.read()
+
+    if new_svg != old_svg:
+        os.makedirs(os.path.dirname(svg_path), exist_ok=True)
         with open(svg_path, "w", encoding="utf-8") as f:
-            f.write(content)
+            f.write(new_svg)
         return True
 
     return False
@@ -301,17 +338,15 @@ def perform_git_workflow(uptime_str: str, age_str: str, stats: dict, push: bool 
     """
     Ejecuta git add, commit y push con mensaje formateado.
     """
-    # 1. Comprobar si hay cambios pendientes en img/CodeMe.svg o el repo
-    status_proc = run_git(["status", "--porcelain", "img/CodeMe.svg"])
-    has_changes = bool(status_proc.stdout.strip())
-
-    if not has_changes:
-        print("  [*] No hay cambios nuevos en img/CodeMe.svg (ya estaba al día).")
+    # 1. Comprobar cambios
+    status_proc = run_git(["status", "--porcelain"])
+    if not status_proc.stdout.strip():
+        print("  [*] No hay cambios pendientes en el repositorio.")
         return False
 
     # 2. git add
-    print("  [+] Ejecutando: git add img/CodeMe.svg today.py daily.ps1")
-    run_git(["add", "img/CodeMe.svg", "today.py", "daily.ps1"])
+    print("  [+] Ejecutando: git add img/CodeMe.svg template.txt today.py daily.ps1")
+    run_git(["add", "img/CodeMe.svg", "template.txt", "today.py", "daily.ps1"])
 
     # 3. git commit
     today_str = datetime.date.today().strftime("%Y-%m-%d")
@@ -353,7 +388,6 @@ def main():
     today = datetime.date.today()
     print(f"📅 Fecha actual: {today.strftime('%d/%m/%Y')}")
 
-    # Parámetros CLI
     dry_run = "--dry-run" in sys.argv
     no_push = "--no-push" in sys.argv
     force_commit = "--force" in sys.argv
@@ -364,25 +398,32 @@ def main():
     print(f"⏱️  Uptime calculado : {uptime}")
     print(f"🎂  Age calculada    : {age}")
 
-    # 2. Obtener estadísticas de GitHub
+    # 2. Métricas de GitHub
     print(f"\n📡 Consultando métricas de GitHub (@{USER_NAME})...")
     stats = get_github_stats(USER_NAME, ACCESS_TOKEN)
     print(f"   • Contribuciones : {stats['contribs']:,}")
     print(f"   • Repositorios   : {stats['repos']:,}")
     print(f"   • Estrellas      : {stats['stars']:,}")
-    print(f"   • Seguidores     : {stats['followers']:,}")
+
+    variables = {
+        "uptime": uptime,
+        "age": age,
+        "contribs": f"{stats['contribs']:,}",
+        "repos": f"{stats['repos']:,}",
+        "stars": f"{stats['stars']:,}",
+    }
 
     if dry_run:
         print("\n🔍 Modo --dry-run activo: No se aplicaron cambios ni commits.")
         return
 
-    # 3. Actualizar SVG
-    print(f"\n🎨 Actualizando {os.path.relpath(SVG_PATH, BASE_DIR)}...")
-    changed = update_svg_file(SVG_PATH, uptime, age, stats)
+    # 3. Generar SVG desde template.txt
+    print(f"\n🎨 Generando {os.path.relpath(SVG_PATH, BASE_DIR)} desde template.txt...")
+    changed = generate_svg_from_template(TEMPLATE_PATH, SVG_PATH, variables)
     if changed:
-        print("  [✓] SVG actualizado correctamente con nuevos valores y nuevo layout.")
+        print("  [✓] SVG generado con éxito con diseño vectorial ultra ligero (~5 KB).")
     else:
-        print("  [*] El archivo SVG ya contenía los valores actuales.")
+        print("  [*] El archivo SVG ya estaba al día.")
 
     # 4. Flujo Git
     if changed or force_commit:
