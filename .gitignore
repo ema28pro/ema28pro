@@ -1,0 +1,11 @@
+# Environment variables
+.env
+*.env
+
+# Python cache & local data
+__pycache__/
+*.pyc
+.loc_cache.json
+
+# Local scratch
+scratch/

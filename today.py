@@ -7,11 +7,15 @@
 -----------------------------------------------------------------------------
  - Genera el SVG CodeMe.svg directamente desde template.txt (sin regex frágiles).
  - Calcula dinámicamente Uptime y Age con años, meses y días (estilo pyoneer).
- - Muestra métricas de GitHub en vivo al lado de "Contact:".
+ - Muestra métricas de GitHub en vivo:
+     * Contribs, Repos, Stars
+     * Líneas de código agregadas (++addlines) y eliminadas (--deletedlines)
  - Aplica la paleta de colores oficial:
      * Gris oscuro (#4a4a4a): Línea 1 (nombre y usuario)
      * Naranja     (#ffa657): Claves antes de los dos puntos (:)
      * Azul        (#a5d6ff): Textos de valores, tecnologías y números
+     * Verde       (#3fb950): Líneas de código agregadas (++)
+     * Rojo        (#f85149): Líneas de código eliminadas (--)
      * Gris/Blanco (#c9d1d9): Cráneo ASCII, separadores, dos puntos y comentarios (#)
  - Realiza git add, commit y push automático a GitHub.
 =============================================================================
@@ -20,6 +24,7 @@
 import sys
 import os
 import re
+import json
 import html
 import datetime
 import subprocess
@@ -37,25 +42,47 @@ if sys.platform.startswith("win"):
         pass
 
 # =============================================================================
+# CARGA DE VARIABLES DE ENTORNO (.env)
+# =============================================================================
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+def load_dotenv(filepath: str = None):
+    """Carga variables desde el archivo .env si existe."""
+    if filepath is None:
+        filepath = os.path.join(BASE_DIR, ".env")
+    if os.path.exists(filepath):
+        with open(filepath, "r", encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if line and not line.startswith("#") and "=" in line:
+                    key, val = line.split("=", 1)
+                    key = key.strip()
+                    val = val.strip().strip('"').strip("'")
+                    if key and key not in os.environ:
+                        os.environ[key] = val
+
+load_dotenv()
+
+# =============================================================================
 # CONFIGURACIÓN
 # =============================================================================
 USER_NAME = os.environ.get("GITHUB_USER", "ema28pro")
 BIRTHDAY = datetime.date(2005, 11, 28)       # 28 de Noviembre de 2005
 UPTIME_START = datetime.date(2022, 5, 1)      # Mayo de 2022
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 TEMPLATE_PATH = os.path.join(BASE_DIR, "template.txt")
 SVG_PATH = os.path.join(BASE_DIR, "img", "CodeMe.svg")
+LOC_CACHE_FILE = os.path.join(BASE_DIR, ".loc_cache.json")
 
 ACCESS_TOKEN = os.environ.get("ACCESS_TOKEN") or os.environ.get("GITHUB_TOKEN")
 
 # Colores oficiales
 C_ORANGE = "#ffa657"   # Naranja (Keys / Identificadores)
 C_BASE = "#c9d1d9"     # Blanco / Gris base (ASCII skull, separadores, :, comentarios #)
-C_BLUE = "#a5d6ff"     # Azul (Valores, tecnologías, estadísticas)
+C_BLUE = "#a5d6ff"     # Azul (Valores, tecnologías, números)
 C_DARK = "#4a4a4a"     # Gris oscuro (Línea 1 del perfil)
-C_GREEN = "#3fb950"    # Verde ++
-C_RED = "#f85149"      # Rojo --
+C_GREEN = "#3fb950"    # Verde ++ (Líneas agregadas)
+C_RED = "#f85149"      # Rojo -- (Líneas eliminadas)
 
 
 # =============================================================================
@@ -169,6 +196,116 @@ def get_github_stats(username: str, token: str = None) -> dict:
     return stats
 
 
+def get_loc_stats(username: str, token: str, force: bool = False) -> dict:
+    """
+    Calcula las líneas de código agregadas (+) y eliminadas (-) en todos los repositorios.
+    Utiliza caché local (.loc_cache.json) para que sea instantáneo.
+    """
+    today_str = datetime.date.today().strftime("%Y-%m-%d")
+
+    # 1. Leer caché si existe y es de hoy
+    if not force and os.path.exists(LOC_CACHE_FILE):
+        try:
+            with open(LOC_CACHE_FILE, "r", encoding="utf-8") as f:
+                cache_data = json.load(f)
+                if cache_data.get("updated") == today_str and cache_data.get("additions"):
+                    return cache_data
+        except Exception:
+            pass
+
+    loc_stats = {"additions": 0, "deletions": 0, "commits": 0}
+    if not token:
+        # Si no hay token pero hay caché previa, usarla
+        if os.path.exists(LOC_CACHE_FILE):
+            try:
+                with open(LOC_CACHE_FILE, "r", encoding="utf-8") as f:
+                    return json.load(f)
+            except Exception:
+                pass
+        return loc_stats
+
+    headers = {"Authorization": f"token {token}"}
+
+    try:
+        print("   • Calculando líneas de código (additions/deletions) vía GraphQL...")
+        u_query = """query($login: String!) {
+          user(login: $login) {
+            id
+            repositories(first: 100, ownerAffiliations: [OWNER]) {
+              nodes { name }
+            }
+          }
+        }"""
+        r = requests.post("https://api.github.com/graphql", json={"query": u_query, "variables": {"login": username}}, headers=headers, timeout=15)
+        if r.status_code != 200:
+            return loc_stats
+
+        u_data = r.json()["data"]["user"]
+        user_id = u_data["id"]
+        repo_names = [repo["name"] for repo in u_data["repositories"]["nodes"]]
+
+        total_adds = 0
+        total_dels = 0
+        total_commits = 0
+
+        repo_query = """
+        query($owner: String!, $name: String!) {
+          repository(owner: $owner, name: $name) {
+            defaultBranchRef {
+              target {
+                ... on Commit {
+                  history(first: 100) {
+                    nodes {
+                      author { user { id } }
+                      additions
+                      deletions
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }"""
+
+        for name in repo_names:
+            rr = requests.post("https://api.github.com/graphql", json={"query": repo_query, "variables": {"owner": username, "name": name}}, headers=headers, timeout=10)
+            if rr.status_code == 200:
+                repo_obj = rr.json().get("data", {}).get("repository")
+                if repo_obj and repo_obj.get("defaultBranchRef"):
+                    commits = repo_obj["defaultBranchRef"]["target"]["history"]["nodes"]
+                    for c in commits:
+                        u = c.get("author", {}).get("user")
+                        if u and u.get("id") == user_id:
+                            total_commits += 1
+                            total_adds += c.get("additions", 0)
+                            total_dels += c.get("deletions", 0)
+
+        loc_stats = {
+            "updated": today_str,
+            "additions": total_adds,
+            "deletions": total_dels,
+            "commits": total_commits,
+        }
+
+        # Guardar en caché local
+        try:
+            with open(LOC_CACHE_FILE, "w", encoding="utf-8") as f:
+                json.dump(loc_stats, f)
+        except Exception:
+            pass
+
+    except Exception as e:
+        print(f"  [!] Advertencia al calcular líneas de código: {e}")
+        if os.path.exists(LOC_CACHE_FILE):
+            try:
+                with open(LOC_CACHE_FILE, "r", encoding="utf-8") as f:
+                    return json.load(f)
+            except Exception:
+                pass
+
+    return loc_stats
+
+
 # =============================================================================
 # TOKENIZADOR Y GENERADOR DE SVG
 # =============================================================================
@@ -179,9 +316,11 @@ def tokenize_line(line_str: str, line_idx: int) -> list:
     - Arte ASCII: Gris base (#c9d1d9)
     - Primera línea separada: Gris oscuro (#4a4a4a)
     - Separadores (——————): Gris base (#c9d1d9)
-    - Texto antes de ':' : Naranja (#ffa657)
+    - Texto antes de ':' (sin espacios): Naranja (#ffa657)
     - Los ':' : Gris base (#c9d1d9)
     - Texto de valores: Azul (#a5d6ff)
+    - Líneas agregadas (++) o (+): Verde (#3fb950)
+    - Líneas eliminadas (--) o (-): Rojo (#f85149)
     - Texto a partir de '#' (inclusive): Gris base (#c9d1d9)
     """
     tokens = []
@@ -213,31 +352,52 @@ def tokenize_line(line_str: str, line_idx: int) -> list:
         pre_hash = info_part
         hash_text = ""
 
-    # Extraer claves terminadas en ':'
-    pattern = re.compile(r'([A-Za-z0-9_.\s]+?)(:)')
-    matches = list(pattern.finditer(pre_hash))
+    # Palabras clave sin espacios seguidas de ':' (ej: Description:, Contribs:, Repos:, Stars:, GitHub.Stats:)
+    pattern = re.compile(r'([A-Za-z0-9_.-]+)(:)')
 
-    if not matches:
-        if pre_hash:
-            tokens.append((pre_hash, C_BLUE))
-    else:
-        for i, m in enumerate(matches):
-            key_name = m.group(1)
-            colon = m.group(2)
+    pos = 0
+    for m in pattern.finditer(pre_hash):
+        key_start, colon_end = m.span()
+        key_name = m.group(1)
+        colon = m.group(2)
 
-            leading_spaces = len(key_name) - len(key_name.lstrip())
-            if leading_spaces > 0:
-                tokens.append((key_name[:leading_spaces], C_BASE))
-                key_name = key_name[leading_spaces:]
+        if key_start > pos:
+            val_text = pre_hash[pos:key_start]
+            # Detectar diffs (++ o + en verde, -- o - en rojo)
+            sub_pattern = re.compile(r'(\+{1,2}[0-9,kK.+-]+)|(\-{1,2}[0-9,kK.+-]+)')
+            sub_pos = 0
+            for sm in sub_pattern.finditer(val_text):
+                s_start, s_end = sm.span()
+                if s_start > sub_pos:
+                    tokens.append((val_text[sub_pos:s_start], C_BLUE))
+                if sm.group(1):
+                    tokens.append((sm.group(1), C_GREEN))
+                elif sm.group(2):
+                    tokens.append((sm.group(2), C_RED))
+                sub_pos = s_end
+            if sub_pos < len(val_text):
+                tokens.append((val_text[sub_pos:], C_BLUE))
 
-            tokens.append((key_name, C_ORANGE))
-            tokens.append((colon, C_BASE))
+        tokens.append((key_name, C_ORANGE))
+        tokens.append((colon, C_BASE))
+        pos = colon_end
 
-            val_start = m.end()
-            val_end = matches[i + 1].start() if i + 1 < len(matches) else len(pre_hash)
-            val_text = pre_hash[val_start:val_end]
-            if val_text:
-                tokens.append((val_text, C_BLUE))
+    # Texto restante después del último ':'
+    if pos < len(pre_hash):
+        val_text = pre_hash[pos:]
+        sub_pattern = re.compile(r'(\+{1,2}[0-9,kK.+-]+)|(\-{1,2}[0-9,kK.+-]+)')
+        sub_pos = 0
+        for sm in sub_pattern.finditer(val_text):
+            s_start, s_end = sm.span()
+            if s_start > sub_pos:
+                tokens.append((val_text[sub_pos:s_start], C_BLUE))
+            if sm.group(1):
+                tokens.append((sm.group(1), C_GREEN))
+            elif sm.group(2):
+                tokens.append((sm.group(2), C_RED))
+            sub_pos = s_end
+        if sub_pos < len(val_text):
+            tokens.append((val_text[sub_pos:], C_BLUE))
 
     # Regla: texto después de # y con la # gris
     if hash_text:
@@ -340,8 +500,8 @@ def perform_git_workflow(uptime_str: str, age_str: str, stats: dict, push: bool 
         return False
 
     # 2. git add
-    print("  [+] Ejecutando: git add img/CodeMe.svg template.txt today.py daily.ps1")
-    run_git(["add", "img/CodeMe.svg", "template.txt", "today.py", "daily.ps1"])
+    print("  [+] Ejecutando: git add img/CodeMe.svg template.txt today.py daily.ps1 .gitignore")
+    run_git(["add", "img/CodeMe.svg", "template.txt", "today.py", "daily.ps1", ".gitignore"])
 
     # 3. git commit
     today_str = datetime.date.today().strftime("%Y-%m-%d")
@@ -386,6 +546,7 @@ def main():
     dry_run = "--dry-run" in sys.argv
     no_push = "--no-push" in sys.argv
     force_commit = "--force" in sys.argv
+    force_loc = "--force-loc" in sys.argv
 
     # 1. Cálculos de tiempo
     uptime = calculate_uptime(today)
@@ -396,9 +557,12 @@ def main():
     # 2. Métricas de GitHub
     print(f"\n📡 Consultando métricas de GitHub (@{USER_NAME})...")
     stats = get_github_stats(USER_NAME, ACCESS_TOKEN)
+    loc_stats = get_loc_stats(USER_NAME, ACCESS_TOKEN, force=force_loc)
+
     print(f"   • Contribuciones : {stats['contribs']:,}")
     print(f"   • Repositorios   : {stats['repos']:,}")
     print(f"   • Estrellas      : {stats['stars']:,}")
+    print(f"   • Líneas Código  : +{loc_stats['additions']:,} / -{loc_stats['deletions']:,}")
 
     variables = {
         "uptime": uptime,
@@ -406,6 +570,10 @@ def main():
         "contribs": f"{stats['contribs']:,}",
         "repos": f"{stats['repos']:,}",
         "stars": f"{stats['stars']:,}",
+        "addlines": f"{loc_stats['additions']:,}",
+        "additions": f"{loc_stats['additions']:,}",
+        "deletedlines": f"{loc_stats['deletions']:,}",
+        "deletions": f"{loc_stats['deletions']:,}",
     }
 
     if dry_run:

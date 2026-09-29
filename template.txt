@@ -6,7 +6,7 @@
              :!~::!H!<   ~.U$X!?R$$$$$$$$MM!           Kernel: Learning Systems, Automation, GameDev
              ~!~!!!!~~ .:XW$$$U!!?$$$$$$RMM!
                !:~~~ .:!M"T#$$$$WX??#MRRMMM!           Languages.Programming: Python, Java, JavaScript, C/C++
-               ~?WuxiW*`   `"#$$$$8!!!!??!!!           Languages.Real: Spanish (Nativo), English (B2 – Improving)
+               ~?WuxiW*`   `"#$$$$8!!!!??!!!           Languages.Real: Spanish (Native), English (B2 – Improving)
              :X- M$$$$       `"T#$T~!8$WUXU~
             :%`  ~#$$$m:        ~!~ ?$$$$$$            Tools.Frontend: HTML, CSS, JS, React, Tailwind
           :!`.-   ~T$$$$8xx.  .xWW- ~""##*"            Tools.Backend: FastAPI, Node.js, MySQL, PostgreSQL
@@ -16,5 +16,5 @@ W$@@M!!! .!~~ !!     .:XUW$W!~ `"~:    :               Hobbies.Hardware: Athleti
 :::~:!!`:X~ .: ?H.!u "$$$B$$$!W:U!T$$M~
 .~~   :X@!.-~   ?@WTWo("*$$$W$TH$! `                   Contact:                       GitHub.Stats:
 Wi.~!X$?!-~    : ?$$$B$Wu("**$RM!                      ——————                         —————————————
-$R@i.~~ !     :   ~$$$$$B$$en:``                       LinkedIn: in/emanuel-lopez-f   {contribs} Contribs
-?MXT@Wx.~    :     ~"##*$$$$M~                         Email: ctrl.ema28@gmail.com    {repos} Repos, {stars} Stars
+$R@i.~~ !     :   ~$$$$$B$$en:``                       LinkedIn: in/emanuel-lopez-f   Contribs: {contribs} ++{addlines} --{deletedlines}
+?MXT@Wx.~    :     ~"##*$$$$M~                         Email: ctrl.ema28@gmail.com    Repos: {repos}   Stars: {stars}
