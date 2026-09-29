@@ -204,14 +204,19 @@ def update_svg_file(svg_path: str, uptime_str: str, age_str: str, stats: dict) -
     content = content.replace(">MongoDB<", ">PostgreSQL<")
     content = content.replace("ema2805pro@gmail.com", "ctrl.ema28@gmail.com")
 
-    # 3. Línea 4: Uptime y Age con formato completo (años, meses y días)
-    sample_style = 'color: rgb(201, 209, 217);'
+    # 3. Colores estándar del SVG
+    c_orange = "color: rgb(255, 166, 87);"       # Naranja (Keys / Identificadores)
+    c_blue = "color: rgb(165, 214, 255);"         # Azul (Valores / Textos / Números)
+    c_gray = "color: rgb(201, 209, 217);"         # Gris / Blanco (Operadores / Dos puntos / Comentarios)
+    c_dots = "color: rgb(100, 110, 120);"         # Puntos justificadores
+
+    # Línea 4: Uptime en Azul, Age en Gris/Blanco
     line4_pattern = r'(>Uptime</span>\s*<span[^>]*class="cm-operator"[^>]*>:\s*</span>)(.*?)(</pre>)'
     new_line4_body = (
-        f'<span style="{sample_style}"> </span>'
-        f'<span class="cm-number" style="{sample_style}">{uptime_str}</span>'
-        f'<span style="{sample_style}"> </span>'
-        f'<span class="cm-comment" style="{sample_style}">#Age: {age_str}</span></span>'
+        f'<span style="{c_gray}"> </span>'
+        f'<span style="{c_blue}">{uptime_str}</span>'
+        f'<span style="{c_gray}"> </span>'
+        f'<span class="cm-comment" style="{c_gray}">#Age: {age_str}</span></span>'
     )
     content = re.sub(line4_pattern, rf"\g<1>{new_line4_body}\g<3>", content, count=1)
 
@@ -220,12 +225,6 @@ def update_svg_file(svg_path: str, uptime_str: str, age_str: str, stats: dict) -
     repos = stats.get("repos", 0)
     stars = stats.get("stars", 0)
     followers = stats.get("followers", 0)
-
-    c_gray = "color: rgb(139, 148, 158);"
-    c_orange = "color: rgb(255, 166, 87);"
-    c_cyan = "color: rgb(121, 192, 255);"
-    c_dots = "color: rgb(80, 90, 100);"
-    c_white = "color: rgb(240, 246, 252);"
 
     def get_dots(label, val_str, target_w):
         cnt = max(1, target_w - len(label) - len(val_str) - 2)
@@ -241,8 +240,9 @@ def update_svg_file(svg_path: str, uptime_str: str, age_str: str, stats: dict) -
     col2_17 = (
         f'<span id="stats-col-17">'
         f'<span style="{c_gray}">{sp20}- </span>'
-        f'<span style="{c_white}; font-weight: 600;">GitHub Stats </span>'
-        f'<span style="{c_gray}">---------------</span>'
+        f'<span style="{c_orange}; font-weight: 600;">GitHub.Stats</span>'
+        f'<span style="{c_gray}">: </span>'
+        f'<span style="{c_gray}">-------------</span>'
         f'</span><!-- /stats-col-17 -->'
     )
 
@@ -252,11 +252,11 @@ def update_svg_file(svg_path: str, uptime_str: str, age_str: str, stats: dict) -
         f'<span style="{c_gray}">{sp28}. </span>'
         f'<span style="{c_orange}">Repos: </span>'
         f'<span style="{c_dots}">{r_dots} </span>'
-        f'<span style="{c_cyan}">{repos:,}</span>'
+        f'<span style="{c_blue}">{repos:,}</span>'
         f'<span style="{c_gray}"> | </span>'
         f'<span style="{c_orange}">Stars: </span>'
         f'<span style="{c_dots}">{s_dots} </span>'
-        f'<span style="{c_cyan}">{stars:,}</span>'
+        f'<span style="{c_blue}">{stars:,}</span>'
         f'</span><!-- /stats-col-18 -->'
     )
 
@@ -265,11 +265,11 @@ def update_svg_file(svg_path: str, uptime_str: str, age_str: str, stats: dict) -
         f'<span style="{c_gray}"> . </span>'
         f'<span style="{c_orange}">Commits: </span>'
         f'<span style="{c_dots}">{c_dots_str} </span>'
-        f'<span style="{c_cyan}">{contribs:,}</span>'
+        f'<span style="{c_blue}">{contribs:,}</span>'
         f'<span style="{c_gray}"> | </span>'
         f'<span style="{c_orange}">Followers: </span>'
         f'<span style="{c_dots}">{f_dots} </span>'
-        f'<span style="{c_cyan}">{followers:,}</span>'
+        f'<span style="{c_blue}">{followers:,}</span>'
         f'</span><!-- /stats-col-19 -->'
     )
 
