@@ -260,7 +260,7 @@ def generate_svg_from_template(template_path: str, svg_path: str, variables: dic
     rendered_text = template.format(**variables)
     lines = rendered_text.splitlines()
 
-    char_width = 7.80
+    char_width = 8
     line_height = 20
     font_size = 14
     padding_x = 20
