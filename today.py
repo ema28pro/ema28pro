@@ -260,10 +260,10 @@ def generate_svg_from_template(template_path: str, svg_path: str, variables: dic
     rendered_text = template.format(**variables)
     lines = rendered_text.splitlines()
 
-    char_width = 8.43
+    char_width = 7.72
     line_height = 20
     font_size = 14
-    padding_x = 24
+    padding_x = 18
     padding_y = 20
 
     max_len = max(len(line) for line in lines)
@@ -286,7 +286,7 @@ def generate_svg_from_template(template_path: str, svg_path: str, variables: dic
   <defs>
     <style>
       .terminal {{
-        font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        font-family: Consolas, "Courier New", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, "Liberation Mono", monospace;
         font-size: {font_size}px;
       }}
     </style>
