@@ -194,8 +194,9 @@ def update_svg_file(svg_path: str, uptime_str: str, age_str: str, stats: dict) -
     content = re.sub(r'<span id="github-stats-block"[^>]*>.*?</span><!-- /gh-stats -->', '', content)
 
     # 2. Actualizar stack tecnológico en el código
-    # Languages.Programming: agregar JavaScript y quitar (Learning)
-    content = content.replace("Python, Java, C/C++ (Learning)", "Python, Java, C/C++, JavaScript")
+    # Languages.Programming: Python, Java, JavaScript, C/C++
+    content = content.replace("Python, Java, C/C++ (Learning)", "Python, Java, JavaScript, C/C++")
+    content = content.replace("Python, Java, C/C++, JavaScript", "Python, Java, JavaScript, C/C++")
     # Tools.Frontend: React sin (Learning) y agregar Tailwind
     content = content.replace("HTML, CSS, JS, React (Learning)", "HTML, CSS, JS, React, Tailwind")
     # Tools.Backend: cambiar MongoDB por PostgreSQL
