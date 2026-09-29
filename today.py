@@ -219,36 +219,19 @@ def parse_val_text(val_text: str, tokens: list):
     cualquier ++... se colorea de Verde (#3fb950) y --... de Rojo (#f85149).
     Fuera de los paréntesis, todo permanece en Azul (#a5d6ff) (así C++ nunca se afecta).
     """
-    paren_pattern = re.compile(r'\(([^)]*)\)')
-    pos = 0
-    for pm in paren_pattern.finditer(val_text):
-        p_start, p_end = pm.span()
-        if p_start > pos:
-            tokens.append((val_text[pos:p_start], C_BLUE))
-
-        tokens.append(("(", C_BASE))
-        inner_content = pm.group(1)
-
-        diff_pattern = re.compile(r'(\+\+\S+)|(\-\-\S+)')
-        d_pos = 0
-        for dm in diff_pattern.finditer(inner_content):
-            d_start, d_end = dm.span()
-            if d_start > d_pos:
-                tokens.append((inner_content[d_pos:d_start], C_BLUE))
-            if dm.group(1):
-                tokens.append((dm.group(1), C_GREEN))
-            elif dm.group(2):
-                tokens.append((dm.group(2), C_RED))
-            d_pos = d_end
-
-        if d_pos < len(inner_content):
-            tokens.append((inner_content[d_pos:], C_BLUE))
-
-        tokens.append((")", C_BASE))
-        pos = p_end
-
-    if pos < len(val_text):
-        tokens.append((val_text[pos:], C_BLUE))
+    for part in re.split(r'(\([^)]*\))', val_text):
+        if part.startswith("(") and part.endswith(")"):
+            tokens.append(("(", C_BASE))
+            for word in re.split(r'(\s+)', part[1:-1]):
+                if word.startswith("++"):
+                    tokens.append((word, C_GREEN))
+                elif word.startswith("--"):
+                    tokens.append((word, C_RED))
+                elif word:
+                    tokens.append((word, C_BLUE))
+            tokens.append((")", C_BASE))
+        elif part:
+            tokens.append((part, C_BLUE))
 
 
 def tokenize_line(line_str: str, line_idx: int) -> list:
