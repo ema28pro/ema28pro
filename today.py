@@ -220,72 +220,60 @@ def update_svg_file(svg_path: str, uptime_str: str, age_str: str, stats: dict) -
     )
     content = re.sub(line4_pattern, rf"\g<1>{new_line4_body}\g<3>", content, count=1)
 
-    # 4. Dos Columnas: Columna 1 (Contact) y Columna 2 (GitHub Stats)
+    # 4. Dos Columnas paralelas: Columna 1 (Contact) y Columna 2 (GitHub.Stats)
     contribs = stats.get("contribs", 0)
     repos = stats.get("repos", 0)
     stars = stats.get("stars", 0)
-    followers = stats.get("followers", 0)
 
-    def get_dots(label, val_str, target_w):
-        cnt = max(1, target_w - len(label) - len(val_str) - 2)
-        return '.' * cnt
+    sp22 = "\xa0" * 22
+    sp24 = "\xa0" * 24
+    sp2 = "\xa0" * 2
 
-    r_dots = get_dots("Repos:", f"{repos:,}", 12)
-    s_dots = get_dots("Stars:", f"{stars:,}", 12)
-    c_dots_str = get_dots("Commits:", f"{contribs:,}", 14)
-    f_dots = get_dots("Followers:", f"{followers:,}", 12)
+    em_dash_6 = "\u2014" * 6
+    em_dash_13 = "\u2014" * 13
 
-    # HTML Columna 2
-    sp20 = "\xa0" * 20
+    # Línea 17: Contact: y GitHub.Stats:
     col2_17 = (
         f'<span id="stats-col-17">'
-        f'<span style="{c_gray}">{sp20}- </span>'
-        f'<span style="{c_orange}; font-weight: 600;">GitHub.Stats</span>'
-        f'<span style="{c_gray}">: </span>'
-        f'<span style="{c_gray}">-------------</span>'
+        f'<span style="{c_gray}">{sp22}</span>'
+        f'<span style="{c_orange}">GitHub.Stats</span>'
+        f'<span style="{c_gray}">:</span>'
         f'</span><!-- /stats-col-17 -->'
     )
 
-    sp28 = "\xa0" * 28
+    # Línea 18: —————— y —————————————
     col2_18 = (
         f'<span id="stats-col-18">'
-        f'<span style="{c_gray}">{sp28}. </span>'
-        f'<span style="{c_orange}">Repos: </span>'
-        f'<span style="{c_dots}">{r_dots} </span>'
-        f'<span style="{c_blue}">{repos:,}</span>'
-        f'<span style="{c_gray}"> | </span>'
-        f'<span style="{c_orange}">Stars: </span>'
-        f'<span style="{c_dots}">{s_dots} </span>'
-        f'<span style="{c_blue}">{stars:,}</span>'
+        f'<span style="{c_gray}">{em_dash_6}{sp24}{em_dash_13}</span>'
         f'</span><!-- /stats-col-18 -->'
     )
 
+    # Línea 19: LinkedIn y Stats (sin followers ni puntos)
     col2_19 = (
         f'<span id="stats-col-19">'
-        f'<span style="{c_gray}"> . </span>'
-        f'<span style="{c_orange}">Commits: </span>'
-        f'<span style="{c_dots}">{c_dots_str} </span>'
-        f'<span style="{c_blue}">{contribs:,}</span>'
-        f'<span style="{c_gray}"> | </span>'
-        f'<span style="{c_orange}">Followers: </span>'
-        f'<span style="{c_dots}">{f_dots} </span>'
-        f'<span style="{c_blue}">{followers:,}</span>'
+        f'<span style="{c_gray}">{sp2}</span>'
+        f'<span style="{c_blue}">{contribs:,}</span> '
+        f'<span style="{c_gray}">Contribs, </span>'
+        f'<span style="{c_blue}">{repos:,}</span> '
+        f'<span style="{c_gray}">Repos, </span>'
+        f'<span style="{c_blue}">{stars:,}</span> '
+        f'<span style="{c_gray}">Stars</span>'
         f'</span><!-- /stats-col-19 -->'
     )
 
     # Inserción en Línea 17 (al lado de Contact:)
     content = re.sub(
         r'(<span[^>]*class="cm-identifier"[^>]*>Contact</span>\s*<span[^>]*class="cm-operator"[^>]*>:\s*</span>)',
-        rf'\g<1>{col2_17}', content, count=1
+        lambda m: m.group(1) + col2_17, content, count=1
     )
 
-    # Inserción en Línea 18 (espacio de col 1 + col 2 Repos/Stars)
+    # Inserción en Línea 18 (guiones debajo de Contact y de GitHub.Stats)
     pattern_l18 = r'(\$RM</span>\s*<span[^>]*class="cm-error"[^>]*>!\s*).*?(</span></span></pre>)'
-    content = re.sub(pattern_l18, rf'\g<1>{col2_18}\g<2>', content, count=1)
+    content = re.sub(pattern_l18, lambda m: m.group(1) + "\xa0 " * 7 + col2_18 + m.group(2), content, count=1)
 
     # Inserción en Línea 19 (después de LinkedIn)
     pattern_l19 = r'(in/emanuel-lopez-f</span>)'
-    content = re.sub(pattern_l19, rf'\g<1>{col2_19}', content, count=1)
+    content = re.sub(pattern_l19, lambda m: m.group(1) + col2_19, content, count=1)
 
     if content != original_content:
         with open(svg_path, "w", encoding="utf-8") as f:
