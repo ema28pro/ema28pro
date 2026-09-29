@@ -293,7 +293,7 @@ def generate_svg_from_template(template_path: str, svg_path: str, variables: dic
   </defs>
 
   <!-- Background Card -->
-  <rect width="100%" height="100%" rx="5" fill="#000000"/>
+  <rect width="100%" height="100%" rx="5" fill="#151718"/>
 
   <!-- Terminal Text -->
   <g class="terminal">

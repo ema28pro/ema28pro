@@ -9,7 +9,7 @@
   </defs>
 
   <!-- Background Card -->
-  <rect width="100%" height="100%" rx="5" fill="#000000"/>
+  <rect width="100%" height="100%" rx="5" fill="#151718"/>
 
   <!-- Terminal Text -->
   <g class="terminal">
@@ -31,7 +31,7 @@
     <text xml:space="preserve" x="24" y="335"><tspan fill="#c9d1d9">:::~:!!`:X~ .: ?H.!u &quot;$$$B$$$!W:U!T$$M~</tspan></text>
     <text xml:space="preserve" x="24" y="355"><tspan fill="#c9d1d9">.~~   :X@!.-~   ?@WTWo(&quot;*$$$W$TH$! `                   </tspan><tspan fill="#ffa657">Contact</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#c9d1d9">                       </tspan><tspan fill="#ffa657">GitHub.Stats</tspan><tspan fill="#c9d1d9">:</tspan></text>
     <text xml:space="preserve" x="24" y="375"><tspan fill="#c9d1d9">Wi.~!X$?!-~    : ?$$$B$Wu(&quot;**$RM!                      </tspan><tspan fill="#c9d1d9">——————                         —————————————</tspan></text>
-    <text xml:space="preserve" x="24" y="395"><tspan fill="#c9d1d9">$R@i.~~ !     :   ~$$$$$B$$en:``                       </tspan><tspan fill="#ffa657">LinkedIn</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#a5d6ff"> in/emanuel-lopez-f   625 Contribs</tspan></text>
+    <text xml:space="preserve" x="24" y="395"><tspan fill="#c9d1d9">$R@i.~~ !     :   ~$$$$$B$$en:``                       </tspan><tspan fill="#ffa657">LinkedIn</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#a5d6ff"> in/emanuel-lopez-f   626 Contribs</tspan></text>
     <text xml:space="preserve" x="24" y="415"><tspan fill="#c9d1d9">?MXT@Wx.~    :     ~&quot;##*$$$$M~                         </tspan><tspan fill="#ffa657">Email</tspan><tspan fill="#c9d1d9">:</tspan><tspan fill="#a5d6ff"> ctrl.ema28@gmail.com    32 Repos, 94 Stars</tspan></text>
   </g>
 </svg>
