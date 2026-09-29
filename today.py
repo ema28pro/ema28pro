@@ -5,9 +5,9 @@
  Daily Profile & SVG Updater (today.py)
  Emanuel Lopez F (ema28pro)
 -----------------------------------------------------------------------------
- - Calcula de forma dinámica Uptime (desde mayo 2022) y Edad (28/nov/2005).
- - Obtiene estadísticas en vivo de GitHub (contribuciones, repos, estrellas).
- - Actualiza con precisión el SVG neofetch (img/CodeMe.svg) preservando estilos.
+ - Calcula dinámicamente Uptime y Age con años, meses y días (estilo pyoneer).
+ - Muestra métricas de GitHub en vivo al lado de "Contact:".
+ - Actualiza lenguajes y herramientas según el stack actual.
  - Realiza git add, git commit automático y git push a GitHub.
 =============================================================================
 """
@@ -46,29 +46,44 @@ ACCESS_TOKEN = os.environ.get("ACCESS_TOKEN") or os.environ.get("GITHUB_TOKEN")
 
 
 # =============================================================================
-# CÁLCULOS TEMPORALES
+# CÁLCULOS TEMPORALES (ESTILO PYONEER / ANDREW6RANT)
 # =============================================================================
+def format_unit(val: int, unit: str) -> str:
+    """Retorna número y unidad formateada con plural según corresponda."""
+    return f"{val} {unit}{'s' if val != 1 else ''}"
+
+
+def get_time_string(start_date: datetime.date, end_date: datetime.date) -> str:
+    """
+    Retorna la duración exacta entre dos fechas en formato:
+    'X years, Y months, Z days'
+    """
+    diff = relativedelta.relativedelta(end_date, start_date)
+    parts = []
+    if diff.years > 0:
+        parts.append(format_unit(diff.years, "year"))
+    if diff.months > 0:
+        parts.append(format_unit(diff.months, "month"))
+    if diff.days > 0 or not parts:
+        parts.append(format_unit(diff.days, "day"))
+    return ", ".join(parts)
+
+
 def calculate_uptime(today: datetime.date) -> str:
-    """
-    Calcula los años transcurridos desde UPTIME_START con un decimal.
-    Ejemplo: '4.4'
-    """
-    days = (today - UPTIME_START).days
-    years = round(days / 365.25, 1)
-    return f"{years}"
+    """Calcula Uptime en años, meses y días desde mayo 2022."""
+    return get_time_string(UPTIME_START, today)
 
 
 def calculate_age(today: datetime.date) -> str:
     """
-    Calcula la edad en años completos.
+    Calcula edad en años, meses y días desde 28/nov/2005.
     Si hoy es el día del cumpleaños, agrega un emoji de pastel 🎂.
-    Ejemplo: '20 years' o '21 years 🎂'
     """
     diff = relativedelta.relativedelta(today, BIRTHDAY)
-    years = diff.years
-    is_birthday = (diff.months == 0 and diff.days == 0)
-    suffix = " 🎂" if is_birthday else ""
-    return f"{years} years{suffix}"
+    age_str = get_time_string(BIRTHDAY, today)
+    if diff.months == 0 and diff.days == 0:
+        age_str += " 🎂"
+    return age_str
 
 
 # =============================================================================
@@ -89,11 +104,11 @@ def get_github_stats(username: str, token: str = None) -> dict:
         "followers": 0,
     }
 
-    # 1. Datos básicos del usuario (repos públicos, followers)
     headers = {"User-Agent": f"today-script-{username}"}
     if token:
         headers["Authorization"] = f"token {token}"
 
+    # 1. Datos básicos del usuario (repos públicos, followers)
     try:
         user_url = f"https://api.github.com/users/{username}"
         res = requests.get(user_url, headers=headers, timeout=10)
@@ -114,9 +129,8 @@ def get_github_stats(username: str, token: str = None) -> dict:
     except Exception as e:
         print(f"  [!] Advertencia al obtener estrellas: {e}")
 
-    # 3. Contribuciones del último año (mediante scraping de la página de contribuciones oficial o GraphQL)
+    # 3. Contribuciones del último año (GraphQL o scraping público)
     if token:
-        # Modo GraphQL con token
         try:
             graphql_query = """
             query($login: String!) {
@@ -140,7 +154,6 @@ def get_github_stats(username: str, token: str = None) -> dict:
         except Exception as e:
             print(f"  [!] GraphQL falló, intentando fallback público: {e}")
 
-    # Fallback sin token
     if not stats["contribs"]:
         try:
             contrib_url = f"https://github.com/users/{username}/contributions"
@@ -161,8 +174,12 @@ def get_github_stats(username: str, token: str = None) -> dict:
 def update_svg_file(svg_path: str, uptime_str: str, age_str: str, stats: dict) -> bool:
     """
     Actualiza con precisión milimétrica las líneas de CodeMe.svg:
-    - Línea 4: Uptime y Age
-    - Línea 7: GitHub.Stats (Contribs, Repos, Stars)
+    - Línea 4: Uptime y Age con años, meses y días
+    - Línea 7: Se mantiene limpia (sin estadísticas atravesadas)
+    - Línea 8: Languages.Programming sin (Learning) y con JavaScript
+    - Línea 11: Tools.Frontend con React y Tailwind
+    - Línea 12: Tools.Backend con PostgreSQL
+    - Línea 17: Estadísticas de GitHub al lado de "Contact:"
     Retorna True si el archivo fue modificado exitosamente.
     """
     if not os.path.exists(svg_path):
@@ -173,50 +190,52 @@ def update_svg_file(svg_path: str, uptime_str: str, age_str: str, stats: dict) -
 
     original_content = content
 
-    # 1. Actualizar número de Uptime (ej. 2.4 -> 4.4)
-    uptime_regex = r'(>Uptime</span>\s*<span[^>]*class="cm-operator"[^>]*>:\s*</span>\s*<span[^>]*>[^<]*</span>\s*<span[^>]*class="cm-number"[^>]*>)([^<]+)(</span>)'
-    content, c_up = re.subn(uptime_regex, rf"\g<1>{uptime_str}\g<3>", content, count=1)
+    # 1. Limpieza de línea 7 (remover cualquier bloque previo de stats atravesadas)
+    content = re.sub(r'<span id="github-stats-block"[^>]*>.*?</span><!-- /gh-stats -->', '', content)
 
-    # 2. Actualizar Age en comentarios
-    age_regex = r'(#Age:\s*</span>\s*<span[^>]*class="cm-comment"[^>]*>\s*</span>\s*<span[^>]*class="cm-comment"[^>]*>)([^<]+)(</span>)(?:\s*<span[^>]*class="cm-comment"[^>]*>[^<]*</span>)?'
-    content, c_age = re.subn(age_regex, rf"\g<1>{age_str}\g<3>", content, count=1)
+    # 2. Actualizar stack tecnológico en el código
+    # Languages.Programming: agregar JavaScript y quitar (Learning)
+    content = content.replace("Python, Java, C/C++ (Learning)", "Python, Java, C/C++, JavaScript")
+    # Tools.Frontend: React sin (Learning) y agregar Tailwind
+    content = content.replace("HTML, CSS, JS, React (Learning)", "HTML, CSS, JS, React, Tailwind")
+    # Tools.Backend: cambiar MongoDB por PostgreSQL
+    content = content.replace(">MongoDB<", ">PostgreSQL<")
 
-    # 3. Insertar o actualizar bloque GitHub.Stats en línea 7
-    gh_block_regex = r'<span id="github-stats-block"[^>]*>.*?</span><!-- /gh-stats -->'
+    # 3. Línea 4: Uptime y Age con formato completo (años, meses y días)
+    sample_style = 'color: rgb(201, 209, 217);'
+    line4_pattern = r'(>Uptime</span>\s*<span[^>]*class="cm-operator"[^>]*>:\s*</span>)(.*?)(</pre>)'
+    new_line4_body = (
+        f'<span style="{sample_style}"> </span>'
+        f'<span class="cm-number" style="{sample_style}">{uptime_str}</span>'
+        f'<span style="{sample_style}"> </span>'
+        f'<span class="cm-comment" style="{sample_style}">#Age: {age_str}</span></span>'
+    )
+    content = re.sub(line4_pattern, rf"\g<1>{new_line4_body}\g<3>", content, count=1)
+
+    # 4. Línea 17: Mostrar estadísticas al lado de Contact:
+    content = re.sub(r'<span id="contact-stats-block"[^>]*>.*?</span><!-- /contact-stats -->', '', content)
+
     contribs = stats.get("contribs", 0)
     repos = stats.get("repos", 0)
     stars = stats.get("stars", 0)
 
-    gh_block = (
-        f'<span id="github-stats-block">'
-        f'<span class="cm-identifier" style="color: rgb(201, 209, 217);">GitHub.Stats</span>'
-        f'<span class="cm-operator" style="color: rgb(201, 209, 217);">: </span>'
-        f'<span class="cm-number" style="color: rgb(201, 209, 217);">{contribs:,}</span> '
-        f'<span class="cm-identifier" style="color: rgb(201, 209, 217);">Contribs</span>'
-        f'<span class="cm-punctuation" style="color: rgb(201, 209, 217);">, </span>'
-        f'<span class="cm-number" style="color: rgb(201, 209, 217);">{repos:,}</span> '
-        f'<span class="cm-identifier" style="color: rgb(201, 209, 217);">Repos</span>'
-        f'<span class="cm-punctuation" style="color: rgb(201, 209, 217);">, </span>'
-        f'<span class="cm-number" style="color: rgb(201, 209, 217);">{stars:,}</span> '
-        f'<span class="cm-identifier" style="color: rgb(201, 209, 217);">Stars</span>'
-        f'</span><!-- /gh-stats -->'
+    contact_pattern = r'(>Contact</span>\s*<span[^>]*class="cm-operator"[^>]*>:\s*</span>)'
+    stats_html = (
+        f'<span id="contact-stats-block">'
+        f'<span style="{sample_style}">  </span>'
+        f'<span class="cm-identifier" style="{sample_style}">GitHub</span>'
+        f'<span class="cm-operator" style="{sample_style}">: </span>'
+        f'<span class="cm-number" style="{sample_style}">{contribs:,}</span> '
+        f'<span class="cm-identifier" style="{sample_style}">Contribs</span>'
+        f'<span class="cm-punctuation" style="{sample_style}">, </span>'
+        f'<span class="cm-number" style="{sample_style}">{repos:,}</span> '
+        f'<span class="cm-identifier" style="{sample_style}">Repos</span>'
+        f'<span class="cm-punctuation" style="{sample_style}">, </span>'
+        f'<span class="cm-number" style="{sample_style}">{stars:,}</span> '
+        f'<span class="cm-identifier" style="{sample_style}">Stars</span>'
+        f'</span><!-- /contact-stats -->'
     )
-
-    if re.search(gh_block_regex, content):
-        content, c_gh = re.subn(gh_block_regex, gh_block, content, count=1)
-    else:
-        # Inserción en la línea 7 tras el arte ASCII ($RMM!)
-        pattern_l7 = r'(\$RMM</span>\s*<span[^>]*class="cm-operator"[^>]*>!</span>\s*<span[^>]*>[^<]*</span>)'
-        match = re.search(pattern_l7, content)
-        if match:
-            insert_pos = match.end()
-            content = content[:insert_pos] + gh_block + content[insert_pos:]
-            c_gh = 1
-        else:
-            c_gh = 0
-
-    if c_up == 0 or c_age == 0 or c_gh == 0:
-        print(f"  [!] Alerta de reemplazo: Uptime={c_up}, Age={c_age}, GitHub.Stats={c_gh}")
+    content = re.sub(contact_pattern, rf"\g<1>{stats_html}", content, count=1)
 
     if content != original_content:
         with open(svg_path, "w", encoding="utf-8") as f:
@@ -260,7 +279,7 @@ def perform_git_workflow(uptime_str: str, age_str: str, stats: dict, push: bool 
     today_str = datetime.date.today().strftime("%Y-%m-%d")
     commit_msg = (
         f"chore(stats): daily update {today_str} "
-        f"[Uptime: {uptime_str}y, Age: {age_str}, {stats.get('contribs', 0)} contribs]"
+        f"[Uptime: {uptime_str}, Age: {age_str}, {stats.get('contribs', 0)} contribs]"
     )
     print(f"  [+] Creando commit: \"{commit_msg}\"")
     commit_proc = run_git(["commit", "-m", commit_msg])
@@ -304,8 +323,8 @@ def main():
     # 1. Cálculos de tiempo
     uptime = calculate_uptime(today)
     age = calculate_age(today)
-    print(f"⏱️  Uptime calculado : {uptime} years (desde mayo 2022)")
-    print(f"🎂  Age calculada    : {age} (nacimiento 28/nov/2005)")
+    print(f"⏱️  Uptime calculado : {uptime}")
+    print(f"🎂  Age calculada    : {age}")
 
     # 2. Obtener estadísticas de GitHub
     print(f"\n📡 Consultando métricas de GitHub (@{USER_NAME})...")
@@ -323,7 +342,7 @@ def main():
     print(f"\n🎨 Actualizando {os.path.relpath(SVG_PATH, BASE_DIR)}...")
     changed = update_svg_file(SVG_PATH, uptime, age, stats)
     if changed:
-        print("  [✓] SVG actualizado correctamente con nuevos valores.")
+        print("  [✓] SVG actualizado correctamente con nuevos valores y nuevo layout.")
     else:
         print("  [*] El archivo SVG ya contenía los valores actuales.")
 
