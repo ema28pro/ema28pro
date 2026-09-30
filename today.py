@@ -455,6 +455,7 @@ def main():
 
     dry_run = "--dry-run" in sys.argv
     no_push = "--no-push" in sys.argv
+    no_commit = "--no-commit" in sys.argv
     force_commit = "--force" in sys.argv
     force_loc = "--force-loc" in sys.argv
 
@@ -499,7 +500,9 @@ def main():
         print("  [*] El archivo SVG ya estaba al día.")
 
     # 4. Flujo Git
-    if changed or force_commit:
+    if no_commit:
+        print("\n⏭️  Modo --no-commit activo: SVG generado pero no se hizo commit.")
+    elif changed or force_commit:
         print("\n📦 Gestionando Git...")
         perform_git_workflow(uptime, age, stats, push=(not no_push))
     else:
