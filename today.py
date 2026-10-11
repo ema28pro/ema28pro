@@ -124,7 +124,7 @@ def get_github_stats(username: str, token: str = None) -> dict:
     """
     Obtiene las estadísticas de GitHub del usuario:
     - contribs: total de contribuciones (último año o histórico)
-    - repos: total de repositorios públicos
+    - repos: total de repositorios PÚBLICOS (lo que muestra el perfil/SVG)
     - stars: total de estrellas recibidas en repositorios
     """
     stats = {
@@ -137,25 +137,51 @@ def get_github_stats(username: str, token: str = None) -> dict:
     if token:
         headers["Authorization"] = f"token {token}"
 
-    # 1. Repos públicos
+    # 1. Repos PÚBLICOS (lo que se muestra en el SVG): definición del perfil.
     try:
         user_url = f"https://api.github.com/users/{username}"
         res = requests.get(user_url, headers=headers, timeout=10)
         if res.status_code == 200:
-            user_data = res.json()
-            stats["repos"] = user_data.get("public_repos", 0)
+            stats["repos"] = res.json().get("public_repos", 0)
     except Exception as e:
-        print(f"  [!] Advertencia al obtener datos de usuario: {e}")
+        print(f"  [!] Advertencia al obtener repos públicos: {e}")
 
-    # 2. Estrellas totales
-    try:
-        repos_url = f"https://api.github.com/users/{username}/repos?per_page=100"
-        res = requests.get(repos_url, headers=headers, timeout=10)
-        if res.status_code == 200:
-            repos_data = res.json()
-            stats["stars"] = sum(repo.get("stargazers_count", 0) for repo in repos_data)
-    except Exception as e:
-        print(f"  [!] Advertencia al obtener estrellas: {e}")
+    # 2. Estrellas vía GraphQL (paginado)
+    if token:
+        try:
+            repos_query = """
+            query($login: String!, $after: String) {
+                user(login: $login) {
+                    repositories(first: 100, after: $after, ownerAffiliations: [OWNER]) {
+                        pageInfo { hasNextPage endCursor }
+                        nodes { stargazerCount }
+                    }
+                }
+            }"""
+            cursor = None
+            total_stars = 0
+            while True:
+                g_res = requests.post(
+                    "https://api.github.com/graphql",
+                    json={"query": repos_query, "variables": {"login": username, "after": cursor}},
+                    headers=headers,
+                    timeout=15,
+                )
+                if g_res.status_code != 200:
+                    raise RuntimeError(f"HTTP {g_res.status_code}")
+                user_data = g_res.json().get("data", {}).get("user")
+                if not user_data:
+                    break
+                conn = user_data["repositories"]
+                for node in conn.get("nodes", []):
+                    total_stars += node.get("stargazerCount", 0)
+                page = conn.get("pageInfo") or {}
+                if not page.get("hasNextPage") or not page.get("endCursor"):
+                    break
+                cursor = page["endCursor"]
+            stats["stars"] = total_stars
+        except Exception as e:
+            print(f"  [!] Advertencia al obtener estrellas: {e}")
 
     # 3. Contribuciones del último año (GraphQL o scraping público)
     if token:
@@ -403,15 +429,26 @@ def perform_git_workflow(uptime_str: str, age_str: str, stats: dict, push: bool 
     """
     Ejecuta git add, commit y push con mensaje formateado.
     """
-    # 1. Comprobar cambios
-    status_proc = run_git(["status", "--porcelain"])
-    if not status_proc.stdout.strip():
-        print("  [*] No hay cambios pendientes en el repositorio.")
-        return False
+    # 1. Preparar solo los archivos que realmente existen.
+    #    Si falta uno (p.ej. daily.ps1 en otra máquina), git abortaría el add
+    #    completo; filtrando evitamos que se pierda todo el add.
+    trackable = [
+        "img/CodeMe.svg", "template.txt", "today.py",
+        "daily.ps1", "loc.json", "update_loc.py", ".gitignore",
+    ]
+    existing = [p for p in trackable if os.path.exists(os.path.join(BASE_DIR, p))]
 
-    # 2. git add
-    print("  [+] Ejecutando: git add img/CodeMe.svg template.txt today.py daily.ps1 loc.json update_loc.py .gitignore")
-    run_git(["add", "img/CodeMe.svg", "template.txt", "today.py", "daily.ps1", "loc.json", "update_loc.py", ".gitignore"])
+    if existing:
+        print(f"  [+] Ejecutando: git add {' '.join(existing)}")
+        run_git(["add", "--"] + existing)
+
+    # 2. Detectar si de verdad hay algo preparado (staged).
+    #    `git status --porcelain` mira TODO el repo (detector malo); aquí solo
+    #    nos importa lo que acabamos de preparar.
+    staged = run_git(["diff", "--cached", "--quiet"])
+    if staged.returncode == 0:
+        print("  [*] No hay cambios preparados para commitear.")
+        return False
 
     # 3. git commit
     today_str = datetime.date.today().strftime("%Y-%m-%d")
@@ -428,8 +465,9 @@ def perform_git_workflow(uptime_str: str, age_str: str, stats: dict, push: bool 
 
     # 4. git push
     if push:
-        print("  [+] Sincronizando con remoto (git pull --rebase origin main)...")
-        run_git(["pull", "--rebase", "origin", "main"])
+        # --autostash evita que el rebase falle por cambios locales sin commitear
+        print("  [+] Sincronizando con remoto (git pull --rebase --autostash origin main)...")
+        run_git(["pull", "--rebase", "--autostash", "origin", "main"])
         print("  [+] Enviando cambios a GitHub (git push origin main)...")
         push_proc = run_git(["push", "origin", "main"])
         if push_proc.returncode == 0:
