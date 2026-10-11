@@ -70,6 +70,10 @@ USER_NAME = os.environ.get("GITHUB_USER", "ema28pro")
 BIRTHDAY = datetime.date(2005, 11, 28)       # 28 de Noviembre de 2005
 UPTIME_START = datetime.date(2022, 5, 1)      # Mayo de 2022
 
+# Meses en 3 letras para la marca de tiempo (formato: 2026 Oct 10 GMT-5 14:32:07)
+MONTH_ABBR = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+              "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+
 TEMPLATE_PATH = os.path.join(BASE_DIR, "template.txt")
 SVG_PATH = os.path.join(BASE_DIR, "img", "CodeMe.svg")
 LOC_FILE = os.path.join(BASE_DIR, "loc.json")
@@ -489,7 +493,15 @@ def main():
     print("=======================================================\n")
 
     today = datetime.date.today()
+    # Hora de Colombia (GMT-5 fijo, sin horario de verano)
+    colombia_tz = datetime.timezone(datetime.timedelta(hours=-5))
+    now = datetime.datetime.now(colombia_tz)
+    now_str = (
+        f"{now.year} {MONTH_ABBR[now.month - 1]} {now.day:02d} "
+        f"GMT-5 {now.hour:02d}:{now.minute:02d}:{now.second:02d}"
+    )
     print(f"📅 Fecha actual: {today.strftime('%d/%m/%Y')}")
+    print(f"🕒 Marca de tiempo: {now_str}")
 
     dry_run = "--dry-run" in sys.argv
     no_push = "--no-push" in sys.argv
@@ -523,6 +535,7 @@ def main():
         "additions": f"{loc_stats['additions']:,}",
         "deletedlines": f"{loc_stats['deletions']:,}",
         "deletions": f"{loc_stats['deletions']:,}",
+        "now": now_str,
     }
 
     if dry_run:
